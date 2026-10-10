@@ -1,0 +1,27 @@
+﻿/* Original Flurzi asset, sourced unchanged from the existing company website. */
+:root{--flurzi-navy:#0b2254;--flurzi-lime:#a4d000;--flurzi-blue:#0070ee;--flurzi-cyan:#31dbf8}
+.wordmark{display:inline-flex;align-items:center;gap:11px}
+.brand-mark{display:block;width:42px;height:auto;flex:none;border-radius:5px}
+.editorial-header .wordmark{font-size:34px}
+.editorial-footer .wordmark .brand-mark{width:46px}
+.ecosystem-opening .opening-stage{background:var(--flurzi-navy)}
+.ecosystem-opening .display-light{background:radial-gradient(ellipse at 85% 25%,#086ce365,transparent 55%),radial-gradient(ellipse at 76% 80%,#16bfdc35,transparent 45%),#0b2254}
+.ecosystem-opening .opening-canvas{inset:0}
+.ecosystem-opening .hero-line-1{color:#50d8fc}
+.ecosystem-opening .hero-line-2{color:#b4dd29}
+.hero-eyebrow i{background:#b4dd29;box-shadow:0 0 18px #a4d00070}
+.expanded-company{background:#0b2254}
+.expanded-company h2 em{color:#45d7ef}
+.company-sculpture .company-logo{position:relative;width:69%;height:auto;z-index:1;display:block;object-fit:contain}
+.company-brand-halo{position:absolute;inset:6%;border-radius:50%;border:1px solid #31dbf840;background:radial-gradient(ellipse,#0070ee22,transparent 70%)}
+.company-brand-halo:before{content:"";position:absolute;inset:-8%;border-radius:50%;border:1px solid #a4d00020}
+.hero-motion-control button{display:inline-flex;align-items:center;gap:14px;border:0;padding:5px 0;background:transparent;color:inherit;font-size:12px}
+.hero-motion-control button:hover{color:#fff}
+.ecosystem-opening .opening-bottom{align-items:center}
+@media(max-width:700px){
+ .editorial-header .wordmark{font-size:29px;gap:9px}
+ .brand-mark{width:34px}
+ .editorial-footer .wordmark .brand-mark{width:40px}
+}
+@media(prefers-reduced-motion:reduce){.company-logo{transform:none!important;opacity:1!important}}
+

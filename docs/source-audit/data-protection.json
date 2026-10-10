@@ -1,0 +1,201 @@
+{
+  "url": "https://www.flurzi.com/data-protection",
+  "title": "Data Protection & Security | Flurzi",
+  "text": "FLURZI\nHome\nProducts\nAbout\nFAQ\nContact\n\nDATA PROTECTION & SECURITY\n\nHow Flurzi approaches data protection and security.\n\nFlurzi designs its products around trust, appropriate access controls and careful handling of personal, operational and product data. Last updated: 23 May 2026.\n\nGovernance\n\nWe aim to handle data in line with UK GDPR principles, including lawfulness, fairness, transparency, purpose limitation, data minimisation, accuracy, storage limitation, integrity and confidentiality.\n\nAccess controls\n\nProduct access should be limited by role, account permissions and authentication so sensitive records are visible only to appropriate users.\n\nSecure transmission\n\nFlurzi websites and products should use HTTPS/TLS for data in transit. Sensitive data should be protected with suitable technical and organisational measures according to the product and risk level.\n\nAuditability\n\nSponsorSafe HR is intended to support timestamped, attributable and exportable compliance records where audit trails matter. Other products may maintain operational logs for account, security and support purposes.\n\nRetention and deletion\n\nData should be kept only for appropriate product, business, legal, security or audit purposes, then deleted or anonymised according to retention settings and applicable law.\n\nIncident response\n\nIf a personal data incident occurs, Flurzi should assess the risk, take steps to contain and reduce harm, document the incident and notify affected parties or regulators where legally required.\n\nContact\n\nData protection enquiries can be sent to hello@flurzimobileapp.co.uk.\n\nFLURZI\n\nBuilding focused digital products for work, commitments, entertainment and reading.\n\nProducts\nSponsorSafe HR\nFlurzi Commit\nFlurziCinema\nEnd Novel\nAll products\nCompany\nAbout\nFAQ\nContact\nContact\nhello@flurzimobileapp.co.uk\n+44 7467 830622\nBook a demo →\n\n© 2026 Flurzi Mobile App Limited. All rights reserved.\n\nPrivacy Policy\nTerms of Service\nDisclaimer\nData Protection",
+  "nodes": [
+    {
+      "tag": "P",
+      "text": "Data Protection & Security"
+    },
+    {
+      "tag": "H1",
+      "text": "How Flurzi approaches data protection and security."
+    },
+    {
+      "tag": "P",
+      "text": "Flurzi designs its products around trust, appropriate access controls and careful handling of personal, operational and product data. Last updated: 23 May 2026."
+    },
+    {
+      "tag": "H2",
+      "text": "Governance"
+    },
+    {
+      "tag": "P",
+      "text": "We aim to handle data in line with UK GDPR principles, including lawfulness, fairness, transparency, purpose limitation, data minimisation, accuracy, storage limitation, integrity and confidentiality."
+    },
+    {
+      "tag": "H2",
+      "text": "Access controls"
+    },
+    {
+      "tag": "P",
+      "text": "Product access should be limited by role, account permissions and authentication so sensitive records are visible only to appropriate users."
+    },
+    {
+      "tag": "H2",
+      "text": "Secure transmission"
+    },
+    {
+      "tag": "P",
+      "text": "Flurzi websites and products should use HTTPS/TLS for data in transit. Sensitive data should be protected with suitable technical and organisational measures according to the product and risk level."
+    },
+    {
+      "tag": "H2",
+      "text": "Auditability"
+    },
+    {
+      "tag": "P",
+      "text": "SponsorSafe HR is intended to support timestamped, attributable and exportable compliance records where audit trails matter. Other products may maintain operational logs for account, security and support purposes."
+    },
+    {
+      "tag": "H2",
+      "text": "Retention and deletion"
+    },
+    {
+      "tag": "P",
+      "text": "Data should be kept only for appropriate product, business, legal, security or audit purposes, then deleted or anonymised according to retention settings and applicable law."
+    },
+    {
+      "tag": "H2",
+      "text": "Incident response"
+    },
+    {
+      "tag": "P",
+      "text": "If a personal data incident occurs, Flurzi should assess the risk, take steps to contain and reduce harm, document the incident and notify affected parties or regulators where legally required."
+    },
+    {
+      "tag": "H2",
+      "text": "Contact"
+    },
+    {
+      "tag": "P",
+      "text": "Data protection enquiries can be sent to hello@flurzimobileapp.co.uk."
+    },
+    {
+      "tag": "P",
+      "text": "Building focused digital products for work, commitments, entertainment and reading."
+    },
+    {
+      "tag": "H3",
+      "text": "Products"
+    },
+    {
+      "tag": "H3",
+      "text": "Company"
+    },
+    {
+      "tag": "H3",
+      "text": "Contact"
+    },
+    {
+      "tag": "P",
+      "text": "© 2026 Flurzi Mobile App Limited. All rights reserved."
+    }
+  ],
+  "links": [
+    {
+      "text": "FLURZI",
+      "href": "https://www.flurzi.com/"
+    },
+    {
+      "text": "Home",
+      "href": "https://www.flurzi.com/"
+    },
+    {
+      "text": "Products",
+      "href": "https://www.flurzi.com/products"
+    },
+    {
+      "text": "About",
+      "href": "https://www.flurzi.com/about"
+    },
+    {
+      "text": "FAQ",
+      "href": "https://www.flurzi.com/faq"
+    },
+    {
+      "text": "Contact",
+      "href": "https://www.flurzi.com/contact"
+    },
+    {
+      "text": "FLURZI",
+      "href": "https://www.flurzi.com/"
+    },
+    {
+      "text": "",
+      "href": "https://x.com/flurzi_official?s=21"
+    },
+    {
+      "text": "",
+      "href": "https://whatsapp.com/channel/0029Vb6IvkeBPzjaC0UQBX2P"
+    },
+    {
+      "text": "",
+      "href": "https://www.tiktok.com/@flurzi.mobile.app?_r=1&_t=ZN-96cNPV3YjxO"
+    },
+    {
+      "text": "",
+      "href": "https://youtube.com/@flurzimobileapplimitedofficial?si=OjkvkZtfRdZHJDlM"
+    },
+    {
+      "text": "SponsorSafe HR",
+      "href": "https://sponsorsafe-hr.com/"
+    },
+    {
+      "text": "Flurzi Commit",
+      "href": "https://flurzicommit.com/"
+    },
+    {
+      "text": "FlurziCinema",
+      "href": "https://flurzicinema.com/"
+    },
+    {
+      "text": "End Novel",
+      "href": "https://endnovel-flurzi.com/"
+    },
+    {
+      "text": "All products",
+      "href": "https://www.flurzi.com/products"
+    },
+    {
+      "text": "About",
+      "href": "https://www.flurzi.com/about"
+    },
+    {
+      "text": "FAQ",
+      "href": "https://www.flurzi.com/faq"
+    },
+    {
+      "text": "Contact",
+      "href": "https://www.flurzi.com/contact"
+    },
+    {
+      "text": "hello@flurzimobileapp.co.uk",
+      "href": "mailto:hello@flurzimobileapp.co.uk"
+    },
+    {
+      "text": "+44 7467 830622",
+      "href": "tel:+447467830622"
+    },
+    {
+      "text": "Book a demo →",
+      "href": "https://www.flurzi.com/contact"
+    },
+    {
+      "text": "Privacy Policy",
+      "href": "https://www.flurzi.com/privacy-policy"
+    },
+    {
+      "text": "Terms of Service",
+      "href": "https://www.flurzi.com/terms"
+    },
+    {
+      "text": "Disclaimer",
+      "href": "https://www.flurzi.com/disclaimer"
+    },
+    {
+      "text": "Data Protection",
+      "href": "https://www.flurzi.com/data-protection"
+    }
+  ]
+}

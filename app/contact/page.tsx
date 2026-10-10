@@ -1,0 +1,5 @@
+import type {Metadata} from "next";
+import ContactDraft from "@/components/ContactDraft";
+import {COMPANY} from "@/lib/site-content";
+export const metadata:Metadata={title:"Contact",description:"Contact Flurzi for product enquiries, SponsorSafe HR demos, support, partnerships and privacy questions.",alternates:{canonical:"/contact"}};
+export default function ContactPage(){return <><section className="page-intro"><span className="section-label">Contact</span><h1>Speak to Flurzi.</h1><p>Product questions, a demo, support or a conversation about working together.</p></section><section className="editorial-section contact-layout"><div className="contact-details"><h2>Get in touch.</h2><a href={"mailto:"+COMPANY.email}>{COMPANY.email}</a><a href={COMPANY.phoneHref}>{COMPANY.phone}</a><p>For product enquiries, choose the platform you want to discuss. Privacy and data protection requests also come directly to this team.</p><span>Flurzi Mobile App Limited<br/>United Kingdom</span></div><ContactDraft/></section></>;}

@@ -1,0 +1,40 @@
+/* Motion references: Junca's screen-to-page transition, depth and staggered side navigation.
+   All assets and geometry here belong to the Flurzi implementation. */
+.cinematic-opening{height:240svh}
+.cinematic-opening .opening-stage{background:#101716}
+.display-light{position:absolute;inset:0;background:radial-gradient(ellipse at 77% 49%,#2b594650,transparent 55%),linear-gradient(180deg,transparent 65%,#080f0d90);pointer-events:none}
+.opening-canvas{position:absolute;inset:0;z-index:2;pointer-events:none}
+.display-ready .opening-art{visibility:hidden}
+.cinematic-opening .opening-meta,.cinematic-opening .opening-bottom{z-index:4}
+.cinematic-opening .home-introduction{z-index:3}
+.opening-word{display:inline-block;overflow:hidden;vertical-align:top;padding-bottom:.08em;margin-bottom:-.08em}
+.opening-word>span{display:inline-block;transform-origin:0 100%}
+.opening-screen-wipe{position:absolute;inset:0;z-index:5;background:var(--paper);color:var(--text);opacity:0;pointer-events:none;display:grid;place-items:center;will-change:clip-path,opacity}
+.opening-destination{font-size:clamp(46px,7.5vw,118px);line-height:1.05;letter-spacing:-.05em;font-weight:500;overflow:hidden;text-align:center}
+.opening-destination>span{display:block}
+.project-image-link{perspective:1100px}
+.project-image-motion{width:100%;height:100%;transform-style:preserve-3d;transform-origin:50% 50%;will-change:transform}
+.project-image-link.has-follow-cursor .project-view{position:absolute;left:0;top:0;right:auto;bottom:auto;margin:0;white-space:nowrap;border-radius:50%;width:104px;height:104px;display:flex;align-items:center;justify-content:center;padding:15px;font-size:12px;text-align:center;background:#f8f8f5ed;backdrop-filter:blur(10px);pointer-events:none;transition:none;z-index:3;will-change:transform}
+.project-image-link.has-follow-cursor:focus-visible .project-view{visibility:hidden!important}
+.quiet-link>span[aria-hidden],.project-arrow{transition:transform .3s cubic-bezier(.22,1,.36,1)}
+.quiet-link:hover>span[aria-hidden],.project-arrow:hover{transform:translate(4px,-4px)}
+.footer-invite{overflow:hidden}
+.editorial-menu-button{position:relative;z-index:4}
+.menu-backdrop{position:fixed;inset:0;z-index:1;background:#0a111460;backdrop-filter:blur(5px)}
+.editorial-menu{z-index:2;inset:92px 20px 20px auto;width:min(640px,calc(100% - 40px));display:flex;flex-direction:column;align-items:stretch;justify-content:space-between;gap:35px;padding:28px 35px;background:var(--paper);animation:none;transform-origin:top;will-change:clip-path;box-shadow:0 20px 80px #00000015}
+.editorial-menu nav{width:100%}
+.editorial-menu nav a{overflow:hidden;font-size:47px;padding:7px 0;line-height:1.12;border:0;position:relative}
+.editorial-menu nav a[aria-current=page]{color:#828b83}
+.editorial-menu nav a .menu-link-label{font-size:inherit;opacity:1;display:inline-block;transform-origin:0 100%}
+.editorial-menu nav a .menu-link-arrow{font-size:27px;opacity:0;transform:translate(-10px,10px);transition:transform .3s,opacity .3s}
+.editorial-menu nav a:hover .menu-link-arrow,.editorial-menu nav a:focus-visible .menu-link-arrow{opacity:1;transform:none}
+.editorial-menu .menu-secondary{display:grid;grid-template-columns:1fr 1.3fr;gap:30px;align-items:start;font-size:12px}
+.menu-secondary>div{display:flex;flex-direction:column;gap:7px}
+.menu-secondary p{color:#788278;margin-bottom:10px!important}
+.menu-secondary a:hover{text-decoration:underline}
+@media(min-width:901px){.cinematic-opening .opening-art{top:24%;left:56%;width:46%;height:58%}.cinematic-opening .home-introduction{max-width:650px;width:45%;bottom:19%}}
+@media(max-width:900px){.cinematic-opening{height:215svh}.opening-destination{font-size:9vw}.cinematic-opening .opening-bottom>span:nth-child(2){display:none}}
+@media(max-width:700px){.cinematic-opening{height:205svh}.editorial-menu{inset:76px 10px 10px auto;width:calc(100% - 20px);padding:20px;gap:28px}.editorial-menu nav a{font-size:38px;padding:8px 0}.editorial-menu .menu-secondary{font-size:11px;gap:20px}.cinematic-opening .opening-bottom{font-size:10px}.project-image-link .project-view{display:none}}
+@media(prefers-reduced-motion:reduce){.cinematic-opening{height:auto}.cinematic-opening .opening-stage{position:relative}.opening-screen-wipe,.opening-canvas{display:none}.opening-word>span,.project-image-motion{transform:none!important}.editorial-menu{clip-path:none!important}.has-follow-cursor .project-view{display:none!important}}
+
+.opening-word{margin-right:.22em}.opening-word:last-child{margin-right:0}

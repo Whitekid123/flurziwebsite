@@ -1,0 +1,11 @@
+node_modules/
+.next/
+screenshots/
+out/
+.vercel/
+*.log
+*.tsbuildinfo
+.env*
+!.env.example
+/*-reference.*
+/docs/source-audit/*.html

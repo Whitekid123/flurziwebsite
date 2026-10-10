@@ -1,0 +1,10 @@
+import { chromium } from 'playwright';
+const browser=await chromium.launch({executablePath:'C:/Program Files/Google/Chrome/Application/chrome.exe',headless:true,args:['--use-angle=swiftshader','--enable-unsafe-swiftshader']});
+const page=await browser.newPage({viewport:{width:1440,height:1000}});
+page.on('console',m=>{if(m.type()==='error'||m.type()==='warning')console.log(m.type(),m.text());});
+page.on('pageerror',e=>console.log('PAGE ERROR',e.message));
+await page.goto('http://localhost:3400',{waitUntil:'networkidle',timeout:120000});
+await page.waitForTimeout(5000);
+console.log(await page.locator('.hero-art').evaluate(el=>({rect:el.getBoundingClientRect().toJSON(),html:el.innerHTML.slice(0,1800),children:[...el.children].map(c=>({tag:c.tagName,rect:c.getBoundingClientRect().toJSON()}))})));
+await page.screenshot({path:'screenshots/desktop-inspection.png'});
+await browser.close();
