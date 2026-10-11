@@ -1,5 +1,7 @@
 ﻿# Flurzi homepage and motion
 
+**Historical reference study.** The product-led implementation described below has been superseded by the company-led narrative. Current files and behaviour are recorded in [CORPORATE-TRANSFORMATION.md](CORPORATE-TRANSFORMATION.md). The active homepage uses a liquid opening, company statement, four technology chapters and an interactive seven-platform portfolio. It has no four-window hero or large repeated product showcases.
+
 All six reference sites were revisited in Chrome for the expanded homepage revision. Captures from arrival and two scroll positions are in `screenshots/references/`. The deeper Junca study remains in `screenshots/junca-motion/`.
 
 ## Reference decisions

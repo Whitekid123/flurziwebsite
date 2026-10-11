@@ -12,7 +12,7 @@ export default function SiteMotion(){
   media.add("(prefers-reduced-motion: no-preference)",()=>{
    const ctx=gsap.context(()=>{
     if(document.querySelector(".page-intro"))gsap.from(".page-intro .section-label,.page-intro h1,.page-intro>p,.product-intro-bottom",{y:30,opacity:0,clipPath:"inset(0% 0% 100% 0%)",stagger:.09,duration:.85,ease:"power3.out",clearProps:"all"});
-    gsap.utils.toArray<HTMLElement>(".section-heading h2,.home-company h2,.home-next h2,.about-statement h2,.feature-section>h2").forEach(el=>gsap.from(el,{y:35,opacity:0,duration:.9,ease:"power3.out",scrollTrigger:{trigger:el,start:"top 92%",once:true},clearProps:"all"}));
+    gsap.utils.toArray<HTMLElement>("[data-reveal]:not(.company-introduction [data-reveal])").forEach(el=>gsap.from(el,{y:35,opacity:0,duration:.9,ease:"power3.out",scrollTrigger:{trigger:el,start:"top 92%",once:true},clearProps:"all"}));
     gsap.utils.toArray<HTMLElement>(".project-image-link").forEach((el,index)=>{
      const image=el.querySelector(".product-preview-media");
      gsap.fromTo(el,{clipPath:"inset(10% 0% 0% 0%)"},{clipPath:"inset(0% 0% 0% 0%)",ease:"none",scrollTrigger:{trigger:el,start:"top 95%",end:"top 35%",scrub:.65}});

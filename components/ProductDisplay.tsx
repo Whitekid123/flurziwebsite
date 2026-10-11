@@ -4,7 +4,8 @@ import {Canvas,useFrame,useLoader,useThree} from "@react-three/fiber";
 import {Suspense,useEffect,useRef} from "react";
 import * as THREE from "three";
 import LiquidSurface,{LiquidScreen} from "./LiquidSurface";
-import {platforms} from "@/lib/site-content";
+import {platforms as ecosystem} from "@/lib/site-content";
+const platforms=ecosystem.filter(p=>p.image).slice(0,4);
 
 type Props={progress:{current:number};pointer:{current:{x:number;y:number}};active:boolean;paused:boolean;highlighted:number;onReady:()=>void;onLost:()=>void};
 const accents=["#71bcff","#49e5bd","#ff8273","#edbd68"];

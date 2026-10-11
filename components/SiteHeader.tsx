@@ -4,7 +4,7 @@ import Brand from "./Brand";
 import {usePathname} from "next/navigation";
 import {useCallback,useEffect,useRef,useState} from "react";
 import {gsap} from "gsap";
-import {SITE_LINKS,COMPANY,platforms} from "@/lib/site-content";
+import {SITE_LINKS,platforms} from "@/lib/site-content";
 export default function SiteHeader(){
  const path=usePathname();
  const [open,setOpen]=useState(false),[scrolled,setScrolled]=useState(false);
@@ -18,7 +18,7 @@ export default function SiteHeader(){
  },[]);
  const dark=path==="/"&&!scrolled&&!open;
  useEffect(()=>{
-  const update=()=>{const hero=document.querySelector<HTMLElement>(".home-opening");const distance=hero?Math.max(0,hero.offsetHeight-innerHeight):0;setScrolled(scrollY>(distance*.64||45));};
+  const update=()=>{const hero=document.querySelector<HTMLElement>(".home-opening");const distance=hero?Math.max(45,hero.offsetHeight-100):45;setScrolled(scrollY>distance);};
   update();window.addEventListener("scroll",update,{passive:true});window.addEventListener("resize",update);
   return()=>{window.removeEventListener("scroll",update);window.removeEventListener("resize",update);};
  },[path]);
@@ -43,7 +43,7 @@ export default function SiteHeader(){
   <button type="button" className="editorial-menu-button" ref={button} aria-expanded={open} aria-controls="site-menu" onClick={()=>open?close():setOpen(true)}><span>{open?"Close":"Menu"}</span><span className={open?"menu-bars expanded":"menu-bars"} aria-hidden="true"><i/><i/></span></button>
   {open&&<><div ref={backdrop} className="menu-backdrop" aria-hidden="true" onClick={()=>close()}/><div className="editorial-menu" id="site-menu" ref={panel}>
    <nav aria-label="Expanded navigation">{[{href:"/",label:"Home"},...SITE_LINKS].map(l=><Link key={l.href} href={l.href} onClick={()=>close(true)} aria-current={path===l.href?"page":undefined}><span className="menu-link-label">{l.label}</span><span className="menu-link-arrow" aria-hidden="true">↗</span></Link>)}</nav>
-   <div className="menu-secondary"><div><p>Our products</p>{platforms.map(p=><Link href={"/products/"+p.slug} key={p.slug} onClick={()=>close(true)}>{p.name}</Link>)}</div><div><p>Contact</p><a href={"mailto:"+COMPANY.email}>{COMPANY.email}</a></div></div>
+   <div className="menu-secondary"><div><p>Our ecosystem</p>{platforms.map(p=><Link href={"/products/"+p.slug} key={p.slug} onClick={()=>close(true)}>{p.name}</Link>)}</div><div><p>Contact</p><Link href="/contact" onClick={()=>close(true)}>Enquiry options ↗</Link><Link href="/faq" onClick={()=>close(true)}>FAQs ↗</Link></div></div>
   </div></>}
  </header>;
 }

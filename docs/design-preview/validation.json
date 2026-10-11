@@ -1,0 +1,190 @@
+{
+  "checkedAt": "2026-10-11",
+  "checks": [
+    {
+      "label": "Seven platform entries",
+      "passed": true
+    },
+    {
+      "label": "Only EndNovel is labelled operational",
+      "passed": true
+    },
+    {
+      "label": "Original assets load",
+      "passed": true
+    },
+    {
+      "label": "Every internal navigation anchor resolves",
+      "passed": true
+    },
+    {
+      "label": "Pause control updates",
+      "passed": true
+    },
+    {
+      "label": "Pause freezes decorative motion",
+      "passed": true
+    },
+    {
+      "label": "Detail opens: endnovel",
+      "passed": true
+    },
+    {
+      "label": "Detail heading: endnovel",
+      "passed": true
+    },
+    {
+      "label": "Escape restores focus: endnovel",
+      "passed": true
+    },
+    {
+      "label": "Detail opens: flurzi360",
+      "passed": true
+    },
+    {
+      "label": "Detail heading: flurzi360",
+      "passed": true
+    },
+    {
+      "label": "Escape restores focus: flurzi360",
+      "passed": true
+    },
+    {
+      "label": "Detail opens: commit",
+      "passed": true
+    },
+    {
+      "label": "Detail heading: commit",
+      "passed": true
+    },
+    {
+      "label": "Escape restores focus: commit",
+      "passed": true
+    },
+    {
+      "label": "Detail opens: flurzix",
+      "passed": true
+    },
+    {
+      "label": "Detail heading: flurzix",
+      "passed": true
+    },
+    {
+      "label": "Escape restores focus: flurzix",
+      "passed": true
+    },
+    {
+      "label": "Detail opens: rush",
+      "passed": true
+    },
+    {
+      "label": "Detail heading: rush",
+      "passed": true
+    },
+    {
+      "label": "Escape restores focus: rush",
+      "passed": true
+    },
+    {
+      "label": "Detail opens: cortex",
+      "passed": true
+    },
+    {
+      "label": "Detail heading: cortex",
+      "passed": true
+    },
+    {
+      "label": "Escape restores focus: cortex",
+      "passed": true
+    },
+    {
+      "label": "Detail opens: cinema",
+      "passed": true
+    },
+    {
+      "label": "Detail heading: cinema",
+      "passed": true
+    },
+    {
+      "label": "Escape restores focus: cinema",
+      "passed": true
+    },
+    {
+      "label": "Flurzi360 audience clarification",
+      "passed": true
+    },
+    {
+      "label": "Platform enquiry handoff",
+      "passed": true
+    },
+    {
+      "label": "Correct topic selected",
+      "passed": true
+    },
+    {
+      "label": "Scroll remains locked when switching dialogs",
+      "passed": true
+    },
+    {
+      "label": "Closing dialog restores scroll",
+      "passed": true
+    },
+    {
+      "label": "Approved corporate identity",
+      "passed": true
+    },
+    {
+      "label": "No page overflow at 390",
+      "passed": true
+    },
+    {
+      "label": "Menu expands at 390",
+      "passed": true
+    },
+    {
+      "label": "Keyboard focus contained at 390",
+      "passed": true
+    },
+    {
+      "label": "Menu closes on navigation at 390",
+      "passed": true
+    },
+    {
+      "label": "Detail does not overflow at 390",
+      "passed": true
+    },
+    {
+      "label": "No page overflow at 320",
+      "passed": true
+    },
+    {
+      "label": "Menu expands at 320",
+      "passed": true
+    },
+    {
+      "label": "Keyboard focus contained at 320",
+      "passed": true
+    },
+    {
+      "label": "Menu closes on navigation at 320",
+      "passed": true
+    },
+    {
+      "label": "Detail does not overflow at 320",
+      "passed": true
+    },
+    {
+      "label": "Reduced motion removes animation",
+      "passed": true
+    },
+    {
+      "label": "Reduced-motion setting is respected",
+      "passed": true
+    },
+    {
+      "label": "No browser script errors",
+      "passed": true
+    }
+  ],
+  "errors": []
+}

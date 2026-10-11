@@ -1,112 +1,72 @@
 [
   {
-    "group": "Flurzi",
-    "question": "What is Flurzi?",
-    "answer": "Flurzi Mobile App Limited is a UK technology company building focused digital products for compliance, commitments, streaming and story reading."
+    "group": "Company",
+    "question": "What is Flurzi Limited?",
+    "answer": "Flurzi Limited is a UK technology company developing and managing an expanding portfolio of digital platforms. Its areas include workforce technology, commerce, financial commitments, entertainment and intelligent technology systems."
   },
   {
-    "group": "Flurzi",
-    "question": "Are the Flurzi platforms the same product?",
-    "answer": "No. SponsorSafe HR, Flurzi Commit, FlurziCinema and End Novel are separate products under the Flurzi company."
+    "group": "Company",
+    "question": "What does Flurzi mean?",
+    "answer": "Fear Limits Us, Rising Zeal Imprints. This is the approved meaning of the company name."
   },
   {
-    "group": "Flurzi",
-    "question": "Is Flurzi only for the UK?",
-    "answer": "The company is UK-based. SponsorSafe HR is specifically designed around UK sponsor licence and right to work workflows; the other platforms have broader consumer use cases."
+    "group": "Company",
+    "question": "Are all the platforms part of one service?",
+    "answer": "No. They are distinct platforms under the Flurzi company, with their own audiences, identities and development stages. A shared company identity does not imply shared accounts, subscriptions or technical integrations."
   },
   {
-    "group": "Brand Meaning",
-    "question": "What does FLURZI stand for?",
-    "answer": "FLURZI stands for Future-focused Lifestyle Unification & Revolutionary Zenith of Innovation."
+    "group": "Platforms",
+    "question": "Which platforms are available?",
+    "answer": "EndNovel is operational. Flurzi360 has an existing SponsorSafe HR foundation with expansion underway. Flurzi Commit is preparing for launch, with financial integrations pending. FlurziX, FlurziRush and Flurzi Cortex are under development; Flurzi Cinema is in development. Visit each platform page for context."
   },
   {
-    "group": "Brand Meaning",
-    "question": "What does MOBILE APP LIMITED stand for?",
-    "answer": "MOBILE means Modern Omnichannel Business & Intelligent Lifestyle Ecosystems. APP means Advanced Platforms & Protocols. LIMITED means Leading Innovation, Mobility, Intelligence, & Technology for Evolving Digitalisation."
+    "group": "Platforms",
+    "question": "What happened to SponsorSafe HR?",
+    "answer": "SponsorSafe HR is transitioning to Flurzi360, with a broader workforce technology focus. The existing foundation and wider capabilities are at different development stages. The new domain and self-service registration destination are not yet confirmed."
   },
   {
-    "group": "Brand Meaning",
-    "question": "What is the complete company meaning?",
-    "answer": "Flurzi Mobile App Limited represents a visionary technology ecosystem engineered to shape the future of digital living through intelligent platforms, scalable systems and globally adaptive innovation."
+    "group": "Platforms",
+    "question": "Does Flurzi360 offer jobs or visa sponsorship?",
+    "answer": "No. Flurzi360 is intended for businesses and workforce administration. It does not offer employment or visa sponsorship to jobseekers. Immigration and right-to-work workflows depend on the jurisdiction and supported features."
   },
   {
-    "group": "Brand Meaning",
-    "question": "What is the legacy statement?",
-    "answer": "\"FLURZI MOBILE APP LIMITED exists to engineer intelligent digital ecosystems that redefine the relationship between technology, lifestyle, business and human advancement.\""
+    "group": "Platforms",
+    "question": "Will Flurzi360 require a sales call to join?",
+    "answer": "The intended model is self-service business registration, subscriptions and onboarding, without a compulsory sales call or demonstration. The confirmed signup destination will be shared when ready."
   },
   {
-    "group": "SponsorSafe HR",
-    "question": "Who is SponsorSafe HR for?",
-    "answer": "It is for UK employers, HR teams, compliance officers and leadership teams managing sponsor licence duties and sponsored worker records."
-  },
-  {
-    "group": "SponsorSafe HR",
-    "question": "Does SponsorSafe HR replace legal advice?",
-    "answer": "No. It is a software and workflow product. It can support compliance operations, but it does not replace legal or immigration advice from a qualified professional."
-  },
-  {
-    "group": "SponsorSafe HR",
-    "question": "What can SponsorSafe HR help track?",
-    "answer": "The product direction covers sponsor licence management, right to work evidence, document expiry, reportable events, audit-ready exports, evidence packs and compliance visibility."
-  },
-  {
-    "group": "Flurzi Commit",
+    "group": "Platforms",
     "question": "What is Flurzi Commit?",
-    "answer": "Flurzi Commit is a secure membership platform for fixed-term commitment plans with plan setup, billing management, account controls, maturity progress and payout tracking."
+    "answer": "Flurzi Commit is a structured savings and financial commitment platform preparing for launch. Financial integrations are pending. Its public website does not mean deposits, transfers or other financial services are available."
   },
   {
-    "group": "Flurzi Commit",
-    "question": "Is Flurzi Commit financial advice?",
-    "answer": "No. It is a behavioural finance and goal-tracking product. It does not provide regulated financial, investment, tax or debt advice."
+    "group": "Platforms",
+    "question": "What is FlurziX being developed for?",
+    "answer": "FlurziX is an e-commerce initiative for shoppers, independent sellers, retailers and merchants. Its direction includes shopping convenience and business reach. Potential merchant services, commissions and promotional placements remain subject to final specifications."
   },
   {
-    "group": "Flurzi Commit",
-    "question": "Can I use it for any saving goal?",
-    "answer": "The product is designed for defined financial targets where a user wants structure, visibility and a clear commitment period."
+    "group": "Platforms",
+    "question": "Has PlayVault been renamed?",
+    "answer": "Yes. PlayVault was renamed FlurziRush in October 2026. It is under development for gaming and interactive entertainment. Cash earnings for playing are not part of the intended initial launch."
   },
   {
-    "group": "FlurziCinema",
-    "question": "What is FlurziCinema?",
-    "answer": "FlurziCinema is a streaming platform for movies, series, reels and live entertainment with discovery and continue-watching features."
+    "group": "Platforms",
+    "question": "What is Flurzi Cortex?",
+    "answer": "Flurzi Cortex is under development in intelligent technology systems and supporting infrastructure. More detailed capabilities and access arrangements have not been announced."
   },
   {
-    "group": "FlurziCinema",
-    "question": "Is FlurziCinema the same as Flurzi Commit?",
-    "answer": "No. It is a separate entertainment product in the Flurzi family."
+    "group": "Platforms",
+    "question": "Can I watch films on Flurzi Cinema now?",
+    "answer": "Flurzi Cinema is in development. Its public website is not confirmation of an operational viewing service. Features, catalogue and access availability will be confirmed by the platform."
   },
   {
-    "group": "End Novel",
-    "question": "What is End Novel?",
-    "answer": "End Novel is a free story-reading platform where readers can discover stories, save a library, follow rankings and unlock supported episodes."
+    "group": "Enquiries",
+    "question": "How can I discuss a partnership?",
+    "answer": "The Partnerships page explains the enquiry options. Select a relevant topic on Contact and describe your organisation, the platform or opportunity, and the proposed next step. The public email address is awaiting confirmation; the form currently prepares a downloadable draft and does not send it."
   },
   {
-    "group": "End Novel",
-    "question": "What does EndNovel mean?",
-    "answer": "EndNovel means endless stories, reflecting a reading platform built around continuous discovery and story worlds readers can keep returning to."
-  },
-  {
-    "group": "End Novel",
-    "question": "Is End Novel only for paid reading?",
-    "answer": "No. The captured product positioning is free reading supported by ad unlocks."
-  },
-  {
-    "group": "Data and Accounts",
-    "question": "How does Flurzi treat data protection?",
-    "answer": "Flurzi is designed around UK GDPR principles including purpose limitation, access control, secure storage and user rights such as access, correction and deletion."
-  },
-  {
-    "group": "Data and Accounts",
-    "question": "Will there be paid plans?",
-    "answer": "The website can support free trials, paid subscriptions and enterprise demos. Final pricing terms should be confirmed before launch."
-  },
-  {
-    "group": "Data and Accounts",
-    "question": "How do I contact the team?",
-    "answer": "Use the contact page or email hello@flurzimobileapp.co.uk for product, demo, support or privacy enquiries."
-  },
-  {
-    "group": "Data and Accounts",
-    "question": "Contact",
-    "answer": "© 2026 Flurzi Mobile App Limited. All rights reserved."
+    "group": "Enquiries",
+    "question": "Where should I get help with an account?",
+    "answer": "Use the support or account-help route on the relevant product website. Platform-specific access, pricing, subscriptions and terms belong to that platform. Do not share passwords or sensitive account details through a corporate enquiry."
   }
 ]

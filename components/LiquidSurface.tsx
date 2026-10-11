@@ -54,6 +54,14 @@ const fragmentShader=`
   colour+=lime*pow(shine,2.0)*.13*smoothstep(.1,.85,vUv.y);
   colour*=mix(.7,1.18,pool);
   colour+=cyan*uProgress*.035;
+  // Broad flowing highlights make the water a deliberate company-scale composition.
+  // The left remains quiet for type; the current scroll position opens the field.
+  float bend=sin(p.x*2.4-t*.28)*.14+cos(p.x*1.2+t*.19)*.12;
+  float sheet=abs(p.y-bend+p.x*.22-.05);
+  float ribbon=exp(-sheet*24.0);
+  float edge=exp(-abs(sheet-.025)*120.0);
+  colour+=cyan*(ribbon*.22+edge*.13)*pool;
+  colour+=blue*exp(-abs(p.y-bend+p.x*.25+.26)*14.0)*.6;
   gl_FragColor=vec4(colour,1.0);
  }
 `;

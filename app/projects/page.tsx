@@ -1,5 +1,2 @@
-import type {Metadata} from "next";
-import Link from "next/link";
-import {ventures} from "@/lib/site-content";
-export const metadata:Metadata={title:"Projects in development",description:"Explore Flurzi X, a marketplace concept, and PlayVault, a planned game discovery hub.",alternates:{canonical:"/projects"}};
-export default function ProjectsPage(){return <><section className="page-intro"><span className="section-label">Projects</span><h1>What we’re<br/>working on next.</h1><p>Alongside the current product family, Flurzi is developing concepts for commerce and gaming. These projects are not yet available as live platforms.</p></section><section className="editorial-section venture-list">{ventures.map(v=><article key={v.name}><div className="venture-title"><span className="section-label">{v.category}</span><h2>{v.name}</h2><span className="status-label">{v.status}</span></div><div><p>{v.description}</p><ul>{v.areas.map(a=><li key={a}>{a}</li>)}</ul><Link className="quiet-link" href="/contact">Discuss this project ↗</Link></div></article>)}</section></>;}
+import {permanentRedirect} from "next/navigation";
+export default function ProjectsPage(){permanentRedirect("/innovation")}

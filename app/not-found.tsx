@@ -1,0 +1,2 @@
+import Link from "next/link";
+export default function NotFound(){return <section className="page-intro corp-page-intro"><span className="section-label">404 / PAGE NOT FOUND</span><h1>Let's find<br/><em>your way back.</em></h1><p>This page is not available. Explore the Flurzi ecosystem or return to the company homepage.</p><div className="detail-actions"><Link className="solid-link" href="/">Flurzi home ↗</Link><Link className="corp-link" href="/products">Explore the ecosystem ↗</Link></div></section>}
