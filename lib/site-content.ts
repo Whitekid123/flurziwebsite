@@ -4,7 +4,7 @@ export const MISSION="To develop accessible, intelligent and dependable technolo
 export const VISION="To establish Flurzi Limited as a globally recognised technology company delivering innovative digital products and solutions across e-commerce, financial technology, workforce management, entertainment and emerging technologies.";
 export const SITE_LINKS=[{href:"/about",label:"Company"},{href:"/products",label:"Ecosystem"},{href:"/innovation",label:"Technology & Innovation"},{href:"/partnerships",label:"Partnerships"},{href:"/contact",label:"Contact"}];
 export const LEGAL_LINKS=[{href:"/privacy-policy",label:"Privacy policy"},{href:"/terms",label:"Terms of service"},{href:"/disclaimer",label:"Disclaimer"},{href:"/data-protection",label:"Data protection"}];
-export type Platform={slug:string;name:string;category:string;sector:string;audience:string;url:string;linkLabel:string;image:string;imageCaption:string;colour:string;accent:string;status:string;stage:"operational"|"launch"|"expansion"|"development";summary:string;description:string;features:{title:string;body:string;release:"v1"|"development"}[];downloads?:{label:string;url:string}[];loginUrl?:string;note:string;enquiry:string};
+export type Platform={slug:string;name:string;category:string;sector:string;audience:string;url:string;linkLabel:string;image:string;imageCaption:string;brandArtwork?:{thumbnail:string;width:number;height:number;background:string};colour:string;accent:string;status:string;stage:"operational"|"launch"|"expansion"|"development";summary:string;description:string;features:{title:string;body:string;release:"v1"|"development"}[];downloads?:{label:string;url:string}[];loginUrl?:string;note:string;enquiry:string};
 export const platforms:Platform[]=[
   {
     "slug": "endnovel",
@@ -60,8 +60,9 @@ export const platforms:Platform[]=[
     "audience": "Businesses, HR teams and workforce administrators",
     "url": "https://app.sponsorsafe-hr.com/signup",
     "linkLabel": "Register for Version 1",
-    "image": "/media/sponsorsafe.webp",
-    "imageCaption": "Flurzi360 Version 1 foundation, shown under its former SponsorSafe HR identity",
+    "image": "/media/flurzi360-brand.webp",
+    "imageCaption": "Flurzi360 · Brand identity",
+    "brandArtwork": {"thumbnail":"/media/flurzi360-mark.webp","width":1600,"height":667,"background":"#000000"},
     "colour": "#dbe7ed",
     "accent": "#217ac0",
     "status": "Version 1 available",
@@ -102,8 +103,9 @@ export const platforms:Platform[]=[
     "audience": "People working towards structured savings and financial commitments",
     "url": "https://www.flurzicommit.com/landing",
     "linkLabel": "View current website",
-    "image": "/media/commit.webp",
-    "imageCaption": "Flurzi Commit · Current website; launch preparations underway",
+    "image": "/media/commit-brand.webp",
+    "imageCaption": "Flurzi Commit · Brand identity",
+    "brandArtwork": {"thumbnail":"/media/commit-mark.webp","width":1024,"height":682,"background":"#122344"},
     "colour": "#d9e8df",
     "accent": "#277762",
     "status": "Preparing for launch",
@@ -174,8 +176,9 @@ export const platforms:Platform[]=[
     "audience": "Players seeking accessible gaming and interactive entertainment",
     "url": "",
     "linkLabel": "",
-    "image": "",
-    "imageCaption": "",
+    "image": "/media/flurzirush-brand.webp",
+    "imageCaption": "FlurziRush · Brand artwork; platform under development",
+    "brandArtwork": {"thumbnail":"/media/flurzirush-thumb.webp","width":1000,"height":1000,"background":"#000000"},
     "colour": "#e5ebbe",
     "accent": "#65771b",
     "status": "Under development",

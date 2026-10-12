@@ -63,7 +63,7 @@
 @media(prefers-reduced-motion:reduce){.company-statement-stage,.directions-anchor{position:static}.company-statement{min-height:0}.company-statement h2>span,.parent-stem,.portfolio-branch,.direction-chapter h3,.direction-contours path,.statement-rule{transform:none!important;opacity:1!important}.direction-contours path{stroke-dashoffset:0!important}.portfolio-preview img,.portfolio-detail{animation:none}.hero-line>span{transform:none!important;opacity:1!important}}
 
 /* Fixed descendants must remain relative to the viewport while the menu is open. */
-.editorial-header.menu-open{backdrop-filter:none;-webkit-backdrop-filter:none}
+.editorial-header.menu-open{-webkit-backdrop-filter:none;backdrop-filter:none}
 .editorial-menu{overscroll-behavior:contain;-webkit-overflow-scrolling:touch;padding-bottom:max(40px,env(safe-area-inset-bottom));max-height:calc(100dvh - 112px)}
 .editorial-menu>nav,.editorial-menu>.menu-secondary{flex-shrink:0}
 .registered-contact{scroll-margin-top:120px}
@@ -76,3 +76,10 @@
 .contact-unavailable .corp-link{display:flex;margin-top:22px;max-width:260px}
 .detail-actions{flex-wrap:wrap}
 @media(max-width:700px){.editorial-menu{max-height:calc(100dvh - 86px)}}
+
+.analytics-choice{position:fixed;z-index:210;bottom:20px;left:20px;max-width:520px;background:#f5f6f2;color:#10283d;box-shadow:0 8px 40px #06132640;border:1px solid #80969f;padding:24px;font-size:14px;line-height:1.6}.analytics-choice a{text-decoration:underline}.analytics-choice>div{display:flex;gap:12px;margin-top:16px}.analytics-choice button,.analytics-settings{border:1px solid #10283d;background:#f5f6f2;color:#10283d;min-height:44px;padding:10px 14px;cursor:pointer;font-size:12px}.analytics-settings{display:block;margin:16px auto}.analytics-choice button:focus-visible,.analytics-settings:focus-visible{outline:3px solid #217ac0;outline-offset:3px}@media(max-width:600px){.analytics-choice{inset:auto 12px 12px;padding:18px}.analytics-choice>div{flex-wrap:wrap}}
+
+.studio-site:has(.menu-open) .analytics-choice,.studio-site:has(.menu-open) .analytics-settings{visibility:hidden}
+
+/* Keep supplied brand lettering and silhouettes fully visible. */
+.portfolio-preview-brand img{object-fit:contain;object-position:center}

@@ -28,7 +28,7 @@ const check=(passed,label)=>checks.push({label,passed:Boolean(passed)});
    check(await page.locator('#portfolio-panel h3').innerText()===names[i],'Matching detail: '+names[i]);
    check(await page.locator('#portfolio-panel>.corp-link').getAttribute('href')==='/products/'+slugs[i],'Matching route: '+names[i]);
    check(await page.locator('#portfolio-panel').getAttribute('aria-labelledby')==='portfolio-tab-'+slugs[i],'Accessible panel label: '+names[i]);
-   if(['flurzix','flurzirush','cortex'].includes(slugs[i]))check(await page.locator('#portfolio-panel img').count()===0,'No fabricated screenshot: '+names[i]);
+   if(['flurzix','cortex'].includes(slugs[i]))check(await page.locator('#portfolio-panel img').count()===0,'No fabricated screenshot: '+names[i]);
   }
   await tabs.first().focus();await page.keyboard.press('End');
   check(await tabs.last().evaluate(e=>document.activeElement===e)&&await tabs.last().getAttribute('aria-selected')==='true','End selects and focuses final platform');

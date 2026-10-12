@@ -2,11 +2,13 @@
 
 The design work can continue with the supplied direction. These details are needed before the corresponding information or access links are published.
 
-1. **Public contact:** Which business email address and telephone number should appear on the corporate website?
+1. **Contact delivery:** Which inbox should receive website enquiries, and which public business email/telephone may be displayed? Confirm the approved email provider and verified sending domain. The code supports Resend with Cloudflare Turnstile; provider keys must be configured privately in the hosting environment. Delivery remains inactive until configured and an actual received email is verified.
 2. **Leadership:** May we publish Kamsiriochi David Emmanuel as Founder and Director, and Josh as Senior Developer and Operational Manager? What name should be displayed for Josh, and are approved photographs available?
-3. **Flurzi360:** What is the confirmed new domain? Which features have completed production validation, and what is the approved self-service signup destination when ready?
-4. **Product specifications and visuals:** Please share the existing approved specifications and current visuals for Flurzi360, Flurzi Commit and Flurzi Cortex. The corporate copy currently stays within the scope supplied in your reply.
-5. **Company timeline:** Companies House records the legal name change on 13 July 2026. Does the August 2026 milestone refer to a separate corporate brand rollout?
+3. **Flurzi360 Version 1:** Confirm the branded domain, approved registration/login URLs and the live feature matrix by plan and jurisdiction. The existing public platform advertises https://app.sponsorsafe-hr.com/signup and /login; these are legacy destinations pending confirmation. Which HR, compliance, finance and operations features belong to Version 1 versus the expansion?
+4. **Product specifications and visuals:** Please share the existing approved specifications and current interface screenshots for Flurzi360, Flurzi Commit and Flurzi Cortex. Flurzi360 and FlurziRush brand artwork has now been supplied, and Flurzi Commit branding has been sourced from its official website and App Store listing. Confirm which legacy screenshots should remain during the transition. The corporate copy currently stays within the scope supplied in your reply.
+5. **Hosting and domain:** Who controls the Vercel project and DNS for flurzi.com and www.flurzi.com? Provide account access so the production domain, HTTPS and redirects can be configured and verified.
+6. **Analytics:** Which GA4 property should receive page views and conversion events? Supply the measurement ID and confirm analytics/privacy settings, retention and access ownership. Disable automatic enhanced measurement for this implementation, which sends its own sanitised page-view and conversion events, and choose the key conversion events in GA4. The 2 million daily visitor figure remains an ambition, not an achieved metric.
+7. **Company timeline:** Companies House records the legal name change on 13 July 2026. Does the August 2026 milestone refer to a separate corporate brand rollout?
 
 Company number 16640198, incorporation on 11 August 2025 and the London registered office have been checked against the [Companies House overview](https://find-and-update.company-information.service.gov.uk/company/16640198). The July name-change date is recorded in the [filing history](https://find-and-update.company-information.service.gov.uk/company/16640198/filing-history).
 

@@ -25,7 +25,7 @@ export default function SiteHeader(){
  useEffect(()=>{
   if(!open)return;
   const old=document.body.style.overflow;document.body.style.overflow="hidden";window.__lenis?.stop();
-  const outside=Array.from(document.querySelectorAll<HTMLElement>("#main,.editorial-footer,.primary-links"));const previous=outside.map(el=>el.inert);outside.forEach(el=>{el.inert=true;});
+  const outside=Array.from(document.querySelectorAll<HTMLElement>("#main,.editorial-footer,.primary-links,.analytics-choice,.analytics-settings"));const previous=outside.map(el=>el.inert);outside.forEach(el=>{el.inert=true;});
   const ctx=gsap.context(()=>{if(!matchMedia("(prefers-reduced-motion: reduce)").matches){
    gsap.fromTo(panel.current,{clipPath:"inset(0% 0% 100% 0%)",y:-15},{clipPath:"inset(0% 0% 0% 0%)",y:0,duration:.65,ease:"power4.inOut"});
    gsap.fromTo(backdrop.current,{opacity:0},{opacity:1,duration:.4});
@@ -37,7 +37,7 @@ export default function SiteHeader(){
   window.addEventListener("keydown",key);
   return()=>{ctx.revert();gsap.killTweensOf([panel.current,backdrop.current]);closing.current=false;outside.forEach((el,i)=>{el.inert=previous[i];});document.body.style.overflow=old;window.__lenis?.start();window.removeEventListener("keydown",key);button.current?.focus({preventScroll:true});};
  },[open,close]);
- return <header className={"editorial-header "+(dark?"on-dark":"")+(open?" menu-open":"")}>
+ return <header className={"editorial-header "+(dark?"on-dark":"")+(open?" menu-open":"")} style={open?{backdropFilter:"none",WebkitBackdropFilter:"none"}:undefined}>
   <Link href="/" className="wordmark" aria-label="Flurzi home" tabIndex={open?-1:0} onClick={()=>close(true)}><Brand/></Link>
   <nav className="primary-links" aria-label="Main navigation">{SITE_LINKS.map(l=><Link href={l.href} key={l.href} aria-current={path===l.href||path.startsWith(l.href+"/")?"page":undefined}>{l.label}</Link>)}</nav>
   <button type="button" className="editorial-menu-button" ref={button} aria-expanded={open} aria-controls="site-menu" onClick={()=>open?close():setOpen(true)}><span>{open?"Close":"Menu"}</span><span className={open?"menu-bars expanded":"menu-bars"} aria-hidden="true"><i/><i/></span></button>

@@ -1,8 +1,21 @@
 {
   "privacy-policy": {
     "title": "How Flurzi handles personal information.",
-    "intro": "This privacy policy explains how Flurzi Limited may collect, use, protect and retain personal information across this website and the Flurzi product family. Last updated: 23 May 2026.",
+    "intro": "This privacy information explains how Flurzi Limited handles enquiries and optional analytics on its corporate website. Individual platforms provide their own privacy information for their services. Updated: 12 October 2026.",
     "sections": [
+      {
+        "title": "Corporate website enquiries",
+        "paragraphs": [
+          "Online enquiries are available only when email delivery is configured. When you submit the enabled form, your name, email address, optional organisation, selected topic and message are sent to Flurzi through its email delivery provider, Resend. Cloudflare Turnstile checks submissions for automated abuse. The corporate application does not store a separate enquiry database; messages are handled in the receiving inbox and by the delivery providers. Do not include passwords, payment details or sensitive worker records."
+        ]
+      },
+      {
+        "title": "Optional analytics and your choice",
+        "paragraphs": [
+          "Where configured, Google Analytics measures visits to known corporate pages, platform access clicks, app download clicks and successfully submitted enquiry forms. It loads only after you accept optional analytics. The site does not pass form contents, email addresses or URL query strings to its custom analytics events. Google may process technical information such as IP addresses and device information.",
+          "Your analytics choice is stored in this browser. You can decline or withdraw using Analytics preferences in the footer. Declining does not prevent access to the website. Advertising personalisation and Google signals are disabled by this implementation. Analytics is not active when no measurement property has been configured."
+        ]
+      },
       {
         "title": "Who this applies to",
         "paragraphs": [
@@ -61,7 +74,7 @@
       {
         "title": "Product scope",
         "paragraphs": [
-          "Flurzi Limited is the company behind seven distinct platforms. EndNovel is operational. Flurzi360 expands the existing SponsorSafe HR foundation, with wider workforce capabilities at different development stages. Flurzi Commit is preparing for launch as a structured savings and financial commitment platform, with financial integrations pending. FlurziX, FlurziRush, Flurzi Cortex and Flurzi Cinema are in development. Individual platform terms and availability govern access. None of these descriptions is a promise that a planned feature is available or a replacement for professional advice."
+          "Flurzi Limited is the company behind seven distinct platforms. EndNovel and Flurzi360 Version 1 are available; expanded Flurzi360 capabilities remain in development. Flurzi Commit is preparing for launch and does not provide customer fund custody or regulated financial services. FlurziX, FlurziRush, Flurzi Cortex and Flurzi Cinema remain in development. Current and planned capabilities are separated on each platform page. Platform-specific terms govern access."
         ]
       },
       {

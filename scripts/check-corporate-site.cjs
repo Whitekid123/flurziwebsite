@@ -77,21 +77,12 @@ fs.mkdirSync(output, {recursive: true});
       check(await page.locator('#site-menu').count() === 0, 'Menu navigation closes drawer at ' + width);
     }
     await page.setViewportSize({width: 390, height: 844});
-    for (const [query, expected] of [['topic=partnership', 'Partnership opportunity'], ['topic=business', 'Business enquiry'], ['topic=opportunity', 'Future opportunity'], ['topic=platform', 'Platform enquiry'], ['product=flurzi360', 'Flurzi360 business enquiry'], ['product=commit', 'Flurzi Commit enquiry'], ['topic=privacy', 'Privacy and data protection']]) {
-      await page.goto(base + '/contact?' + query, {waitUntil: 'networkidle'});
-      check(await page.locator('#contact-topic').inputValue() === expected, 'Contact routes ' + query);
-    }
-    await page.locator('button[type=submit]').click();
-    check(await page.locator('#contact-name').evaluate(el => !el.validity.valid), 'Enquiry requires name');
-    await page.locator('#contact-name').fill('Local QA');
-    await page.locator('#contact-email').fill('qa@example.com');
-    await page.locator('#contact-message').fill('Local validation only. This draft must not be sent.');
-    const downloadEvent = page.waitForEvent('download');
-    await page.locator('button[type=submit]').click();
-    const download = await downloadEvent;
-    const draft = fs.readFileSync(await download.path(), 'utf8');
-    check(download.suggestedFilename() === 'flurzi-enquiry.txt' && draft.includes('Privacy and data protection') && draft.includes('qa@example.com'), 'Downloaded enquiry contains selected topic and details');
-    check((await page.locator('[role=status]').innerText()).includes('not been sent'), 'Enquiry never claims delivery');
+    await page.goto(base + '/contact?topic=partnership', {waitUntil: 'networkidle'});
+    check(await page.locator('.contact-unavailable').count() === 1, 'Unconfigured delivery shows honest contact availability');
+    check(await page.locator('.contact-draft button[type=submit]').count() === 0, 'No misleading send or draft-download CTA');
+    check(await page.locator('#registered-office').count() === 1, 'Postal contact remains available');
+    const disabledDelivery = await page.request.post(base + '/api/contact', {data: {name: 'QA'}});
+    check(disabledDelivery.status() === 503, 'Unconfigured API cannot claim delivery');
     await page.setViewportSize({width: 320, height: 844});
     check(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth), 'Contact fits 320px');
     await page.goto(base + '/faq');

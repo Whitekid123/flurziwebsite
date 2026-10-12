@@ -8,21 +8,19 @@ declare global { interface Window { turnstile?: {
   render: (el: HTMLElement, options: Record<string, unknown>) => string;
   reset: (id: string) => void; remove: (id: string) => void;
 }; } }
-export default function ContactDraft({enabled, siteKey}: {enabled: boolean; siteKey: string}) {
-  const [topic, setTopic] = useState("Business enquiry"), [token, setToken] = useState("");
+export default function ContactDraft({enabled, siteKey, initialTopic}: {enabled: boolean; siteKey: string; initialTopic: string}) {
+  const [topic, setTopic] = useState(initialTopic), [token, setToken] = useState("");
   const [state, setState] = useState<"idle"|"sending"|"success"|"error">("idle"), [message, setMessage] = useState("");
   const container = useRef<HTMLDivElement>(null), widget = useRef<string|undefined>(undefined);
   const requestId = useRef(""), submitting = useRef(false), status = useRef<HTMLParagraphElement>(null);
   useEffect(() => {
-    const query = new URLSearchParams(location.search), slug = query.get("product");
-    const product = platforms.find(p => p.slug === (slug === "sponsorsafe" ? "flurzi360" : slug));
-    setTopic(product?.enquiry || enquiryTopics[query.get("topic") || ""] || "Business enquiry");
     return () => { if (widget.current) { window.turnstile?.remove(widget.current); widget.current = undefined; } };
   }, []);
+  useEffect(() => {setTopic(initialTopic);}, [initialTopic]);
   const renderChallenge = useCallback(() => {
     if (!container.current || !window.turnstile || widget.current) return;
     widget.current = window.turnstile.render(container.current, {sitekey: siteKey, action: "contact", size: "flexible",
-      callback: (value: string) => {setToken(value); setMessage("");},
+      callback: (value: string) => {setToken(value);},
       "expired-callback": () => setToken(""),
       "error-callback": () => {setToken(""); setState("error"); setMessage("The security check could not load. Please check your connection and try again.");},
     });
