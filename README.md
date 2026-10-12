@@ -43,7 +43,7 @@ The earlier portal, product-window opening and single-page components remain as 
 ## Images and footage
 
 Edit `lib/media.ts`; place assets in `public/media/`.
-The desktop opening uses an interactive liquid background. Set HERO_MEDIA.video and a poster to substitute decorative looping footage. Smaller screens use lightweight liquid-light styling; reduced motion freezes it or displays the supplied poster. Genuine platform screenshots are mapped in `lib/site-content.ts`. The retained `ScrollMedia` component is available for future supplied footage; the current platform stories use still images.
+The desktop opening uses an interactive liquid background. Set HERO_MEDIA.video and a poster to substitute decorative looping footage. Smaller screens use lightweight liquid-light styling; reduced motion freezes it or displays the supplied poster. Genuine platform screenshots are mapped in `lib/site-content.ts`. The retained `ScrollMedia` component is available for future supplied footage; the current portfolio uses genuine still images where available.
 
 Keep headings outside footage and provide a poster. MP4/H.264 with frequent keyframes is a starting point; final framing and seek timing need tuning to the supplied assets.
 

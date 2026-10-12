@@ -9,10 +9,23 @@ export default function CorporatePortfolio() {
   const [selected, setSelected] = useState(0);
   const tabs = useRef<(HTMLButtonElement | null)[]>([]);
   const p = platforms[selected];
+  const selectPlatform = (index: number) => {
+    setSelected(index);
+    if (!window.matchMedia("(max-width: 600px)").matches) return;
+    requestAnimationFrame(() => {
+      const panel = document.getElementById("portfolio-panel");
+      if (!panel) return;
+      if (window.__lenis) {
+        window.__lenis.scrollTo(window.scrollY, {immediate: true, force: true});
+        window.__lenis.scrollTo(panel, {duration: .65});
+      }
+      else panel.scrollIntoView({block: "start", behavior: "instant"});
+    });
+  };
   return <div className="corporate-portfolio">
     <div className="portfolio-parent"><span>THE PARENT COMPANY</span><strong>Flurzi<span>Limited</span></strong><p>Independent platforms. A shared company direction.</p><div className="parent-stem" aria-hidden="true"/></div>
     <div className="portfolio-branches" role="tablist" aria-label="Explore the Flurzi portfolio">
-      {platforms.map((platform, i) => <button key={platform.slug} ref={el => {tabs.current[i] = el;}} type="button" role="tab" id={"portfolio-tab-" + platform.slug} aria-controls="portfolio-panel" aria-selected={selected === i} tabIndex={selected === i ? 0 : -1} className="portfolio-branch" onClick={() => setSelected(i)} onKeyDown={event => {
+      {platforms.map((platform, i) => <button key={platform.slug} ref={el => {tabs.current[i] = el;}} type="button" role="tab" id={"portfolio-tab-" + platform.slug} aria-controls="portfolio-panel" aria-selected={selected === i} tabIndex={selected === i ? 0 : -1} className="portfolio-branch" onClick={() => selectPlatform(i)} onKeyDown={event => {
         let next = i;
         if (event.key === "ArrowRight" || event.key === "ArrowDown") next = (i + 1) % platforms.length;
         else if (event.key === "ArrowLeft" || event.key === "ArrowUp") next = (i + platforms.length - 1) % platforms.length;

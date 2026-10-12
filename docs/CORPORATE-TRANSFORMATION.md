@@ -49,6 +49,8 @@ See [questions for the founder](design-preview/QUESTIONS-FOR-FOUNDER.md). These 
 - Lazy-loaded desktop water scene, limited frame rate, offscreen/hidden-tab pause, manual pause control and a CSS fallback.
 - Lightweight mobile hero, live reduced-motion handling and no forced WebGL on small screens.
 - Masked headline entrances, a scroll-linked company statement, drawn contour artwork, a sticky desktop technology rail with section links and current-area highlighting, a staggered portfolio reveal, and route/menu transitions. Mobile flows naturally and reduced motion removes the held sections. Content remains available without animation.
+- Technology section links preserve their URL hash, move keyboard focus to the destination and respect the fixed header. Smooth scrolling synchronises with native scroll position before navigating.
+- On phones, selecting a platform brings its detail panel into view; arrow-key selection retains focus in the tabs.
 - The portfolio supports mouse, touch, arrow keys, Home and End. All seven platforms remain visible, with a labelled detail panel and a real link to the selected platform page. Its connecting lines represent the company portfolio, not shared accounts or technical integrations.
 - Keyboard menu navigation, focus containment and restoration, inert background, Escape dismissal and scroll-lock cleanup.
 - Native FAQ disclosures, labelled form inputs, honest delivery state, pressed-state filters and an announced result count.
@@ -75,3 +77,19 @@ The first build failed because Google Fonts was unavailable. The existing Inter 
 `node scripts/check-corporate-hero.cjs http://localhost:3411` checks actual water motion, pause/resume, mobile and reduced-motion behaviour, no-WebGL fallback and hero navigation. Historical scripts that assert the retired four-product layout are not acceptance criteria for this redesign.
 
 No commit, push or production deployment is part of this local implementation.
+
+## Company narrative verification - 12 October 2026
+
+The homepage now leads from the liquid-light opening into the company statement, four technology chapters and the seven-platform corporate portfolio. Large paired product showcases are retired. Navy, cyan, lime and off-white carry the company identity through the sequence.
+
+Final checks against the production build on http://localhost:3411:
+
+- Production build and TypeScript passed.
+- Full-site suite: **269/269 passed**, covering all 18 public pages and existing journeys.
+- Corporate story suite: **71/71 passed**, including narrative order, all seven platform selections, keyboard controls, responsive widths from 320px to 1440px, scroll navigation, focus/hash behaviour, mobile detail visibility and reduced motion.
+- Hero suite: **24/24 passed**, including water movement, pause, mobile fallback and unavailable WebGL.
+- No browser runtime errors; git diff whitespace checks passed.
+
+Browser checks caught a native-anchor/smooth-scroll conflict after layout changes. The final handler synchronises the actual scroll position, honours CSS header spacing and moves focus to the section. Mobile platform selection now brings the detail panel into view without changing arrow-key tab behaviour.
+
+A development-preview attempt timed out during compilation; final verification used the successful production build. Contact delivery remains an explicitly labelled local enquiry draft while approved contact details are pending. No commit, push or deployment was performed in this pass.

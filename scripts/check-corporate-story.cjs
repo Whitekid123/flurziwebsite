@@ -8,6 +8,7 @@ const check=(passed,label)=>checks.push({label,passed:Boolean(passed)});
  const browser=await chromium.launch({executablePath:'C:/Program Files/Google/Chrome/Application/chrome.exe',headless:true});
  try{
   const page=await browser.newPage({viewport:{width:1440,height:1000},reducedMotion:'reduce'});
+  page.setDefaultNavigationTimeout(90000);
   page.on('pageerror',e=>errors.push(e.message));
   await page.goto(base,{waitUntil:'networkidle'});
   check(await page.locator('.platform-stories,.story-pair,.direction-grid').count()===0,'Homepage replaces product showcases and repeated grids');
@@ -45,11 +46,15 @@ const check=(passed,label)=>checks.push({label,passed:Boolean(passed)});
    check(await page.locator('.portfolio-branch').evaluateAll(es=>es.every(e=>{const r=e.getBoundingClientRect();return r.width>=44&&r.height>=44})),'Portfolio touch targets at '+width);
    await page.locator('.portfolio-branch').last().click();
    check(await page.locator('#portfolio-panel h3').innerText()==='Flurzi Cinema','Portfolio usable at '+width);
+   if(width<=600){
+    await page.waitForTimeout(250);
+    check(await page.locator('#portfolio-panel').evaluate(e=>{const r=e.getBoundingClientRect();return r.top>=100&&r.top<200;}),'Mobile selection brings details below header at '+width);
+   }
    await page.locator('.portfolio-branch').first().click();
    if(width===1440||width===390){
     await page.locator('img').evaluateAll(es=>es.forEach(e=>e.loading='eager'));
     await page.waitForFunction(()=>[...document.images].every(i=>i.complete));
-    await page.evaluate(()=>scrollTo(0,0));
+    await page.evaluate(()=>{document.activeElement?.blur();scrollTo(0,0);});
     await page.screenshot({path:dir+'/home-'+width+'.png',fullPage:true});
     await page.locator('#ecosystem').screenshot({path:dir+'/portfolio-'+width+'.png'});
     await page.locator('.corporate-directions').screenshot({path:dir+'/directions-'+width+'.png'});
@@ -62,11 +67,17 @@ const check=(passed,label)=>checks.push({label,passed:Boolean(passed)});
   await page.locator('.company-statement').scrollIntoViewIfNeeded();await page.waitForTimeout(1000);
   check(await page.locator('.company-statement-stage').evaluate(e=>getComputedStyle(e).position)==='sticky','Desktop company statement holds while scrolling');
   await page.locator('.directions-index a').nth(2).click();await page.waitForTimeout(1800);
-  check(await page.locator('#home-direction-2').evaluate(e=>{const r=e.getBoundingClientRect();return r.top>=0&&r.top<innerHeight;}),'Technology navigation reaches its section');
+  check(await page.locator('#home-direction-2').evaluate(e=>{const r=e.getBoundingClientRect();return r.top>=100&&r.top<200;}),'Technology navigation reaches its section');
   check(await page.locator('.directions-index a').nth(2).evaluate(e=>e.classList.contains('is-current')),'Scroll state marks current technology area');
   check(await page.locator('.direction-contours path').first().evaluate(e=>parseFloat(getComputedStyle(e).strokeDashoffset)<.05),'Scroll draws corporate contours');
+  check(await page.locator('#home-direction-2').evaluate(e=>document.activeElement===e),'Technology link moves keyboard focus to destination');
+  check(new URL(page.url()).hash==='#home-direction-2','Technology link preserves shareable section hash');
   await page.locator('.portfolio-branches').scrollIntoViewIfNeeded();await page.waitForTimeout(1500);
   check(await page.locator('.portfolio-branch').evaluateAll(es=>es.every(e=>Number(getComputedStyle(e).opacity)>.99)),'Portfolio reveal finishes with all platforms visible');
+  await page.setViewportSize({width:390,height:844});
+  await page.locator('.portfolio-branch').last().click();await page.waitForTimeout(1000);
+  check(await page.locator('#portfolio-panel').evaluate(e=>{const r=e.getBoundingClientRect();return r.top>=100&&r.top<200;}),'Mobile animated selection clears fixed header');
+  await page.setViewportSize({width:1440,height:1000});
   await page.emulateMedia({reducedMotion:'reduce'});await page.waitForTimeout(200);
   check(await page.locator('.company-statement-stage').evaluate(e=>getComputedStyle(e).position)==='static','Reduced motion removes sticky company sequence');
   check(await page.locator('.directions-anchor').evaluate(e=>getComputedStyle(e).position)==='static','Reduced motion removes sticky direction rail');
