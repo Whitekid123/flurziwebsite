@@ -1,9 +1,67 @@
-"use client";
-import {useEffect,useState} from "react";
+﻿"use client";
+import {useCallback, useEffect, useRef, useState} from "react";
 import Link from "next/link";
-import {COMPANY,platforms} from "@/lib/site-content";
-const topics:Record<string,string>={business:"Business enquiry",partnership:"Partnership opportunity",opportunity:"Future opportunity",platform:"Platform enquiry",support:"Support request",privacy:"Privacy and data protection"};
-export default function ContactDraft(){const [topic,setTopic]=useState("Business enquiry"),[prepared,setPrepared]=useState(false);useEffect(()=>{const query=new URLSearchParams(window.location.search),slug=query.get("product"),p=platforms.find(p=>p.slug===(slug==="sponsorsafe"?"flurzi360":slug));if(p)setTopic(p.enquiry);else if(topics[query.get("topic")||""])setTopic(topics[query.get("topic")!]);},[]);
- return <form className="contact-draft" onChange={()=>setPrepared(false)} onSubmit={event=>{event.preventDefault();const data=new FormData(event.currentTarget);const body="To: Flurzi Limited\nSubject: "+topic+"\nName: "+data.get("name")+"\nReply email: "+data.get("email")+"\nOrganisation: "+(data.get("organisation")||"Not supplied")+"\n\n"+data.get("message");if(COMPANY.email){window.location.href="mailto:"+COMPANY.email+"?subject="+encodeURIComponent(topic)+"&body="+encodeURIComponent(body);}else{const url=URL.createObjectURL(new Blob([body],{type:"text/plain;charset=utf-8"}));const a=document.createElement("a");a.href=url;a.download="flurzi-enquiry.txt";document.body.append(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(url),1000);}setPrepared(true);}}>
- <label htmlFor="contact-topic">What would you like to discuss?<select id="contact-topic" name="topic" value={topic} onChange={e=>setTopic(e.target.value)}>{[...Object.values(topics),...platforms.map(p=>p.enquiry)].map(t=><option key={t}>{t}</option>)}</select></label><div className="form-row"><label htmlFor="contact-name">Name<input id="contact-name" name="name" autoComplete="name" required maxLength={120}/></label><label htmlFor="contact-email">Email<input id="contact-email" name="email" type="email" autoComplete="email" required maxLength={200}/></label></div><label htmlFor="contact-organisation">Organisation <span>(optional)</span><input id="contact-organisation" name="organisation" autoComplete="organization" maxLength={160}/></label><label htmlFor="contact-message">Your enquiry<textarea id="contact-message" name="message" rows={6} required maxLength={5000} placeholder="Tell us the context, your area of interest and the next step you have in mind."/></label>
- <p className="form-explanation">{COMPANY.email?"This opens a draft in your email app for you to review and send.":"The public email address is awaiting confirmation. You can download your enquiry as a text file. Nothing is sent to Flurzi or stored by this form."} <Link href="/privacy-policy">Privacy information</Link></p><button type="submit" className="solid-link">{COMPANY.email?"Open email draft":"Download enquiry draft"} <span aria-hidden="true">↗</span></button>{prepared&&<p role="status" className="draft-status">{COMPANY.email?"Your email app has been requested. Review the draft there and send it when ready.":"Your enquiry file has been prepared for download. It has not been sent. Keep it for when the contact address is confirmed, or use the registered postal address shown on this page."}</p>}</form>}
+import Script from "next/script";
+import {platforms} from "@/lib/site-content";
+import {enquiryTopics} from "@/lib/contact-topics";
+declare global { interface Window { turnstile?: {
+  render: (el: HTMLElement, options: Record<string, unknown>) => string;
+  reset: (id: string) => void; remove: (id: string) => void;
+}; } }
+export default function ContactDraft({enabled, siteKey}: {enabled: boolean; siteKey: string}) {
+  const [topic, setTopic] = useState("Business enquiry"), [token, setToken] = useState("");
+  const [state, setState] = useState<"idle"|"sending"|"success"|"error">("idle"), [message, setMessage] = useState("");
+  const container = useRef<HTMLDivElement>(null), widget = useRef<string|undefined>(undefined);
+  const requestId = useRef(""), submitting = useRef(false), status = useRef<HTMLParagraphElement>(null);
+  useEffect(() => {
+    const query = new URLSearchParams(location.search), slug = query.get("product");
+    const product = platforms.find(p => p.slug === (slug === "sponsorsafe" ? "flurzi360" : slug));
+    setTopic(product?.enquiry || enquiryTopics[query.get("topic") || ""] || "Business enquiry");
+    return () => { if (widget.current) { window.turnstile?.remove(widget.current); widget.current = undefined; } };
+  }, []);
+  const renderChallenge = useCallback(() => {
+    if (!container.current || !window.turnstile || widget.current) return;
+    widget.current = window.turnstile.render(container.current, {sitekey: siteKey, action: "contact", size: "flexible",
+      callback: (value: string) => {setToken(value); setMessage("");},
+      "expired-callback": () => setToken(""),
+      "error-callback": () => {setToken(""); setState("error"); setMessage("The security check could not load. Please check your connection and try again.");},
+    });
+  }, [siteKey]);
+  if (!enabled) return <div className="contact-draft contact-unavailable"><span className="section-label">ENQUIRY OPTIONS</span><h2>Online enquiries<br/>are not open yet.</h2><p>Email delivery is being set up. This page cannot currently send an enquiry.</p><p>You can write to our registered postal address, or visit the relevant platform for existing account support.</p><a className="corp-link" href="#registered-office">Registered postal address <span aria-hidden="true">&#8595;</span></a><Link className="corp-link" href="/products">Find your platform <span aria-hidden="true">&#8599;</span></Link></div>;
+  return <form className="contact-draft" aria-busy={state === "sending"} onChange={() => {requestId.current = ""; if (state !== "sending") {setState("idle"); setMessage("");}}} onSubmit={async event => {
+    event.preventDefault();
+    if (submitting.current || !token) return;
+    submitting.current = true; setState("sending"); setMessage("");
+    const form = event.currentTarget, data = Object.fromEntries(new FormData(form));
+    if (!requestId.current) requestId.current = crypto.randomUUID();
+    try {
+      const response = await fetch("/api/contact", {method: "POST", headers: {"Content-Type": "application/json"}, body: JSON.stringify({...data, token, requestId: requestId.current}), signal: AbortSignal.timeout(25000)});
+      const result = await response.json();
+      setMessage(result.message || "We could not confirm delivery. Please try again.");
+      if (response.ok) {
+        setState("success"); form.reset(); requestId.current = "";
+        window.dispatchEvent(new Event("flurzi:enquiry-sent"));
+      } else setState("error");
+    } catch {setState("error"); setMessage("We could not confirm delivery. Your text is still here; please try again.");}
+    finally {
+      submitting.current = false; setToken("");
+      if (widget.current) window.turnstile?.reset(widget.current);
+      requestAnimationFrame(() => status.current?.focus());
+    }
+  }}>
+    <fieldset disabled={state === "sending"}>
+      <label htmlFor="contact-topic">What would you like to discuss?<select id="contact-topic" name="topic" value={topic} onChange={e => setTopic(e.target.value)}>{[...Object.values(enquiryTopics), ...platforms.map(p => p.enquiry)].map(t => <option key={t}>{t}</option>)}</select></label>
+      <div className="form-row"><label htmlFor="contact-name">Name<input id="contact-name" name="name" autoComplete="name" required maxLength={120}/></label><label htmlFor="contact-email">Email<input id="contact-email" name="email" type="email" autoComplete="email" required maxLength={200}/></label></div>
+      <label htmlFor="contact-organisation">Organisation <span>(optional)</span><input id="contact-organisation" name="organisation" autoComplete="organization" maxLength={160}/></label>
+      <label htmlFor="contact-message">Your enquiry<textarea id="contact-message" name="message" rows={6} required maxLength={5000} placeholder="Tell us what you would like to discuss."/></label>
+      <div className="contact-trap" aria-hidden="true"><label>Leave this blank<input name="website" tabIndex={-1} autoComplete="off"/></label></div>
+      <p className="form-explanation">We use your details to respond to this enquiry. Please do not include passwords, payment details or sensitive worker records. <Link href="/privacy-policy">Privacy information</Link></p>
+      <div ref={container} className="contact-challenge"/>
+      <Script src="https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit" strategy="afterInteractive" onReady={renderChallenge} onError={() => {setState("error"); setMessage("The security check could not load. Please reload this page to try again.");}}/>
+      {!token && state !== "success" && <p className="form-explanation">Complete the security check to enable sending.</p>}
+      <button type="submit" className="solid-link" disabled={!token || state === "sending"}>{state === "sending" ? "Sending enquiry..." : "Send enquiry"} <span aria-hidden="true">&#8599;</span></button>
+    </fieldset>
+    {message && <p tabIndex={-1} ref={status} role={state === "error" ? "alert" : "status"} className="draft-status">{message}</p>}
+    <noscript><p>JavaScript is needed for the security check. You can write to the registered postal address shown on this page.</p></noscript>
+  </form>;
+}

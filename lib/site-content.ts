@@ -4,15 +4,266 @@ export const MISSION="To develop accessible, intelligent and dependable technolo
 export const VISION="To establish Flurzi Limited as a globally recognised technology company delivering innovative digital products and solutions across e-commerce, financial technology, workforce management, entertainment and emerging technologies.";
 export const SITE_LINKS=[{href:"/about",label:"Company"},{href:"/products",label:"Ecosystem"},{href:"/innovation",label:"Technology & Innovation"},{href:"/partnerships",label:"Partnerships"},{href:"/contact",label:"Contact"}];
 export const LEGAL_LINKS=[{href:"/privacy-policy",label:"Privacy policy"},{href:"/terms",label:"Terms of service"},{href:"/disclaimer",label:"Disclaimer"},{href:"/data-protection",label:"Data protection"}];
-export type Platform={slug:string;name:string;category:string;sector:string;audience:string;url:string;linkLabel:string;image:string;imageCaption:string;colour:string;accent:string;status:string;stage:"operational"|"launch"|"expansion"|"development";summary:string;description:string;features:{title:string;body:string}[];note:string;enquiry:string};
+export type Platform={slug:string;name:string;category:string;sector:string;audience:string;url:string;linkLabel:string;image:string;imageCaption:string;colour:string;accent:string;status:string;stage:"operational"|"launch"|"expansion"|"development";summary:string;description:string;features:{title:string;body:string;release:"v1"|"development"}[];downloads?:{label:string;url:string}[];loginUrl?:string;note:string;enquiry:string};
 export const platforms:Platform[]=[
- {slug:"endnovel",name:"EndNovel",category:"Reading & audio",sector:"Entertainment",audience:"Readers and listeners",url:"https://endnovel-flurzi.com/",linkLabel:"Visit EndNovel",image:"/media/endnovel.webp",imageCaption:"EndNovel · Operational platform",colour:"#e5d9be",accent:"#a2783b",status:"Operational",stage:"operational",summary:"A home for digital reading, storytelling and audiobook entertainment.",description:"EndNovel brings stories to readers and listeners. The operational platform is part of Flurzi's work in digital culture: helping people discover stories and return to the worlds that interest them.",features:[{title:"Digital reading",body:"Explore stories and continue through chapters at your own pace."},{title:"Story discovery",body:"Find titles and build a reading journey around your interests."},{title:"Audiobook entertainment",body:"Discover the platform's audio storytelling offering and current access options."}],note:"Visit EndNovel for its current catalogue, availability, account options and platform terms.",enquiry:"EndNovel enquiry"},
- {slug:"flurzi360",name:"Flurzi360",category:"Workforce technology",sector:"Business",audience:"Businesses, HR teams and workforce administrators",url:"",linkLabel:"",image:"/media/sponsorsafe.webp",imageCaption:"SponsorSafe HR · Existing foundation for Flurzi360",colour:"#dbe7ed",accent:"#217ac0",status:"Expansion underway",stage:"expansion",summary:"Expanding the SponsorSafe HR foundation into a broader workforce operating system.",description:"Flurzi360 is the new identity and wider direction for SponsorSafe HR. It is being developed for organisations managing people, records and workforce operations, with a global business audience in mind. The existing foundation and the wider development programme are at different stages.",features:[{title:"Existing foundation",body:"SponsorSafe HR provides the starting point for document records, reminders, compliance monitoring, administrative roles and audit-related workflows. Production validation varies by feature."},{title:"People & operations",body:"The broader scope includes recruitment, onboarding, employee records, scheduling and attendance. These capabilities are at different development stages."},{title:"Governance & insight",body:"Planned areas include approvals, role access, analytics and AI-assisted administration, alongside payroll-related workflows and workforce finance."},{title:"Self-service access",body:"The intended model lets businesses register, subscribe and onboard themselves. A compulsory sales call or demo is not the intended entry point."}],note:"The new domain and self-service destination are not yet confirmed. Immigration, right-to-work and sponsorship workflows depend on jurisdiction and feature availability. Flurzi360 does not offer jobs or visa sponsorship to jobseekers.",enquiry:"Flurzi360 business enquiry"},
- {slug:"commit",name:"Flurzi Commit",category:"Financial commitments",sector:"Finance",audience:"People working towards structured savings and financial commitments",url:"https://www.flurzicommit.com/landing",linkLabel:"View current website",image:"/media/commit.webp",imageCaption:"Flurzi Commit · Current website; launch preparations underway",colour:"#d9e8df",accent:"#277762",status:"Preparing for launch",stage:"launch",summary:"A structured savings and financial commitment platform preparing for launch.",description:"Flurzi Commit is being developed to help people bring structure to saving and financial commitments. Launch preparations are underway, with financial integrations still pending. Its public website is an introduction to the platform, not confirmation that financial services are available.",features:[{title:"Structured savings",body:"The product direction centres on bringing structure to savings goals and commitments."},{title:"Financial commitment",body:"A focused platform for organising the commitments people choose to work towards."},{title:"Launch preparation",body:"Financial integrations remain pending. Confirmed access, service scope and applicable terms will accompany availability."}],note:"The corporate website does not offer deposits, money transfers or investment products. No financial integration or provider partnership is being announced here.",enquiry:"Flurzi Commit enquiry"},
- {slug:"flurzix",name:"FlurziX",category:"Digital commerce",sector:"Business",audience:"Shoppers, independent sellers, retailers and merchants",url:"",linkLabel:"",image:"",imageCaption:"",colour:"#dceaff",accent:"#2862bd",status:"Under development",stage:"development",summary:"An e-commerce platform connecting shopping convenience with business reach.",description:"FlurziX is being developed around accessible online commerce for shoppers and businesses. Its direction combines the shopping experience with opportunities for independent sellers, retailers and merchants to reach customers.",features:[{title:"Shopping experience",body:"Accessibility, convenience and customer experience shape the planned consumer offering."},{title:"Merchant participation",body:"The business direction includes independent sellers, retailers and merchants seeking an online presence and wider reach."},{title:"Commercial model",body:"Potential revenue areas include merchant services, commissions and promotional placements. Final scope and pricing will follow the product specifications."}],note:"FlurziX is under development. It is an e-commerce initiative, not a banking infrastructure or ledger platform. No launch date or commercial terms have been announced.",enquiry:"FlurziX enquiry"},
- {slug:"flurzirush",name:"FlurziRush",category:"Gaming & interaction",sector:"Entertainment",audience:"Players seeking accessible gaming and interactive entertainment",url:"",linkLabel:"",image:"",imageCaption:"",colour:"#e5ebbe",accent:"#65771b",status:"Under development",stage:"development",summary:"Gaming and interactive entertainment, with room for future community experiences.",description:"Previously known as PlayVault, FlurziRush is being developed for accessible gaming across web and mobile. The direction includes younger audiences as well as a broader player community, with a focus on discovery and personalisation.",features:[{title:"Play & discovery",body:"Planned areas include games, discovery, recommendations, player profiles and personalisation."},{title:"Web & mobile",body:"The roadmap includes web, iOS and Android experiences, supported by advertising and rewarded-ad options."},{title:"Future community",body:"Community, streamer, follower and live-interaction features are future directions, not available launch features."}],note:"FlurziRush is under development. The initial launch is not intended to pay users cash for playing. The PlayVault identity was renamed FlurziRush in October 2026.",enquiry:"FlurziRush enquiry"},
- {slug:"cortex",name:"Flurzi Cortex",category:"Intelligent systems",sector:"Technology",audience:"Future technology and infrastructure use cases",url:"",linkLabel:"",image:"",imageCaption:"",colour:"#d9eaf0",accent:"#227888",status:"Under development",stage:"development",summary:"Intelligent technology systems and supporting infrastructure.",description:"Flurzi Cortex represents the company's development work in intelligent technology systems and supporting infrastructure. More detailed product specifications will define its capabilities and intended applications.",features:[{title:"Intelligent systems",body:"The approved direction is the development of intelligent technology systems."},{title:"Supporting infrastructure",body:"Supporting infrastructure is part of the initiative's stated scope. Detailed specifications remain to be confirmed."}],note:"Flurzi Cortex is under development. Specific models, APIs, cloud services, access arrangements and launch timing have not been announced.",enquiry:"Flurzi Cortex enquiry"},
- {slug:"cinema",name:"Flurzi Cinema",category:"Film & entertainment",sector:"Entertainment",audience:"Film and digital entertainment audiences",url:"https://flurzicinema.com/",linkLabel:"View current website",image:"/media/cinema.webp",imageCaption:"Flurzi Cinema · Development website",colour:"#e5ddd1",accent:"#956d3b",status:"In development",stage:"development",summary:"A digital film and entertainment platform in development.",description:"Flurzi Cinema is part of the company's expanding entertainment direction. It is being developed around digital film and entertainment experiences. A public website is available, while the service itself remains in development.",features:[{title:"Digital film",body:"Film forms the core of the intended entertainment experience."},{title:"Entertainment experience",body:"The platform is being developed to bring digital entertainment to its audiences."}],note:"A public website does not indicate an operational viewing service. Catalogue, features, licensing, access and launch availability will be confirmed by the platform.",enquiry:"Flurzi Cinema enquiry"}
+  {
+    "slug": "endnovel",
+    "name": "EndNovel",
+    "category": "Reading & audio",
+    "sector": "Entertainment",
+    "audience": "Readers and listeners",
+    "url": "https://endnovel-flurzi.com/",
+    "linkLabel": "Visit EndNovel",
+    "image": "/media/endnovel.webp",
+    "imageCaption": "EndNovel · Operational platform",
+    "colour": "#e5d9be",
+    "accent": "#a2783b",
+    "status": "Version 1 available",
+    "stage": "operational",
+    "summary": "A home for digital reading, storytelling and audiobook entertainment.",
+    "description": "EndNovel brings stories to readers and listeners. The operational platform is part of Flurzi's work in digital culture: helping people discover stories and return to the worlds that interest them.",
+    "features": [
+      {
+        "title": "Digital reading",
+        "body": "Explore stories and continue through chapters at your own pace.",
+        "release": "v1"
+      },
+      {
+        "title": "Story discovery",
+        "body": "Find titles and build a reading journey around your interests.",
+        "release": "v1"
+      },
+      {
+        "title": "Audiobook entertainment",
+        "body": "Discover the platform's audio storytelling offering and current access options.",
+        "release": "v1"
+      }
+    ],
+    "note": "Visit EndNovel for its current catalogue, availability, account options and platform terms.",
+    "enquiry": "EndNovel enquiry",
+    "downloads": [
+      {
+        "label": "Download for Android",
+        "url": "https://play.google.com/store/apps/details?id=com.endnovel.endnovel_app"
+      },
+      {
+        "label": "Download for iPhone and iPad",
+        "url": "https://apps.apple.com/app/id6782002330"
+      }
+    ]
+  },
+  {
+    "slug": "flurzi360",
+    "name": "Flurzi360",
+    "category": "Workforce technology",
+    "sector": "Business",
+    "audience": "Businesses, HR teams and workforce administrators",
+    "url": "https://app.sponsorsafe-hr.com/signup",
+    "linkLabel": "Register for Version 1",
+    "image": "/media/sponsorsafe.webp",
+    "imageCaption": "Flurzi360 Version 1 foundation, shown under its former SponsorSafe HR identity",
+    "colour": "#dbe7ed",
+    "accent": "#217ac0",
+    "status": "Version 1 available",
+    "stage": "expansion",
+    "summary": "A global business workforce operating system spanning HR, compliance, finance and operations.",
+    "description": "Flurzi360 is the new identity of SponsorSafe HR. Version 1 is available through the existing workforce platform, while the expanded global business workforce operating system is being developed. The current release focuses on employee records and compliance administration; the broader HR, finance and operations scope is a development programme.",
+    "features": [
+      {
+        "title": "Employee records & documents",
+        "body": "The existing workforce platform provides employee records and document storage for business administration.",
+        "release": "v1"
+      },
+      {
+        "title": "Compliance administration",
+        "body": "The current platform advertises expiry reminders, evidence tracking and audit exports. Availability depends on the selected plan and jurisdiction.",
+        "release": "v1"
+      },
+      {
+        "title": "HR & people operations",
+        "body": "The expansion includes broader recruitment, onboarding, scheduling and attendance workflows. These are development areas, not a claim of availability in Version 1.",
+        "release": "development"
+      },
+      {
+        "title": "Finance & operations",
+        "body": "Payroll-related workflows, workforce finance and wider business operations form part of the expanded platform direction. They are still in development.",
+        "release": "development"
+      }
+    ],
+    "note": "Register directly through the existing SponsorSafe HR application while the Flurzi360 identity is introduced. No mandatory demonstration or sales call is required. The new branded domain and complete Version 1 feature matrix await confirmation. Flurzi360 does not offer jobs or visa sponsorship.",
+    "enquiry": "Flurzi360 business enquiry",
+    "loginUrl": "https://app.sponsorsafe-hr.com/login"
+  },
+  {
+    "slug": "commit",
+    "name": "Flurzi Commit",
+    "category": "Financial commitments",
+    "sector": "Finance",
+    "audience": "People working towards structured savings and financial commitments",
+    "url": "https://www.flurzicommit.com/landing",
+    "linkLabel": "View current website",
+    "image": "/media/commit.webp",
+    "imageCaption": "Flurzi Commit · Current website; launch preparations underway",
+    "colour": "#d9e8df",
+    "accent": "#277762",
+    "status": "Preparing for launch",
+    "stage": "launch",
+    "summary": "A structured savings and financial commitment platform preparing for launch.",
+    "description": "Flurzi Commit is a structured savings and financial commitment concept designed to help people organise goals and follow through on commitments. It is preparing for launch, with financial integrations still pending. Flurzi does not hold customer funds or provide regulated financial services through this website or the announced product concept.",
+    "features": [
+      {
+        "title": "Structured savings",
+        "body": "The product direction centres on bringing structure to savings goals and commitments.",
+        "release": "development"
+      },
+      {
+        "title": "Financial commitment",
+        "body": "A focused platform for organising the commitments people choose to work towards.",
+        "release": "development"
+      },
+      {
+        "title": "Launch preparation",
+        "body": "Financial integrations remain pending. Confirmed access, service scope and applicable terms will accompany availability.",
+        "release": "development"
+      }
+    ],
+    "note": "No deposits, transfers, investments or fund-custody services are available here. Any future financial functionality depends on confirmed provider arrangements, applicable requirements and published platform terms.",
+    "enquiry": "Flurzi Commit enquiry"
+  },
+  {
+    "slug": "flurzix",
+    "name": "FlurziX",
+    "category": "Digital commerce",
+    "sector": "Business",
+    "audience": "Shoppers, independent sellers, retailers and merchants",
+    "url": "",
+    "linkLabel": "",
+    "image": "",
+    "imageCaption": "",
+    "colour": "#dceaff",
+    "accent": "#2862bd",
+    "status": "Under development",
+    "stage": "development",
+    "summary": "A commerce platform being developed around trust, verification, inspection and traceability.",
+    "description": "FlurziX is a commerce initiative for shoppers and businesses, with trust at the centre of its intended experience. Its development direction brings together verification, inspection information and traceability to help people make better-informed trading decisions. These capabilities are planned and are not being presented as operational.",
+    "features": [
+      {
+        "title": "Trust & verification",
+        "body": "Planned verification workflows are intended to help people assess who they are dealing with. Verification criteria and service scope remain under development.",
+        "release": "development"
+      },
+      {
+        "title": "Inspection information",
+        "body": "Inspection-related workflows form part of the intended product concept. Coverage, providers and the inspection process will be confirmed before availability.",
+        "release": "development"
+      },
+      {
+        "title": "Traceability",
+        "body": "The product direction includes traceable information and records to support transparency in commerce. No certification, guarantee or specific tracking technology is being claimed.",
+        "release": "development"
+      }
+    ],
+    "note": "FlurziX is under development. Verification, inspection and traceability are intended capabilities; the detailed operating model, commercial terms and launch timing are not yet confirmed.",
+    "enquiry": "FlurziX enquiry"
+  },
+  {
+    "slug": "flurzirush",
+    "name": "FlurziRush",
+    "category": "Gaming & interaction",
+    "sector": "Entertainment",
+    "audience": "Players seeking accessible gaming and interactive entertainment",
+    "url": "",
+    "linkLabel": "",
+    "image": "",
+    "imageCaption": "",
+    "colour": "#e5ebbe",
+    "accent": "#65771b",
+    "status": "Under development",
+    "stage": "development",
+    "summary": "Gaming and interactive entertainment, with room for future community experiences.",
+    "description": "Previously known as PlayVault, FlurziRush is being developed for accessible gaming across web and mobile. The direction includes younger audiences as well as a broader player community, with a focus on discovery and personalisation.",
+    "features": [
+      {
+        "title": "Play & discovery",
+        "body": "Planned areas include games, discovery, recommendations, player profiles and personalisation.",
+        "release": "development"
+      },
+      {
+        "title": "Web & mobile",
+        "body": "The roadmap includes web, iOS and Android experiences, supported by advertising and rewarded-ad options.",
+        "release": "development"
+      },
+      {
+        "title": "Future community",
+        "body": "Community, streamer, follower and live-interaction features are future directions, not available launch features.",
+        "release": "development"
+      }
+    ],
+    "note": "FlurziRush is under development. The initial launch is not intended to pay users cash for playing. The PlayVault identity was renamed FlurziRush in October 2026.",
+    "enquiry": "FlurziRush enquiry"
+  },
+  {
+    "slug": "cortex",
+    "name": "Flurzi Cortex",
+    "category": "Intelligent systems",
+    "sector": "Technology",
+    "audience": "Future technology and infrastructure use cases",
+    "url": "",
+    "linkLabel": "",
+    "image": "",
+    "imageCaption": "",
+    "colour": "#d9eaf0",
+    "accent": "#227888",
+    "status": "Under development",
+    "stage": "development",
+    "summary": "Intelligent technology systems and supporting infrastructure.",
+    "description": "Flurzi Cortex represents the company's development work in intelligent technology systems and supporting infrastructure. More detailed product specifications will define its capabilities and intended applications.",
+    "features": [
+      {
+        "title": "Intelligent systems",
+        "body": "The approved direction is the development of intelligent technology systems.",
+        "release": "development"
+      },
+      {
+        "title": "Supporting infrastructure",
+        "body": "Supporting infrastructure is part of the initiative's stated scope. Detailed specifications remain to be confirmed.",
+        "release": "development"
+      }
+    ],
+    "note": "Flurzi Cortex is under development. Specific models, APIs, cloud services, access arrangements and launch timing have not been announced.",
+    "enquiry": "Flurzi Cortex enquiry"
+  },
+  {
+    "slug": "cinema",
+    "name": "Flurzi Cinema",
+    "category": "Film & entertainment",
+    "sector": "Entertainment",
+    "audience": "Film and digital entertainment audiences",
+    "url": "https://flurzicinema.com/",
+    "linkLabel": "View current website",
+    "image": "/media/cinema.webp",
+    "imageCaption": "Flurzi Cinema · Development website",
+    "colour": "#e5ddd1",
+    "accent": "#956d3b",
+    "status": "In development",
+    "stage": "development",
+    "summary": "A digital film and entertainment platform in development.",
+    "description": "Flurzi Cinema is part of the company's expanding entertainment direction. It is being developed around digital film and entertainment experiences. A public website is available, while the service itself remains in development.",
+    "features": [
+      {
+        "title": "Digital film",
+        "body": "Film forms the core of the intended entertainment experience.",
+        "release": "development"
+      },
+      {
+        "title": "Entertainment experience",
+        "body": "The platform is being developed to bring digital entertainment to its audiences.",
+        "release": "development"
+      }
+    ],
+    "note": "A public website does not indicate an operational viewing service. Catalogue, features, licensing, access and launch availability will be confirmed by the platform.",
+    "enquiry": "Flurzi Cinema enquiry"
+  }
 ];
-export const directions=[{title:"Business & workforce",body:"Tools for organisations, people and commerce. Flurzi360 expands the workforce foundation while FlurziX develops the commerce direction.",slugs:["flurzi360","flurzix"]},{title:"Culture & entertainment",body:"Stories people return to and new ways to play and watch. EndNovel is operational; FlurziRush and Flurzi Cinema are in development.",slugs:["endnovel","flurzirush","cinema"]},{title:"Financial commitments",body:"A structured approach to savings and financial commitments through Flurzi Commit, with financial integrations pending.",slugs:["commit"]},{title:"Intelligent technology",body:"Intelligent technology systems and supporting infrastructure through the development of Flurzi Cortex.",slugs:["cortex"]}];
+export const directions=[{title:"Business & workforce",body:"Tools for organisations, people and commerce. Flurzi360 has an available Version 1 and a broader workforce programme in development. FlurziX explores trust, verification, inspection and traceability in commerce.",slugs:["flurzi360","flurzix"]},{title:"Culture & entertainment",body:"Stories people return to and new ways to play and watch. EndNovel is operational; FlurziRush and Flurzi Cinema are in development.",slugs:["endnovel","flurzirush","cinema"]},{title:"Financial commitments",body:"A structured approach to savings and financial commitments through Flurzi Commit, with financial integrations pending.",slugs:["commit"]},{title:"Intelligent technology",body:"Intelligent technology systems and supporting infrastructure through the development of Flurzi Cortex.",slugs:["cortex"]}];
 export const ventures=platforms.filter(p=>p.stage==="development").map(p=>({...p,areas:p.features.map(f=>f.title)}));

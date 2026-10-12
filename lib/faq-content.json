@@ -17,12 +17,12 @@
   {
     "group": "Platforms",
     "question": "Which platforms are available?",
-    "answer": "EndNovel is operational. Flurzi360 has an existing SponsorSafe HR foundation with expansion underway. Flurzi Commit is preparing for launch, with financial integrations pending. FlurziX, FlurziRush and Flurzi Cortex are under development; Flurzi Cinema is in development. Visit each platform page for context."
+    "answer": "EndNovel and Flurzi360 Version 1 are available. The expanded Flurzi360 platform is in development. Flurzi Commit is preparing for launch; FlurziX, FlurziRush, Flurzi Cortex and Flurzi Cinema remain in development. Product pages distinguish current release features from planned functionality."
   },
   {
     "group": "Platforms",
     "question": "What happened to SponsorSafe HR?",
-    "answer": "SponsorSafe HR is transitioning to Flurzi360, with a broader workforce technology focus. The existing foundation and wider capabilities are at different development stages. The new domain and self-service registration destination are not yet confirmed."
+    "answer": "SponsorSafe HR has been renamed Flurzi360. Version 1 remains available through the existing application while a broader global business workforce operating system across HR, compliance, finance and operations is developed. You may still see the former name in the existing application."
   },
   {
     "group": "Platforms",
@@ -32,17 +32,17 @@
   {
     "group": "Platforms",
     "question": "Will Flurzi360 require a sales call to join?",
-    "answer": "The intended model is self-service business registration, subscriptions and onboarding, without a compulsory sales call or demonstration. The confirmed signup destination will be shared when ready."
+    "answer": "No mandatory sales call or demonstration is required. The Flurzi360 product page links directly to the existing self-service Version 1 registration route."
   },
   {
     "group": "Platforms",
     "question": "What is Flurzi Commit?",
-    "answer": "Flurzi Commit is a structured savings and financial commitment platform preparing for launch. Financial integrations are pending. Its public website does not mean deposits, transfers or other financial services are available."
+    "answer": "Flurzi Commit is a structured savings and financial commitment concept designed to help people organise goals and follow through on commitments. It is preparing for launch, with financial integrations still pending. Flurzi does not hold customer funds or provide regulated financial services through this website or the announced product concept."
   },
   {
     "group": "Platforms",
     "question": "What is FlurziX being developed for?",
-    "answer": "FlurziX is an e-commerce initiative for shoppers, independent sellers, retailers and merchants. Its direction includes shopping convenience and business reach. Potential merchant services, commissions and promotional placements remain subject to final specifications."
+    "answer": "FlurziX is a commerce initiative for shoppers and businesses, with trust at the centre of its intended experience. Its development direction brings together verification, inspection information and traceability to help people make better-informed trading decisions. These capabilities are planned and are not being presented as operational."
   },
   {
     "group": "Platforms",
@@ -62,7 +62,7 @@
   {
     "group": "Enquiries",
     "question": "How can I discuss a partnership?",
-    "answer": "The Partnerships page explains the enquiry options. Select a relevant topic on Contact and describe your organisation, the platform or opportunity, and the proposed next step. The public email address is awaiting confirmation; the form currently prepares a downloadable draft and does not send it."
+    "answer": "Visit Contact for the currently available enquiry options and registered postal address. Online submission is shown only when delivery is configured; a draft download is not treated as a sent enquiry."
   },
   {
     "group": "Enquiries",
