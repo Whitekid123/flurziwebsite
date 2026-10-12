@@ -35,8 +35,8 @@ export default function CorporatePortfolio() {
         event.preventDefault(); setSelected(next); tabs.current[next]?.focus();
       }}><span className="branch-index">{String(i + 1).padStart(2, "0")}<span aria-hidden="true">↗</span></span><strong>{platform.name}</strong><span className="branch-category">{platform.category}</span><span className={"platform-status status-" + platform.stage}><i/>{platform.status}</span></button>)}
     </div>
-    <div id="portfolio-panel" role="tabpanel" aria-labelledby={"portfolio-tab-" + p.slug} tabIndex={0} className="portfolio-panel">
-      <div className={"portfolio-preview" + (p.brandArtwork ? " portfolio-preview-brand" : "")} key={p.slug} style={{backgroundColor:p.brandArtwork?.background ?? p.colour}}>{p.image ? <img src={p.brandArtwork?.thumbnail ?? p.image} alt={p.imageCaption} width={p.brandArtwork ? 480 : 1440} height={p.brandArtwork ? 480 : 1040} loading="lazy"/> : <span className="portfolio-in-development"><span>{p.category}</span><strong>{p.name}</strong><span>Under development</span></span>}</div>
+    <div id="portfolio-panel" role="tabpanel" aria-labelledby={"portfolio-tab-" + p.slug} tabIndex={0} className={"portfolio-panel" + (p.brandArtwork?.thumbnailWidth ? " portfolio-panel-wide-art" : "")}>
+      <div className={"portfolio-preview" + (p.brandArtwork ? " portfolio-preview-brand" : "")} key={p.slug} style={{backgroundColor:p.brandArtwork?.background ?? p.colour}}>{p.image ? <img src={p.brandArtwork?.thumbnail ?? p.image} alt={p.imageCaption} width={p.brandArtwork?.thumbnailWidth ?? (p.brandArtwork ? 480 : 1440)} height={p.brandArtwork?.thumbnailHeight ?? (p.brandArtwork ? 480 : 1040)} loading="lazy"/> : <span className="portfolio-in-development"><span>{p.category}</span><strong>{p.name}</strong><span>Under development</span></span>}</div>
       <div className="portfolio-detail" key={"detail-" + p.slug}><span className="section-label">{p.category}</span><h3>{p.name}</h3><p>{p.summary}</p>{p.image && <small>{p.imageCaption}</small>}</div>
       <Link className="corp-link" href={"/products/" + p.slug}>Explore the platform <span aria-hidden="true">↗</span></Link>
     </div>

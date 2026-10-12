@@ -4,7 +4,7 @@ export const MISSION="To develop accessible, intelligent and dependable technolo
 export const VISION="To establish Flurzi Limited as a globally recognised technology company delivering innovative digital products and solutions across e-commerce, financial technology, workforce management, entertainment and emerging technologies.";
 export const SITE_LINKS=[{href:"/about",label:"Company"},{href:"/products",label:"Ecosystem"},{href:"/innovation",label:"Technology & Innovation"},{href:"/partnerships",label:"Partnerships"},{href:"/contact",label:"Contact"}];
 export const LEGAL_LINKS=[{href:"/privacy-policy",label:"Privacy policy"},{href:"/terms",label:"Terms of service"},{href:"/disclaimer",label:"Disclaimer"},{href:"/data-protection",label:"Data protection"}];
-export type Platform={slug:string;name:string;category:string;sector:string;audience:string;url:string;linkLabel:string;image:string;imageCaption:string;brandArtwork?:{thumbnail:string;width:number;height:number;background:string};colour:string;accent:string;status:string;stage:"operational"|"launch"|"expansion"|"development";summary:string;description:string;features:{title:string;body:string;release:"v1"|"development"}[];downloads?:{label:string;url:string}[];loginUrl?:string;note:string;enquiry:string};
+export type Platform={slug:string;name:string;category:string;sector:string;audience:string;url:string;linkLabel:string;image:string;imageCaption:string;brandArtwork?:{thumbnail:string;thumbnailWidth?:number;thumbnailHeight?:number;width:number;height:number;background:string};colour:string;accent:string;status:string;stage:"operational"|"launch"|"expansion"|"development";summary:string;description:string;features:{title:string;body:string;release:"v1"|"development"}[];downloads?:{label:string;url:string}[];loginUrl?:string;note:string;enquiry:string};
 export const platforms:Platform[]=[
   {
     "slug": "endnovel",
@@ -62,7 +62,7 @@ export const platforms:Platform[]=[
     "linkLabel": "Register for Version 1",
     "image": "/media/flurzi360-brand.webp",
     "imageCaption": "Flurzi360 · Brand identity",
-    "brandArtwork": {"thumbnail":"/media/flurzi360-mark.webp","width":1600,"height":667,"background":"#000000"},
+    "brandArtwork": {"thumbnail":"/media/flurzi360-preview.webp","thumbnailWidth":800,"thumbnailHeight":334,"width":1600,"height":667,"background":"#fbfcfd"},
     "colour": "#dbe7ed",
     "accent": "#217ac0",
     "status": "Version 1 available",
