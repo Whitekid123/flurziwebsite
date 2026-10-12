@@ -93,7 +93,7 @@ export default function Hero() {
       <div className="hero-copy mx-auto flex w-full max-w-[1400px] flex-1 flex-col justify-end px-5 pb-10 pt-32 sm:px-8 md:pb-14">
         <p className="hero-fade mb-6 flex items-center gap-3 font-mono text-[11px] uppercase tracking-[0.25em] text-offwhite/60">
           <span className="h-px w-8 bg-violet" />
-          Flurzi Mobile App Limited
+          Flurzi Limited
         </p>
 
         <h1 className="max-w-[16ch] text-[13vw] font-medium leading-[0.92] tracking-[-0.045em] sm:text-[10vw] lg:text-[8.2vw] 2xl:text-[132px]">

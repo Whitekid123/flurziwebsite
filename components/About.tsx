@@ -62,8 +62,8 @@ export default function About() {
         </div>
 
         <p data-reveal className="mt-10 max-w-2xl text-offwhite/50">
-          Flurzi Mobile App Limited is the company behind SponsorSafe HR, Flurzi Commit,
-          FlurziCinema and End Novel, with FlurziX and PlayVault in development.
+          Flurzi Limited is the company behind Flurzi360, Flurzi Commit, FlurziCinema and
+          EndNovel, with FlurziX and FlurziRush in development.
         </p>
       </div>
     </section>

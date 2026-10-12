@@ -67,8 +67,8 @@ export const platforms:Platform[]=[
     "accent": "#217ac0",
     "status": "Version 1 available",
     "stage": "expansion",
-    "summary": "A global business workforce operating system spanning HR, compliance, finance and operations.",
-    "description": "Flurzi360 is the new identity of SponsorSafe HR. Version 1 is available through the existing workforce platform, while the expanded global business workforce operating system is being developed. The current release focuses on employee records and compliance administration; the broader HR, finance and operations scope is a development programme.",
+    "summary": "A global business workforce platform built around HR, compliance and operational oversight.",
+    "description": "Flurzi360 is the new identity of SponsorSafe HR. Version 1 remains available through the existing workforce platform, while the broader Flurzi360 business platform continues to develop. The current release focuses on workforce compliance administration and employee record management; wider HR, finance and operational capabilities are still in development and should not be described as live unless confirmed.",
     "features": [
       {
         "title": "Employee records & documents",
@@ -91,7 +91,7 @@ export const platforms:Platform[]=[
         "release": "development"
       }
     ],
-    "note": "Register directly through the existing SponsorSafe HR application while the Flurzi360 identity is introduced. No mandatory demonstration or sales call is required. The new branded domain and complete Version 1 feature matrix await confirmation. Flurzi360 does not offer jobs or visa sponsorship.",
+    "note": "Register directly through the existing SponsorSafe HR application while the Flurzi360 identity is introduced. No mandatory demonstration or sales call is required. The intended permanent domain is flurzi360.com, but the current application URLs remain in place until the new environment is deployed and tested. Flurzi360 is business software, not a recruitment or visa sponsorship service.",
     "enquiry": "Flurzi360 business enquiry",
     "loginUrl": "https://app.sponsorsafe-hr.com/login"
   },
