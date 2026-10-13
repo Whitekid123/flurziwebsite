@@ -6,7 +6,7 @@
       {
         "title": "Corporate website enquiries",
         "paragraphs": [
-          "Online enquiries are available only when email delivery is configured. When you submit the enabled form, your name, email address, optional organisation, selected topic and message are sent to Flurzi through its email delivery provider, Resend. Cloudflare Turnstile checks submissions for automated abuse. The corporate application does not store a separate enquiry database; messages are handled in the receiving inbox and by the delivery providers. Do not include passwords, payment details or sensitive worker records."
+          "Online enquiries are available only when email delivery is configured. When you submit the enabled form, your name, email address, optional organisation, selected topic and message are sent to Flurzi through its email delivery provider, Resend. Cloudflare Turnstile checks submissions for automated abuse. The corporate application does not store a separate enquiry database; messages are handled in the receiving inbox and by the delivery providers. Quality testing applicants may email their name, contact details, available test devices, relevant experience or interests, and general availability for consideration and communication about testing opportunities. Do not include passwords, payment details, identity documents or sensitive worker records."
         ]
       },
       {
@@ -49,7 +49,7 @@
       {
         "title": "Retention",
         "paragraphs": [
-          "We keep personal information only for as long as reasonably needed for the purpose it was collected, including account support, product records, security, legal, tax, audit and dispute-resolution requirements. Retention periods may differ between products because the data and obligations are different."
+          "Website enquiries and quality testing applications are retained for up to 12 months after the last meaningful interaction, unless a longer period is necessary for a documented legal or business reason. Other personal information is kept only as long as reasonably needed for its purpose, including account support, product records, security, legal, tax, audit and dispute-resolution requirements. Retention periods may differ between products because the data and obligations are different."
         ]
       },
       {

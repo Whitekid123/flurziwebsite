@@ -3,7 +3,7 @@ export const COMPANY = {
   short: "Flurzi",
   email: "hello@flurzimobileapp.co.uk",
   phone: "+44 024 7510 7676",
-  phoneHref: "tel:+4402475107676",
+  phoneHref: "tel:+442475107676",
 };
 
 export const demoHref = `mailto:${COMPANY.email}?subject=${encodeURIComponent(

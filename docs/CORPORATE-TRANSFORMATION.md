@@ -36,9 +36,9 @@ Companies House company 16640198 supplies the incorporation date, registered add
 
 ## Enquiries and publication dependencies
 
-The public email, phone and leadership permission remain unconfirmed, as instructed. The contact page offers topic routing and an accessible enquiry draft form. With no approved email configured, it downloads a local text file and explicitly states that nothing has been sent or stored. The registered postal address is displayed. This is not an email-delivery backend.
+The founder-approved public contact details are hello@flurzimobileapp.co.uk and +44 024 7510 7676. The contact form retains its Resend and Cloudflare Turnstile integration, but remains unavailable until the private environment configuration is complete and a genuine enquiry is successfully delivered. The registered postal address is displayed.
 
-The source retains an email-draft branch for a subsequently approved `COMPANY.email`; it does not silently send messages. An actual submission backend would be a separate integration with delivery and failure handling.
+The public quality-testing opportunity at `/testing-opportunity` accepts applications by email and states that selected tests may pay up to £10 per test, with each assignment's fee and scope confirmed before acceptance. Its privacy notice applies the approved 12-month retention period after the last meaningful interaction, subject to documented legal or business needs. Internal tester-group screenshots are not included on the website; no authenticated private area is currently part of this implementation.
 
 The four existing policy pages are retained. Company identity, product names, stages and contact references have been aligned; this is not a new legal review or an assertion that all planned processing is active. Existing policy provisions should be checked by the company before publication. No financial provider partnership, regulatory approval, new feature availability or commercial pricing has been invented.
 

@@ -2,7 +2,7 @@
 
 Updated 12 October 2026. These are the remaining information and account-access requests for the existing website. Please answer what you can; optional content can follow later.
 
-1. **Website enquiries and public contact details:** Which inbox should receive contact-form submissions? Which business email and telephone number, if any, may appear publicly? The form integration is built for Resend and Cloudflare Turnstile. Can the account owner provide access and configure the sending domain and required keys privately in the hosting environment, or confirm a different approved provider? Delivery remains inactive until configuration and a real received enquiry have been verified.
+1. **Website enquiries and public contact details:** The approved public details are hello@flurzimobileapp.co.uk and +44 024 7510 7676. The existing Resend and Cloudflare Turnstile integration remains in place. Contact-form delivery must stay described as unavailable until its secrets are configured privately and a real enquiry has been successfully delivered.
 
 2. **Launch on flurzi.com:** Who manages the Vercel project and the domain's DNS? Please invite the developer to the relevant accounts so flurzi.com and www.flurzi.com can be connected to the updated site and checked. Are there existing email records or other services on the domain that must be preserved? Pushing the website to GitHub does not confirm that the production domain has been switched.
 
@@ -12,7 +12,7 @@ Updated 12 October 2026. These are the remaining information and account-access 
 
 5. **Traffic and conversion tracking:** Is there an existing GA4 property we should use? Please provide its measurement ID and identify who should have access to the reports. Which actions matter most: product visits, app downloads or successfully delivered enquiries? Consent-based tracking is implemented but remains inactive without a configured property. The developer can handle event configuration and prevent duplicate automatic tracking. Two million daily visitors remains a long-term ambition, not a published achievement or guaranteed result.
 
-6. **Privacy information:** What public contact should handle privacy and data-rights requests, and how long should website enquiries be retained? Please confirm the actual service providers and processing arrangements once the email and analytics accounts are chosen, so the existing privacy information matches the services used at launch.
+6. **Privacy information:** Use hello@flurzimobileapp.co.uk for privacy and data-rights enquiries until a dedicated privacy mailbox has been created and tested. Website enquiries should be retained for 12 months after the last meaningful interaction, unless a longer period is necessary for a documented legal or business reason. Keep the privacy information aligned with providers actually enabled.
 
 7. **People - photographs and biographies still needed:** The supplied names and roles for Kamsiriochi David Emmanuel, Josh, Praise, Rayzin and Dessie are approved. As requested, the Company page now includes name-and-role containers with initials placeholders. Please supply the approved photographs and biographies when ready, and confirm Josh's full professional name before expanding his profile. No biography has been invented.
 
