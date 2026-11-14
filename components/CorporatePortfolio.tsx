@@ -24,8 +24,8 @@ export default function CorporatePortfolio() {
     });
   };
   return <div className="corporate-portfolio">
-    <div className="portfolio-parent"><span>THE PARENT COMPANY</span><strong>Flurzi<span>Limited</span></strong><p>Independent platforms. A shared company direction.</p><div className="parent-stem" aria-hidden="true"/></div>
-    <div className="portfolio-branches" role="tablist" aria-label="Explore the Flurzi portfolio">
+    <div className="portfolio-parent"><span>THE PARENT COMPANY</span><strong>FLURZI<em>HQ</em></strong><p>Independent platforms. A shared headquarters direction.</p><div className="parent-stem" aria-hidden="true"/></div>
+    <div className="portfolio-branches" role="tablist" aria-label="Explore the FLURZIHQ portfolio">
       {platforms.map((platform, i) => <button key={platform.slug} ref={el => {tabs.current[i] = el;}} type="button" role="tab" id={"portfolio-tab-" + platform.slug} aria-controls="portfolio-panel" aria-selected={selected === i} tabIndex={selected === i ? 0 : -1} className="portfolio-branch" onClick={() => selectPlatform(i)} onKeyDown={event => {
         let next = i;
         if (event.key === "ArrowRight" || event.key === "ArrowDown") next = (i + 1) % platforms.length;

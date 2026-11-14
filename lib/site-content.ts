@@ -1,7 +1,7 @@
 /** Corporate content: founder's October 2026 reply; see docs/CORPORATE-TRANSFORMATION.md. */
-export const COMPANY={name:"Flurzi Limited",meaning:"Fear Limits Us, Rising Zeal Imprints",number:"16640198",address:"Suite G04 1 Quality Court, Chancery Lane, London, England, WC2A 1HR",record:"https://find-and-update.company-information.service.gov.uk/company/16640198",email:"hello@flurzimobileapp.co.uk",phone:"+44 024 7510 7676",phoneHref:"tel:+442475107676"};
+export const COMPANY={name:"FLURZIHQ",legalName:"Flurzi Limited",meaning:"The Flurzi headquarters — the parent company behind seven distinct platforms.",number:"16640198",address:"Suite G04 1 Quality Court, Chancery Lane, London, England, WC2A 1HR",record:"https://find-and-update.company-information.service.gov.uk/company/16640198",email:"hello@flurzimobileapp.co.uk",phone:"+44 024 7510 7676",phoneHref:"tel:+442475107676"};
 export const MISSION="To develop accessible, intelligent and dependable technology that empowers individuals, businesses and organisations to overcome limitations, simplify complex processes and unlock new opportunities.";
-export const VISION="To establish Flurzi Limited as a globally recognised technology company delivering innovative digital products and solutions across e-commerce, financial technology, workforce management, entertainment and emerging technologies.";
+export const VISION="To establish FLURZIHQ as a globally recognised technology headquarters delivering innovative digital products and solutions across e-commerce, financial technology, workforce management, entertainment and emerging technologies.";
 export const SITE_LINKS=[{href:"/about",label:"Company"},{href:"/products",label:"Ecosystem"},{href:"/innovation",label:"Technology & Innovation"},{href:"/partnerships",label:"Partnerships"},{href:"/contact",label:"Contact"}];
 export const LEGAL_LINKS=[{href:"/privacy-policy",label:"Privacy policy"},{href:"/terms",label:"Terms of service"},{href:"/disclaimer",label:"Disclaimer"},{href:"/data-protection",label:"Data protection"}];
 export type Platform={slug:string;name:string;category:string;sector:string;audience:string;url:string;linkLabel:string;image:string;imageCaption:string;brandArtwork?:{thumbnail:string;thumbnailWidth?:number;thumbnailHeight?:number;mobileArtwork?:string;width:number;height:number;background:string};colour:string;accent:string;status:string;stage:"operational"|"launch"|"expansion"|"development";summary:string;description:string;features:{title:string;body:string;release:"v1"|"development"}[];downloads?:{label:string;url:string}[];loginUrl?:string;note:string;enquiry:string};
@@ -21,7 +21,7 @@ export const platforms:Platform[]=[
     "status": "Version 1 available",
     "stage": "operational",
     "summary": "A home for digital reading, storytelling and audiobook entertainment.",
-    "description": "EndNovel brings stories to readers and listeners. The operational platform is part of Flurzi's work in digital culture: helping people discover stories and return to the worlds that interest them.",
+    "description": "EndNovel brings stories to readers and listeners. The operational platform is part of FLURZIHQ's work in digital culture: helping people discover stories and return to the worlds that interest them.",
     "features": [
       {
         "title": "Digital reading",
@@ -111,7 +111,7 @@ export const platforms:Platform[]=[
     "status": "Preparing for launch",
     "stage": "launch",
     "summary": "A structured savings and financial commitment platform preparing for launch.",
-    "description": "Flurzi Commit is a structured savings and financial commitment concept designed to help people organise goals and follow through on commitments. It is preparing for launch, with financial integrations still pending. Flurzi does not hold customer funds or provide regulated financial services through this website or the announced product concept.",
+    "description": "Flurzi Commit is a structured savings and financial commitment concept designed to help people organise goals and follow through on commitments. It is preparing for launch, with financial integrations still pending. FLURZIHQ does not hold customer funds or provide regulated financial services through this website or the announced product concept.",
     "features": [
       {
         "title": "Structured savings",

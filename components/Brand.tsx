@@ -1,4 +1,3 @@
 ﻿export default function Brand(){
- return <><img className="brand-mark" src="/media/flurzi-logo.png" alt="" width={151} height={156}/><span>flurzi</span></>;
+ return <span className="brand-wordmark" aria-hidden="true">FLURZI<em>HQ</em></span>;
 }
-

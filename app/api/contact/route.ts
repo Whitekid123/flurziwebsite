@@ -10,7 +10,7 @@ export async function POST(request: Request) {
   const config = contactConfig();
   if (!config.ready) return reply(503, "Online enquiries are not available yet. Please use the contact options on this page.");
   const origin = request.headers.get("origin");
-  if (!origin || !config.origins.includes(origin)) return reply(403, "Please submit your enquiry through the Flurzi website.");
+  if (!origin || !config.origins.includes(origin)) return reply(403, "Please submit your enquiry through the FLURZIHQ website.");
   if (!request.headers.get("content-type")?.startsWith("application/json")) return reply(415, "Please submit the enquiry form.");
   // Limit the actual stream as well as Content-Length; do not trust client headers.
   const reader = request.body?.getReader();
@@ -46,13 +46,13 @@ export async function POST(request: Request) {
     if (!result.success || result.action !== "contact" || result.hostname !== new URL(origin).hostname) return reply(400, "The security check expired or failed. Please try it again.");
     const delivery = await fetch("https://api.resend.com/emails", {
       method: "POST", headers: {Authorization: `Bearer ${config.apiKey}`, "Content-Type": "application/json", "Idempotency-Key": `contact-${requestId}`},
-      body: JSON.stringify({from: config.from, to: [config.to], reply_to: (email as string).trim(), subject: `Flurzi website: ${topic}`,
+      body: JSON.stringify({from: config.from, to: [config.to], reply_to: (email as string).trim(), subject: `FLURZIHQ website: ${topic}`,
         text: `Name: ${(name as string).trim()}\nReply email: ${(email as string).trim()}\nOrganisation: ${(organisation as string).trim() || "Not supplied"}\nTopic: ${topic}\n\n${message.trim()}`}),
       signal: AbortSignal.timeout(10000),
     });
     if (!delivery.ok) return reply(502, "We could not submit your enquiry. Your text is still here; please try again shortly.");
     const accepted = await delivery.json();
     if (!accepted.id) return reply(502, "Delivery could not be confirmed. Please try again shortly.");
-    return reply(200, "Your enquiry has been accepted for email delivery to Flurzi. Thank you for getting in touch.");
+    return reply(200, "Your enquiry has been accepted for email delivery to FLURZIHQ. Thank you for getting in touch.");
   } catch { return reply(502, "Delivery could not be confirmed. Your text is still here; please try again shortly."); }
 }

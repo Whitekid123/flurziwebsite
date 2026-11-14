@@ -4,18 +4,18 @@ import {COMPANY} from "@/lib/site-content";
 
 export const metadata:Metadata={
   title:"Quality testing opportunity",
-  description:"Apply to be considered for Flurzi software quality testing opportunities, with fees of up to £10 per test.",
+  description:"Apply to be considered for FLURZIHQ software quality testing opportunities, with fees of up to £10 per test.",
   alternates:{canonical:"/testing-opportunity"},
 };
 
 export default function TestingOpportunityPage(){
-  const subject=encodeURIComponent("Flurzi quality testing application");
+  const subject=encodeURIComponent("FLURZIHQ quality testing application");
   const body=encodeURIComponent("Name:\nDevices and operating systems I can test:\nRelevant testing experience or interests:\nGeneral availability:\n");
   return <>
     <section className="page-intro corp-page-intro">
-      <span className="section-label">WORK WITH FLURZI</span>
+      <span className="section-label">WORK WITH FLURZIHQ</span>
       <h1>Help us test<br/><em>what we build.</em></h1>
-      <p>Apply to be considered for software quality testing opportunities with Flurzi.</p>
+      <p>Apply to be considered for software quality testing opportunities with FLURZIHQ.</p>
     </section>
     <section className="corp-section">
       <div className="corp-section-heading">

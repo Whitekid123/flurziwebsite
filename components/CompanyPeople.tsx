@@ -2,8 +2,8 @@ import {companyPeople} from "@/lib/company-people";
 
 export default function CompanyPeople() {
   return <section className="corp-section company-people" id="people" aria-labelledby="company-people-heading">
-    <div className="corp-kicker"><span>04 / OUR PEOPLE</span><span>FLURZI LIMITED</span></div>
-    <div className="corp-section-heading"><h2 id="company-people-heading">The people<br/>behind Flurzi.</h2></div>
+    <div className="corp-kicker"><span>04 / OUR PEOPLE</span><span>FLURZIHQ</span></div>
+    <div className="corp-section-heading"><h2 id="company-people-heading">The people<br/>behind FLURZIHQ.</h2></div>
     <div className="company-people-grid">
       {companyPeople.map(person => <article className="company-person" key={person.id} aria-labelledby={"person-" + person.id}>
         <div className={"person-portrait" + (person.image ? "" : " person-portrait-placeholder")}>

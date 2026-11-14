@@ -38,7 +38,7 @@ export default function SiteHeader(){
   return()=>{ctx.revert();gsap.killTweensOf([panel.current,backdrop.current]);closing.current=false;outside.forEach((el,i)=>{el.inert=previous[i];});document.body.style.overflow=old;window.__lenis?.start();window.removeEventListener("keydown",key);button.current?.focus({preventScroll:true});};
  },[open,close]);
  return <header className={"editorial-header "+(dark?"on-dark":"")+(open?" menu-open":"")} style={open?{backdropFilter:"none",WebkitBackdropFilter:"none"}:undefined}>
-  <Link href="/" className="wordmark" aria-label="Flurzi home" tabIndex={open?-1:0} onClick={()=>close(true)}><Brand/></Link>
+  <Link href="/" className="wordmark" aria-label="FLURZIHQ home" tabIndex={open?-1:0} onClick={()=>close(true)}><Brand/></Link>
   <nav className="primary-links" aria-label="Main navigation">{SITE_LINKS.map(l=><Link href={l.href} key={l.href} aria-current={path===l.href||path.startsWith(l.href+"/")?"page":undefined}>{l.label}</Link>)}</nav>
   <button type="button" className="editorial-menu-button" ref={button} aria-expanded={open} aria-controls="site-menu" onClick={()=>open?close():setOpen(true)}><span>{open?"Close":"Menu"}</span><span className={open?"menu-bars expanded":"menu-bars"} aria-hidden="true"><i/><i/></span></button>
   {open&&<><div ref={backdrop} className="menu-backdrop" aria-hidden="true" onClick={()=>close()}/><div className="editorial-menu" id="site-menu" ref={panel} data-lenis-prevent>
