@@ -10,6 +10,7 @@ import "./corporate.css";
 import "./transformation.css";
 import "./corporate-story.css";
 import "./hq-home.css";
+import "./hq-sections.css";
 import AnalyticsConsent from "@/components/AnalyticsConsent";
 import SmoothScroll from "@/components/SmoothScroll";
 import SiteMotion from "@/components/SiteMotion";
