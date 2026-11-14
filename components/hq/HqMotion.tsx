@@ -6,8 +6,8 @@ gsap.registerPlugin(ScrollTrigger);
 
 /** Five choreographed moments. Every tween is `from`-based, so reduced-motion
     and no-JS render the finished state. M1 hero assembly · M2 statement line
-    scrub · M3 directions contour + rail pin · M4 ecosystem stem draw + panel
-    crossfade · M5 progress rail draw + footer invite rise. */
+    scrub · M3 directions contour + rail pin · M4 ecosystem stem draw + branch
+    reveal · M5 progress rail draw. The footer invite rise is global (SiteMotion). */
 export default function HqMotion(){
  useEffect(()=>{
   const mm=gsap.matchMedia();
@@ -30,9 +30,8 @@ export default function HqMotion(){
     // M4 — ecosystem stem draw + panel crossfade.
     gsap.from(".hq-parent-stem",{scaleY:0,ease:"none",scrollTrigger:{trigger:".hq-portfolio-parent",start:"top 85%",end:"bottom 60%",scrub:.5}});
     gsap.from(".hq-branch",{y:30,opacity:0,stagger:.06,duration:.7,ease:"power3.out",clearProps:"all",scrollTrigger:{trigger:".hq-branches",start:"top 92%",once:true}});
-    // M5 — progress rail draw + footer invite rise.
+    // M5 — progress rail draw.
     gsap.from(".hq-rail-stop",{y:34,opacity:0,stagger:.09,duration:.8,ease:"power3.out",clearProps:"all",scrollTrigger:{trigger:".hq-rail",start:"top 88%",once:true}});
-    gsap.from(".footer-invite > a",{yPercent:55,opacity:0,duration:1,ease:"power3.out",scrollTrigger:{trigger:".footer-invite",start:"top 92%",once:true},clearProps:"all"});
    });
    return()=>ctx.revert();
   });
