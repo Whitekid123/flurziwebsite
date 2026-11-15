@@ -1,89 +1,87 @@
 import {chromium} from 'playwright';
 import fs from 'node:fs';
-const base=process.argv[2]||'http://localhost:3400';
-fs.mkdirSync('screenshots',{recursive:true});
+const base=process.argv[2]||'http://localhost:3000';
+fs.mkdirSync('screenshots/corporate-refinement',{recursive:true});
 const browser=await chromium.launch({executablePath:'C:/Program Files/Google/Chrome/Application/chrome.exe',headless:true});
 const failures=[],measurements=[];
-const assert=(value,label)=>{if(!value)failures.push(label);};
-for(const [name,viewport,reducedMotion] of [
- ['desktop',{width:1440,height:1000},'no-preference'],
- ['mobile',{width:390,height:844},'no-preference'],
- ['reduced',{width:1440,height:1000},'reduce'],
- ['small',{width:320,height:740},'reduce'],
+const check=(value,label)=>{if(!value)failures.push(label);};
+try{
+for(const [name,width,height,reducedMotion] of [
+ ['desktop',1440,1000,'no-preference'],['mobile',390,844,'no-preference'],
+ ['tablet',768,1024,'no-preference'],['laptop',1024,900,'no-preference'],
+ ['wide',1920,1080,'no-preference'],['reduced',1440,1000,'reduce'],['small',320,740,'reduce']
 ]){
- const context=await browser.newContext({viewport,reducedMotion,deviceScaleFactor:1,isMobile:name==='mobile',hasTouch:name==='mobile'});
+ if(process.argv[3]&&!process.argv[3].split(',').includes(name))continue;
+ const context=await browser.newContext({viewport:{width,height},reducedMotion,deviceScaleFactor:1,isMobile:width<600,hasTouch:width<600});
  const page=await context.newPage(),errors=[];
  page.on('pageerror',e=>errors.push(e.message));
  const response=await page.goto(base,{waitUntil:'networkidle',timeout:120000});
- await page.waitForTimeout(2200);
- if(name==='desktop')await page.locator('.hero-art.scene-ready').waitFor({timeout:60000});
- assert(response.status()===200,name+': HTTP 200');
- assert(await page.locator('h1').count()===1,name+': one main heading');
- assert((await page.locator('h1').innerText()).includes('Built by Flurzi.'),name+': headline');
- assert(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth+1),name+': no horizontal overflow');
- await page.screenshot({path:'screenshots/'+name+'-hero.png'});
- const jump=async y=>{await page.evaluate(y=>{window.__lenis?.scrollTo(y,{immediate:true});window.scrollTo(0,y);},y);await page.waitForTimeout(1100);};
- const position=async selector=>page.locator(selector).evaluate(el=>el.getBoundingClientRect().top+window.scrollY);
- const anchors=await page.locator('a[href^="#"]').evaluateAll(els=>els.map(el=>el.getAttribute('href')).filter(h=>h.length>1));
- for(const hash of new Set(anchors))assert(await page.locator(hash).count()>0,name+': anchor '+hash);
+ await page.waitForTimeout(2600);
+ check(response.status()===200,name+': home responds');
+ check(await page.locator('h1').count()===1,name+': one heading');
+ check((await page.locator('h1').innerText()).includes('Many worlds.'),name+': corporate headline');
+ check(await page.locator('.hq-hq-card').count()===0,name+': corporate hero has no dashboard');
+ check(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth+1),name+': no page overflow');
+ check(await page.locator('.hq-showcase a[href^="/products/"]').evaluateAll(els=>new Set(els.map(el=>el.getAttribute('href'))).size)===7,name+': seven portfolio destinations');
+ await page.screenshot({path:'screenshots/corporate-refinement/'+name+'-hero.png'});
+ check(await page.locator('.hq-liquid-sculpture').count()===0,name+': oversized loop removed');
+ const piece=page.locator('.hq-kinetic-piece').first();
+ const motionBefore=await piece.evaluate(el=>getComputedStyle(el).transform);
  if(reducedMotion==='no-preference'){
-  const scrollDistance=await page.locator('.flagship-hero').evaluate(el=>el.offsetHeight-innerHeight);
-  await jump(scrollDistance*.57);
-  const state=await page.evaluate(()=>({
-   title:getComputedStyle(document.querySelector('.hero-line-one')).transform,
-   art:getComputedStyle(document.querySelector('.hero-art')).transform,
-   reveal:Number(getComputedStyle(document.querySelector('.hero-reveal')).opacity),
-   stageTop:document.querySelector('.hero-stage').getBoundingClientRect().top
-  }));
-  measurements.push({name,heroMidpoint:state});
-  assert(state.title!=='none'&&state.art!=='none'&&state.reveal>.5&&Math.abs(state.stageTop)<2,name+': hero transforms and reveals during sticky scroll');
-  await page.screenshot({path:'screenshots/'+name+'-hero-scroll.png'});
+  const moved=await page.waitForFunction(before=>getComputedStyle(document.querySelector('.hq-kinetic-piece')).transform!==before,motionBefore,{timeout:14000,polling:100}).then(()=>true,()=>false);
+  check(moved,name+': geometry moves without interaction');
+ }else{
+  await page.waitForTimeout(400);
+  check(motionBefore===await piece.evaluate(el=>getComputedStyle(el).transform),name+': geometry respects reduced motion');
  }
- for(const id of ['sponsorsafe','commit','cinema','endnovel']){
-  const y=await position('#'+id);
-  await jump(y);
-  if(name==='desktop'||name==='mobile')await page.screenshot({path:'screenshots/'+name+'-'+id+'.png'});
-  assert(await page.locator('[data-world='+id+'] .product-cta').isVisible(),name+': '+id+' CTA visible');
- }
+ const pause=page.getByRole('button',{name:'Pause animation'});
  if(reducedMotion==='no-preference'){
-  const y=await position('#commit');
-  await jump(y-viewport.height*.5);
-  const transform=await page.locator('[data-world=commit] .world-visual').evaluate(el=>getComputedStyle(el).transform);
-  const clip=await page.locator('[data-world=commit] .world-stage').evaluate(el=>getComputedStyle(el).clipPath);
-  await jump(y);
-  const settled=await page.locator('[data-world=commit] .world-visual').evaluate(el=>getComputedStyle(el).transform);
-  assert(transform!==settled&&clip!=='none',name+': product perspective and clipping respond to scroll');
-  measurements.push({name,productTransition:{entering:transform,settled,clip}});
+  await pause.click();
+  check(await page.locator('.hq-hero').evaluate(el=>el.classList.contains('is-paused')),name+': motion can be paused');
+  check(await piece.evaluate(el=>getComputedStyle(el).animationPlayState==='paused'),name+': geometry pauses');
+  await page.getByRole('button',{name:'Resume animation'}).click();
+ }else{
+  check(await page.locator('canvas').count()===0,name+': reduced motion skips WebGL');
+  check(await page.locator('.hq-discover-orbit svg').evaluate(el=>getComputedStyle(el).animationName==='none'),name+': reduced motion stops orbit');
  }
- for(const id of ['about','future','contact']){
-  await page.locator('#'+id).scrollIntoViewIfNeeded();await page.waitForTimeout(1100);
-  if(name==='desktop'||name==='mobile')await page.screenshot({path:'screenshots/'+name+'-'+id+'.png'});
- }
- assert(await page.locator('.product-image').evaluateAll(els=>els.every(el=>el.tagName!=='IMG'||(el.complete&&el.naturalWidth>0))),name+': images loaded');
- assert(await page.locator('a[href="mailto:hello@flurzimobileapp.co.uk"]').count()>0,name+': email link');
- if(name==='mobile'||name==='small'){
-  await jump(0);
-  const toggle=page.getByRole('button',{name:'Menu',exact:false});
-  await toggle.click();
-  assert(await page.locator('#mobile-navigation').isVisible(),name+': menu opens');
-  await page.keyboard.press('Escape');
-  assert(await page.locator('#mobile-navigation').count()===0,name+': Escape closes menu');
-  assert(await toggle.evaluate(el=>el===document.activeElement),name+': focus restores');
-  await toggle.click();
-  await page.locator('#mobile-navigation').getByRole('link',{name:'Our products'}).click();
+ if(width>=1000&&reducedMotion==='no-preference'){
+  const before=await page.locator('.hq-hero-line').first().evaluate(el=>getComputedStyle(el).transform);
+  await page.evaluate(()=>{window.__lenis?.scrollTo(innerHeight*.4,{immediate:true});window.scrollTo(0,innerHeight*.4);});
   await page.waitForTimeout(1500);
-  assert(await page.locator('#mobile-navigation').count()===0,name+': navigation closes menu');
-  const top=await page.locator('#products').evaluate(el=>el.getBoundingClientRect().top);
-  assert(top>=70&&top<=100,name+': menu reaches product section: '+top);
+  const after=await page.locator('.hq-hero-line').first().evaluate(el=>getComputedStyle(el).transform);
+  check(before!==after,name+': hero type responds to scroll');
+  measurements.push({name,waterReady:await page.locator('.hq-hero').evaluate(el=>el.classList.contains('is-ready')),before,after});
+  await page.screenshot({path:'screenshots/corporate-refinement/'+name+'-hero-scroll.png'});
  }
- if(reducedMotion==='reduce'){
-  assert(await page.locator('canvas').count()===0,name+': reduced motion avoids WebGL');
-  assert(await page.locator('.world-card').first().evaluate(el=>getComputedStyle(el).position)==='relative',name+': reduced motion removes sticky chapters');
+ await page.locator('#ecosystem').scrollIntoViewIfNeeded();await page.waitForTimeout(1500);
+ await page.screenshot({path:'screenshots/corporate-refinement/'+name+'-portfolio.png'});
+ const worlds=page.locator('.hq-world');
+ check(await worlds.count()===3,name+': three featured platform worlds');
+ for(let i=0;i<await worlds.count();i++){await worlds.nth(i).scrollIntoViewIfNeeded();await page.waitForTimeout(1000);await page.screenshot({path:'screenshots/corporate-refinement/'+name+'-world-'+i+'.png'});}
+ check(await page.locator('.hq-world img').evaluateAll(imgs=>imgs.every(img=>img.complete&&img.naturalWidth>0)),name+': supplied artwork loads');
+ await page.screenshot({path:'screenshots/corporate-refinement/'+name+'-artwork.png'});
+ await page.locator('.hq-venture-list').scrollIntoViewIfNeeded();await page.waitForTimeout(1500);
+ await page.screenshot({path:'screenshots/corporate-refinement/'+name+'-ventures.png'});
+ for(const section of ['.hq-directions','.hq-progress','.hq-purpose','.hq-partnerships']){
+  await page.locator(section).evaluate(el=>{const y=el.getBoundingClientRect().top+scrollY-90;window.__lenis?.scrollTo(y,{immediate:true});window.scrollTo(0,y);});
+  await page.waitForTimeout(1200);
+  check(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth+1),name+': no overflow at '+section);
+  await page.screenshot({path:'screenshots/corporate-refinement/'+name+'-'+section.slice(4)+'.png'});
  }
- assert(errors.length===0,name+': no runtime errors: '+errors.join('; '));
- console.log(name,errors.length?'ERRORS '+errors.join('; '):'checked');
+ const anchors=await page.locator('a[href^="#"]').evaluateAll(els=>els.map(el=>el.getAttribute('href')).filter(h=>h.length>1));
+ for(const hash of new Set(anchors))check(await page.locator(hash).count()>0,name+': anchor '+hash);
+ if(width<600){
+  await page.evaluate(()=>{window.__lenis?.scrollTo(0,{immediate:true});window.scrollTo(0,0);});await page.waitForTimeout(500);
+  const toggle=page.getByRole('button',{name:'Menu',exact:true});await toggle.click();await page.waitForTimeout(700);
+  check(await page.locator('#site-menu').isVisible(),name+': menu opens');
+  await page.keyboard.press('Escape');await page.waitForTimeout(700);
+  check(await page.locator('#site-menu').count()===0,name+': Escape closes menu');
+  check(await toggle.evaluate(el=>el===document.activeElement),name+': menu restores focus');
+ }
+ check(errors.length===0,name+': no runtime errors: '+errors.join('; '));
+ console.log(name+' checked');
  await context.close();
 }
-await browser.close();
-fs.writeFileSync('screenshots/qa-results.json',JSON.stringify({checkedAt:new Date().toISOString(),failures,measurements},null,2));
-if(failures.length){console.error(failures.join('\n'));process.exitCode=1;}else console.log('All homepage and scroll checks passed.');
+}finally{await browser.close();}
+fs.writeFileSync('screenshots/corporate-refinement/qa-results'+(process.argv[3]?'-'+process.argv[3].replaceAll(',','-'):'')+'.json',JSON.stringify({failures,measurements},null,2));
+if(failures.length){console.error(failures.join('\n'));process.exitCode=1;}else console.log('All corporate homepage checks passed.');

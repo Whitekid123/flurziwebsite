@@ -9,8 +9,8 @@ import HqMotion from "./hq/HqMotion";
 export default function EditorialHome(){return <div className="hq-home">
  <HqHero/>
  <HqStatement/>
- <HqDirections/>
  <HqEcosystem/>
+ <HqDirections/>
  <HqProgress/>
  <HqPurpose/>
  <HqPartnerships/>

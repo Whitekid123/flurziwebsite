@@ -295,6 +295,7 @@
  .hq-contours path{stroke-dashoffset:0!important}
  .hq-panel{animation:none}
  .hq-hero-line>span{transform:none!important;opacity:1!important}
+ .hq-directions-anchor{position:static}
 }
 
 /* Products system — directory, detail template, believable visuals.
@@ -356,7 +357,7 @@
 .hq-directory-filters button:hover{border-color:var(--hq-ink)}
 .hq-directory-count{font-size:12px;color:var(--hq-mute);margin-bottom:28px}
 .hq-platform-rows{border-top:1px solid var(--hq-line)}
-.hq-platform-row{display:grid;grid-template-columns:35px 1.05fr 1fr 175px 30px;gap:25px;align-items:center;padding:30px 0;border-bottom:1px solid var(--hq-line);transition:background .3s,padding .3s}
+.hq-platform-row{display:grid;grid-template-columns:35px 1.05fr 1fr 175px 30px;gap:25px;align-items:center;padding:30px 18px;border-bottom:1px solid var(--hq-line);transition:background .3s}
 .hq-platform-number{font-size:11px;color:var(--hq-mute);align-self:start;padding-top:8px}
 .studio-site .hq-platform-identity h3{font-size:clamp(24px,2.7vw,40px);font-weight:450;letter-spacing:-.04em}
 .hq-platform-identity>span{display:block;margin-top:9px;font-size:11px;color:var(--hq-mute)}

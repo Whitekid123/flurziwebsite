@@ -56,6 +56,14 @@
   white-space: nowrap;
   color: inherit;
 }
+.brand-wordmark img {
+  width: 30px;
+  height: 30px;
+  border-radius: 7px;
+  display: inline-block;
+  vertical-align: -7px;
+  margin-right: 9px;
+}
 .brand-wordmark em {
   font-style: normal;
   color: var(--hq-accent-bright);

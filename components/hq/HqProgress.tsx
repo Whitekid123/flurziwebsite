@@ -15,8 +15,8 @@ export default function HqProgress(){
   <div className="hq-section-heading"><h2 id="hq-progress-heading">Progress takes<br/><em>many forms.</em></h2><p>From a wider workforce remit to new commerce and entertainment platforms, the ecosystem sits at different stages of development.</p></div>
   <ol className="hq-rail">{RAIL.map((r,i)=>{
    const members=platforms.filter(p=>p.stage===r.stage);
-   return <li className="hq-rail-stop" key={r.stage}>
-    <span className="hq-rail-node" aria-hidden="true"><i>{String(i+1).padStart(2,"0")}</i></span>
+   return <li className={"hq-rail-stop rail-stage-"+i} key={r.stage}>
+    <div className="hq-stage-art" aria-hidden="true">{Array.from({length:5},(_,j)=><i key={j} style={{"--j":j} as React.CSSProperties}/>)}</div><span className="hq-rail-node" aria-hidden="true"><i>{String(i+1).padStart(2,"0")}</i></span>
     <span className="hq-eyebrow">{r.label.toUpperCase()} · {r.note.toUpperCase()}</span>
     <h3>{r.label}</h3>
     <p>{r.blurb}</p>

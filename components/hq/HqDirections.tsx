@@ -5,7 +5,7 @@ import {directions,platforms} from "@/lib/site-content";
     the rail highlight and draw are driven by HqMotion. */
 export default function HqDirections(){
  return <section className="hq-directions" aria-labelledby="hq-directions-heading">
-  <div className="hq-kicker hq-kicker-dark"><span>02 / TECHNOLOGY &amp; INNOVATION</span><span>FOUR AREAS. A WIDER AMBITION.</span></div>
+  <div className="hq-kicker hq-kicker-dark"><span>03 / TECHNOLOGY &amp; INNOVATION</span><span>FOUR AREAS. A WIDER AMBITION.</span></div>
   <div className="hq-directions-layout">
    <div className="hq-directions-anchor">
     <span className="hq-eyebrow">OUR DIRECTION OF TRAVEL</span>
@@ -16,7 +16,7 @@ export default function HqDirections(){
    </div>
    <div className="hq-direction-chapters">{directions.map((d,i)=><article className="hq-direction-chapter" id={"hq-direction-"+i} key={d.title}>
     <div className="hq-direction-top"><span>0{i+1} / EXPLORING THE POSSIBILITIES</span><span className="hq-direction-track" aria-hidden="true"><i/></span></div>
-    <h3>{d.title}</h3><p>{d.body}</p>
+    <div className={"hq-direction-visual direction-visual-"+i} aria-hidden="true">{Array.from({length:8},(_,j)=><i key={j} style={{"--j":j} as React.CSSProperties}/>)}</div><h3>{d.title}</h3><p>{d.body}</p>
     <div className="hq-direction-platforms">{d.slugs.map(slug=>{const p=platforms.find(p=>p.slug===slug)!;return <Link href={"/products/"+slug} key={slug}>{p.name}<span>{p.status}</span><span aria-hidden="true">↗</span></Link>})}</div>
     <Link className="hq-link hq-link-light" href={"/innovation#direction-"+i}>Explore the technology direction <span aria-hidden="true">↗</span></Link>
    </article>)}</div>

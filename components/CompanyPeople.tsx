@@ -6,7 +6,7 @@ export default function CompanyPeople() {
     <div className="hq-section-heading"><h2 id="company-people-heading">The people<br/>behind FLURZIHQ.</h2></div>
     <div className="hq-company-people-grid">
       {companyPeople.map(person => <article className="hq-company-person" key={person.id} aria-labelledby={"person-" + person.id}>
-        <div className={"hq-person-portrait" + (person.image ? "" : " hq-hq-person-portrait-placeholder")}>
+        <div className={"hq-person-portrait" + (person.image ? "" : " hq-person-portrait-placeholder")}>
           {person.image ? <img src={person.image} alt={person.name} width={640} height={800} loading="lazy" decoding="async"/> : <span className="hq-person-initials" aria-hidden="true">{person.initials}</span>}
         </div>
         <div className="hq-person-details">

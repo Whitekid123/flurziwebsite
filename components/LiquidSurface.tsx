@@ -60,8 +60,11 @@ const fragmentShader=`
   float sheet=abs(p.y-bend+p.x*.22-.05);
   float ribbon=exp(-sheet*24.0);
   float edge=exp(-abs(sheet-.025)*120.0);
-  colour+=cyan*(ribbon*.22+edge*.13)*pool;
+  colour+=cyan*(ribbon*.56+edge*.38)*pool;
+  float fold=exp(-abs(p.y-bend+p.x*.22-.12)*65.0);
+  colour+=vec3(.68,.82,.72)*fold*.52*pool;
   colour+=blue*exp(-abs(p.y-bend+p.x*.25+.26)*14.0)*.6;
+
   gl_FragColor=vec4(colour,1.0);
  }
 `;
