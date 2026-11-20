@@ -1,0 +1,63 @@
+[
+  {
+    "page": "products",
+    "width": 1440,
+    "initial_platform_rows": 7,
+    "filter_Business": 2,
+    "filter_Entertainment": 3,
+    "filter_Finance": 1,
+    "filter_Technology": 1,
+    "filter_All platforms": 7,
+    "errors": []
+  },
+  {
+    "page": "products",
+    "width": 390,
+    "initial_platform_rows": 7,
+    "filter_Business": 2,
+    "filter_Entertainment": 3,
+    "filter_Finance": 1,
+    "filter_Technology": 1,
+    "filter_All platforms": 7,
+    "menu_open": true,
+    "menu_links": 9,
+    "menu_closes_with_escape": true,
+    "errors": []
+  },
+  {
+    "page": "faq",
+    "width": 390,
+    "faq_opens": true,
+    "faq_closes": true,
+    "menu_open": true,
+    "menu_links": 9,
+    "menu_closes_with_escape": true,
+    "errors": []
+  },
+  {
+    "page": "about",
+    "width": 390,
+    "menu_open": true,
+    "menu_links": 9,
+    "menu_closes_with_escape": true,
+    "errors": []
+  },
+  {
+    "page": "privacy-policy",
+    "width": 390,
+    "legal_sections": 9,
+    "toc_links": 9,
+    "menu_open": true,
+    "menu_links": 9,
+    "menu_closes_with_escape": true,
+    "errors": []
+  },
+  {
+    "page": "contact",
+    "width": 390,
+    "menu_open": true,
+    "menu_links": 9,
+    "menu_closes_with_escape": true,
+    "errors": []
+  }
+]

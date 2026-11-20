@@ -1,0 +1,60 @@
+const {chromium}=require('playwright');
+const fs=require('node:fs');
+const path=require('node:path');
+const sharp=require('sharp');
+const base=process.argv[2]||'http://localhost:3410';
+const dir='screenshots/corporate-hero';fs.mkdirSync(dir,{recursive:true});
+(async()=>{
+ const browser=await chromium.launch({executablePath:'C:/Program Files/Google/Chrome/Application/chrome.exe',headless:true});
+ const checks=[],errors=[];
+ const check=(ok,label)=>checks.push({label,passed:Boolean(ok)});
+ const difference=async(a,b)=>{const aa=await sharp(a).resize(160,100).removeAlpha().raw().toBuffer(),bb=await sharp(b).resize(160,100).removeAlpha().raw().toBuffer();return aa.reduce((sum,v,i)=>sum+Math.abs(v-bb[i]),0)/aa.length;};
+ try{
+  const page=await browser.newPage({viewport:{width:1440,height:1000}});
+  page.on('pageerror',e=>errors.push(e.message));
+  await page.goto(base,{waitUntil:'networkidle'});
+  await page.locator('.corporate-opening.water-ready').waitFor({timeout:30000});
+  await page.waitForTimeout(1800);
+  check(await page.locator('.corporate-opening svg,.corporate-opening .hero-products').count()===0,'No hero diamond or product windows');
+  check((await page.locator('h1').innerText()).includes('Technology for'),'Corporate heading');
+  check(await page.locator('header .brand-mark').evaluate(i=>i.complete&&i.naturalWidth>0),'Original header logo');
+  check(await page.locator('.corporate-primary').getAttribute('href')==='/products','Ecosystem CTA destination');
+  check(await page.locator('.corporate-secondary').getAttribute('href')==='/about','Company CTA destination');
+  await page.screenshot({path:path.join(dir,'desktop.png')});
+  const clip={x:1000,y:450,width:400,height:300};
+  const a=await page.screenshot({clip});await page.waitForTimeout(700);const b=await page.screenshot({clip});
+  check(await difference(a,b)>.1,'Water visibly animates');
+  await page.getByRole('button',{name:'Pause water motion'}).click();await page.waitForTimeout(500);
+  const c=await page.screenshot({clip});await page.waitForTimeout(700);const d=await page.screenshot({clip});
+  check(await difference(c,d)<.1,'Pause freezes water');
+  await page.getByRole('button',{name:'Resume water motion'}).click();
+  await page.locator('.corporate-secondary').click();await page.waitForURL('**/about');
+  check(await page.locator('h1').count()===1,'Company navigation works');await page.goBack();
+  await page.waitForSelector('.corporate-opening');
+  for(const width of [390,320]){
+   await page.setViewportSize({width,height:844});await page.evaluate(()=>scrollTo(0,0));await page.waitForTimeout(300);
+   check(await page.locator('.corporate-opening canvas').count()===0,'Mobile avoids WebGL at '+width);
+   check(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth),'No overflow at '+width);
+   check(await page.locator('.corporate-hero-actions').evaluate(el=>{const r=el.getBoundingClientRect();const bottom=document.querySelector('.corporate-hero-bottom').getBoundingClientRect();return r.bottom<bottom.top;}),'Hero controls do not overlap at '+width);
+   const menu=page.locator('.editorial-menu-button');await menu.click();
+   check(await menu.getAttribute('aria-expanded')==='true','Menu opens at '+width);
+   await page.keyboard.press('Escape');await page.waitForTimeout(500);
+   check(await menu.getAttribute('aria-expanded')==='false','Menu closes at '+width);
+   if(width===390)await page.screenshot({path:path.join(dir,'mobile.png')});
+  }
+  await page.setViewportSize({width:1440,height:1000});await page.emulateMedia({reducedMotion:'reduce'});await page.waitForTimeout(300);
+  check(await page.locator('.corporate-opening canvas').count()===0,'Reduced motion removes WebGL');
+  check(await page.locator('.liquid-sheet').first().evaluate(el=>getComputedStyle(el).animationName)==='none','Reduced motion stops fallback');
+  check(await page.getByRole('button',{name:'Reduced motion enabled'}).isDisabled(),'Motion preference honoured');
+  const fallback=await browser.newPage({viewport:{width:1440,height:1000}});
+  await fallback.addInitScript(()=>{const original=HTMLCanvasElement.prototype.getContext;HTMLCanvasElement.prototype.getContext=function(type,...args){return type==='webgl2'?null:original.call(this,type,...args);};});
+  await fallback.goto(base,{waitUntil:'networkidle'});await fallback.waitForTimeout(1200);
+  check(await fallback.locator('.corporate-opening canvas').count()===0,'Unavailable WebGL uses CSS fallback');
+  check(await fallback.locator('.corporate-primary').isVisible(),'Fallback retains navigation');
+  await fallback.screenshot({path:path.join(dir,'fallback.png')});
+  check(errors.length===0,'No runtime errors');
+ }finally{await browser.close();}
+ fs.writeFileSync(path.join(dir,'validation.json'),JSON.stringify({checks,errors},null,2));
+ console.log(JSON.stringify({passed:checks.filter(x=>x.passed).length,total:checks.length,failed:checks.filter(x=>!x.passed),errors},null,2));
+ if(checks.some(x=>!x.passed)||errors.length)process.exitCode=1;
+})().catch(e=>{console.error(e);process.exitCode=1;});

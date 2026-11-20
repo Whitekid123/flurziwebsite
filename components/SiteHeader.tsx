@@ -16,9 +16,9 @@ export default function SiteHeader(){
   gsap.to(backdrop.current,{opacity:0,duration:.25});
   gsap.to(panel.current,{clipPath:"inset(0% 0% 100% 0%)",y:-15,duration:.35,ease:"power3.inOut",onComplete:()=>{closing.current=false;setOpen(false);}});
  },[]);
- const dark=path==="/"&&!scrolled&&!open;
+ const dark=!scrolled&&!open;
  useEffect(()=>{
-  const update=()=>{const hero=document.querySelector<HTMLElement>(".home-opening");const distance=hero?Math.max(45,hero.offsetHeight-100):45;setScrolled(scrollY>distance);};
+  const update=()=>{const hero=document.querySelector<HTMLElement>(".home-opening,.hq-page-intro,.hq-product-intro");const distance=hero?Math.max(45,hero.offsetHeight-115):45;setScrolled(scrollY>distance);};
   update();window.addEventListener("scroll",update,{passive:true});window.addEventListener("resize",update);
   return()=>{window.removeEventListener("scroll",update);window.removeEventListener("resize",update);};
  },[path]);

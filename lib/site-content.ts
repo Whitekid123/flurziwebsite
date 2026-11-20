@@ -105,7 +105,7 @@ export const platforms:Platform[]=[
     "linkLabel": "View current website",
     "image": "/media/commit-brand.webp",
     "imageCaption": "Flurzi Commit · Brand identity",
-    "brandArtwork": {"thumbnail":"/media/commit-mark.webp","width":1024,"height":682,"background":"#122344"},
+    "brandArtwork": {"thumbnail":"/media/commit-brand.webp","thumbnailWidth":1024,"thumbnailHeight":682,"width":1024,"height":682,"background":"#122344"},
     "colour": "#d9e8df",
     "accent": "#277762",
     "status": "Preparing for launch",

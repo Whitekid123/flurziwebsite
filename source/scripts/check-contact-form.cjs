@@ -1,0 +1,25 @@
+const {chromium}=require('playwright');
+const assert=require('node:assert/strict');
+const base=process.argv[2]||'http://localhost:3412';
+(async()=>{const browser=await chromium.launch({executablePath:'C:/Program Files/Google/Chrome/Application/chrome.exe',headless:true});let passed=0;const check=(v,label)=>{assert.ok(v,label);passed++;};try{
+ const page=await browser.newPage({viewport:{width:390,height:844},reducedMotion:'reduce'});page.setDefaultNavigationTimeout(90000);
+ await page.route('https://challenges.cloudflare.com/**',route=>route.fulfill({contentType:'application/javascript',body:`window.turnstile={render:(el,options)=>{window.qaChallenge=options;el.textContent='Mock security check';setTimeout(()=>options.callback('local-test-token'),10);return 'test-widget';},reset:()=>setTimeout(()=>window.qaChallenge.callback('local-test-token'),10),remove:()=>{}};`}));
+ let mode='failure',lastPayload;
+ await page.route('**/api/contact',async route=>{lastPayload=route.request().postDataJSON();await route.fulfill({status:mode==='failure'?502:200,contentType:'application/json',body:JSON.stringify({message:mode==='failure'?'We could not submit your enquiry. Please try again.':'Your enquiry has been accepted for email delivery to Flurzi.'})});});
+ await page.goto(base+'/contact?product=flurzi360',{waitUntil:'networkidle'});
+ check(await page.locator('#contact-topic').inputValue()==='Flurzi360 business enquiry','Product enquiry preselected');
+ await page.waitForFunction(()=>!document.querySelector('button[type=submit]').disabled);
+ await page.locator('button[type=submit]').click();check(await page.locator('#contact-name').evaluate(e=>!e.validity.valid),'Native required-name validation');
+ await page.locator('#contact-name').fill('Local Test');await page.locator('#contact-email').fill('qa@example.com');await page.locator('#contact-message').fill('Local browser fixture. Never sent.');
+ await page.locator('button[type=submit]').click();await page.locator('.contact-draft [role=alert]').waitFor();
+ check(await page.locator('#contact-message').inputValue()==='Local browser fixture. Never sent.','Failure preserves enquiry text');
+ await page.waitForFunction(()=>document.querySelector('.contact-draft [role=alert]')===document.activeElement);
+ check(await page.locator('.contact-draft [role=alert]').evaluate(e=>e===document.activeElement),'Failure is focused for keyboard users');
+ const firstId=lastPayload.requestId;mode='success';await page.locator('button[type=submit]').click();await page.locator('.contact-draft [role=status]').waitFor();
+ check(lastPayload.requestId===firstId,'Retry preserves delivery idempotency key');
+ check(lastPayload.topic==='Flurzi360 business enquiry'&&lastPayload.token==='local-test-token','Selected topic and security token submitted');
+ check(await page.locator('#contact-message').inputValue()==='','Successful submission clears message');
+ check((await page.locator('.contact-draft [role=status]').innerText()).includes('accepted for email delivery'),'Success requires an API acknowledgement');
+ check(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth),'Configured form fits mobile');
+ console.log(JSON.stringify({passed,transport:'Browser API and challenge mocked; no email sent'}));
+}finally{await browser.close();}})().catch(e=>{console.error(e);process.exitCode=1});

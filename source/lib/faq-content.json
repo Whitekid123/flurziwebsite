@@ -1,0 +1,72 @@
+[
+  {
+    "group": "Company",
+    "question": "What is FLURZIHQ?",
+    "answer": "FLURZIHQ is the Flurzi headquarters — the UK technology company developing and managing an expanding portfolio of digital platforms. Its areas include workforce technology, commerce, financial commitments, entertainment and intelligent technology systems."
+  },
+  {
+    "group": "Company",
+    "question": "What does FLURZIHQ mean?",
+    "answer": "HQ stands for headquarters. FLURZIHQ is the parent company behind seven distinct platforms — EndNovel, Flurzi360, Flurzi Commit, FlurziX, FlurziRush, Flurzi Cortex and Flurzi Cinema. The legal entity is Flurzi Limited."
+  },
+  {
+    "group": "Company",
+    "question": "Are all the platforms part of one service?",
+    "answer": "No. They are distinct platforms under FLURZIHQ, with their own audiences, identities and development stages. A shared headquarters identity does not imply shared accounts, subscriptions or technical integrations."
+  },
+  {
+    "group": "Platforms",
+    "question": "Which platforms are available?",
+    "answer": "EndNovel and Flurzi360 Version 1 are available. The expanded Flurzi360 platform is in development. Flurzi Commit is preparing for launch; FlurziX, FlurziRush, Flurzi Cortex and Flurzi Cinema remain in development. Product pages distinguish current release features from planned functionality."
+  },
+  {
+    "group": "Platforms",
+    "question": "What happened to SponsorSafe HR?",
+    "answer": "SponsorSafe HR has been renamed Flurzi360. Version 1 remains available through the existing application while a broader global business workforce operating system across HR, compliance, finance and operations is developed. You may still see the former name in the existing application."
+  },
+  {
+    "group": "Platforms",
+    "question": "Does Flurzi360 offer jobs or visa sponsorship?",
+    "answer": "No. Flurzi360 is intended for businesses and workforce administration. It does not offer employment or visa sponsorship to jobseekers. Immigration and right-to-work workflows depend on the jurisdiction and supported features."
+  },
+  {
+    "group": "Platforms",
+    "question": "Will Flurzi360 require a sales call to join?",
+    "answer": "No mandatory sales call or demonstration is required. The Flurzi360 product page links directly to the existing self-service Version 1 registration route."
+  },
+  {
+    "group": "Platforms",
+    "question": "What is Flurzi Commit?",
+    "answer": "Flurzi Commit is a structured savings and financial commitment concept designed to help people organise goals and follow through on commitments. It is preparing for launch, with financial integrations still pending. FLURZIHQ does not hold customer funds or provide regulated financial services through this website or the announced product concept."
+  },
+  {
+    "group": "Platforms",
+    "question": "What is FlurziX being developed for?",
+    "answer": "FlurziX is a commerce initiative for shoppers and businesses, with trust at the centre of its intended experience. Its development direction brings together verification, inspection information and traceability to help people make better-informed trading decisions. These capabilities are planned and are not being presented as operational."
+  },
+  {
+    "group": "Platforms",
+    "question": "Has PlayVault been renamed?",
+    "answer": "Yes. PlayVault was renamed FlurziRush in October 2026. It is under development for gaming and interactive entertainment. Cash earnings for playing are not part of the intended initial launch."
+  },
+  {
+    "group": "Platforms",
+    "question": "What is Flurzi Cortex?",
+    "answer": "Flurzi Cortex is under development in intelligent technology systems and supporting infrastructure. More detailed capabilities and access arrangements have not been announced."
+  },
+  {
+    "group": "Platforms",
+    "question": "Can I watch films on Flurzi Cinema now?",
+    "answer": "Flurzi Cinema is in development. Its public website is not confirmation of an operational viewing service. Features, catalogue and access availability will be confirmed by the platform."
+  },
+  {
+    "group": "Enquiries",
+    "question": "How can I discuss a partnership?",
+    "answer": "Visit Contact for the currently available enquiry options and registered postal address. Online submission is shown only when delivery is configured; a draft download is not treated as a sent enquiry."
+  },
+  {
+    "group": "Enquiries",
+    "question": "Where should I get help with an account?",
+    "answer": "Use the support or account-help route on the relevant product website. Platform-specific access, pricing, subscriptions and terms belong to that platform. Do not share passwords or sensitive account details through a corporate enquiry."
+  }
+]

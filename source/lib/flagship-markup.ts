@@ -1,0 +1,92 @@
+/* Trusted, authored homepage markup, synced with public/flagship/index.html. */
+export const FLAGSHIP_MARKUP = `<a href="#main" class="skip">Skip to content</a>
+<div id="progress-line" aria-hidden="true"></div>
+<header class="shell-header" id="shell-header">
+  <a class="shell-wordmark" href="#top" aria-label="FLURZIHQ, back to top">FLURZI<span>HQ</span><i class="shell-wordmark-dot"></i></a>
+  <nav class="shell-links" aria-label="Main navigation"><a href="#portfolio">Our platforms</a><a href="#approach">The company</a><a href="#contact">Get in touch</a></nav>
+  <a class="shell-discover" href="#portfolio">Explore <span aria-hidden="true">↗</span></a>
+  <button class="shell-menu-trigger" type="button" id="shell-menu-trigger" aria-label="Open navigation menu" aria-expanded="false" aria-controls="shell-mobile-menu"><span>MENU</span><span class="shell-menu-icon" aria-hidden="true"><i></i><i></i></span></button>
+</header>
+<div class="shell-mobile-menu" id="shell-mobile-menu" aria-hidden="true" inert>
+  <div class="shell-mobile-menu-top"><span class="shell-mobile-menu-brand">FLURZI<small>HQ</small></span><button class="shell-mobile-menu-close" id="shell-mobile-menu-close" type="button" aria-label="Close navigation menu"><span>Close</span><i aria-hidden="true">×</i></button></div>
+  <p class="shell-mobile-menu-kicker micro">FLURZI LIMITED / THE HEADQUARTERS</p>
+  <nav class="shell-mobile-menu-links" aria-label="Mobile navigation">
+    <a href="#top"><span>01</span>Home<i aria-hidden="true">↗</i></a>
+    <a href="#portfolio"><span>02</span>Our platforms<i aria-hidden="true">↗</i></a>
+    <a href="#approach"><span>03</span>The company<i aria-hidden="true">↗</i></a>
+    <a href="/about"><span>04</span>About Flurzi<i aria-hidden="true">↗</i></a>
+    <a href="/contact"><span>05</span>Get in touch<i aria-hidden="true">↗</i></a>
+  </nav>
+  <div class="shell-mobile-menu-bottom micro"><span>SEVEN PLATFORMS · ONE HEADQUARTERS</span><a href="/products">EXPLORE ALL SEVEN ↗</a></div>
+</div>
+<div class="flagship-content">
+<section id="top" class="film-track" aria-label="FLURZIHQ introduction">
+  <div class="film-stage">
+    <div class="film-grid" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
+    <div class="film-hero" id="film-hero">
+      <div class="film-hero-top micro"><span><i class="signal"></i> AN INDEPENDENT TECHNOLOGY COMPANY</span><span>LONDON / GLOBAL AMBITION</span></div>
+      <div class="film-hero-copy">
+        <div class="film-hero-eyebrow micro">FLURZI LIMITED <span class="micro-line"></span> EST. IN THE UK</div>
+        <h1 id="hero-heading"><span class="mask-line"><span>Different ideas.</span></span><span class="mask-line"><span>One <em>restless</em></span></span><span class="mask-line"><span>company.</span></span></h1>
+        <p>Seven distinct platforms spanning how we work, live and experience the world. One company developing what comes next.</p>
+      </div>
+      <div class="film-hero-media" id="film-hero-media" aria-label="Artwork from EndNovel, a Flurzi platform"><div class="film-hero-media-image"></div><div class="film-hero-media-meta micro"><span>01 / 07</span><span>ENDNOVEL <span aria-hidden="true">↗</span></span></div></div>
+      <div class="film-hero-bottom micro"><span><span class="scroll-line" aria-hidden="true"><i></i></span> SCROLL TO EXPLORE</span><span>ONE HEADQUARTERS · SEVEN PLATFORMS</span><span>001 — THE OPENING</span></div>
+      <span class="film-outline" aria-hidden="true">FLURZI</span>
+    </div>
+    <div class="film-scenes" aria-hidden="true">
+      <div class="cinema-frame frame-novel" id="frame-novel"><div class="cinema-scene-bg"></div><div class="cinema-scene-shade"></div><div class="cinema-caption"><span class="micro">01 / STORIES & CULTURE</span><p>There is always<br><em>another chapter.</em></p><small>ENDNOVEL</small></div></div>
+      <div class="cinema-frame frame-work" id="frame-work"><div class="cinema-scene-bg"></div><div class="cinema-scene-shade"></div><div class="cinema-caption"><span class="micro">02 / WORKFORCE TECHNOLOGY</span><p>Building for<br><em>the way we work.</em></p><small>FLURZI360</small></div></div>
+      <div class="cinema-frame frame-cinema" id="frame-cinema"><div class="cinema-scene-bg"></div><div class="cinema-scene-shade"></div><div class="cinema-caption"><span class="micro">03 / DIGITAL ENTERTAINMENT</span><p>Culture deserves<br><em>more possibilities.</em></p><small>FLURZI CINEMA · IN DEVELOPMENT</small></div></div>
+      <div class="cinema-end" id="cinema-end"><div class="cinema-end-top micro"><span>FLURZIHQ / THE HEADQUARTERS</span><span>INDEPENDENT IDEAS. SHARED AMBITION.</span></div><div class="cinema-end-copy"><span class="end-copy-line">Not one</span><span class="end-copy-line end-copy-italic">direction.</span><span class="end-copy-line">Seven.</span></div><div class="cinema-end-bottom"><span class="micro">A PORTFOLIO OF DISTINCT DIGITAL PLATFORMS</span><span class="cinema-end-circle" aria-hidden="true">↓</span></div></div>
+    </div>
+    <div class="film-progress" aria-hidden="true"><span id="film-chapter-index">01</span><div class="film-progress-track"><i id="film-progress-indicator"></i></div><span>05</span><span class="film-progress-chapter" id="film-progress-chapter">THE OPENING</span></div>
+  </div>
+</section>
+<section id="approach" class="manifesto">
+ <div class="section-meta micro"><span>01 / THE COMPANY</span><span>INDEPENDENT BY NATURE</span></div>
+ <div class="manifesto-grid"><div class="manifesto-sticky"><span class="manifesto-icon" aria-hidden="true">✳</span><div class="micro">SEVEN PLATFORMS<br>ONE HQ</div></div>
+  <div class="manifesto-main"><h2>We don't believe<br>great ideas have<br>to fit into <em>one box.</em></h2><div class="manifesto-caption"><span class="micro">WHAT CONNECTS US</span><p>Flurzi Limited builds and develops platforms across workforce technology, digital commerce, financial commitments, stories, games, film and intelligent systems.</p><a href="/about">Discover the company <span aria-hidden="true">↗</span></a></div></div>
+ </div>
+ <div class="manifesto-bottom micro"><span>FORM FOLLOWS AMBITION</span><span>SCROLL TO DISCOVER OUR WORK ↓</span></div>
+</section>
+<section class="work-opening" id="portfolio"><div class="section-meta micro"><span>02 / THE PORTFOLIO</span><span>REAL PRODUCTS. DISTINCT IDENTITIES.</span></div><div class="work-opening-typography"><h2>Different by<br><em>design.</em></h2><p>Each platform is its own idea. Each has a purpose, a personality, and a place in the wider Flurzi portfolio.</p></div><div class="work-opening-foot micro"><span>SELECTED PLATFORMS <span aria-hidden="true">↘</span></span><span>01 — 03</span></div></section>
+<section class="features-track" id="featured" aria-label="Selected Flurzi platforms">
+ <div class="features-stage">
+  <article class="feature-panel feature-novel" data-feature="0">
+   <div class="feature-grain" aria-hidden="true"></div><div class="feature-top micro"><span>01 / 07 — CULTURE</span><span>VERSION 1 AVAILABLE</span></div>
+   <div class="feature-grid"><div class="feature-copy"><span class="feature-copy-kicker micro">STORIES & AUDIO</span><h3>Turn the<br><em>page.</em></h3><p>Stories to discover. Chapters to return to. Digital reading and audiobook entertainment.</p><a href="/products/endnovel" class="feature-link">Explore EndNovel <span>↗</span></a></div><div class="feature-visual feature-visual-novel"><img src="/flagship/assets/endnovel.webp" alt="EndNovel storytelling website" loading="lazy"><div class="feature-visual-border" aria-hidden="true"></div></div></div>
+   <div class="feature-bottom micro"><span>ENDNOVEL</span><span>ONE OF SEVEN</span></div>
+  </article>
+  <article class="feature-panel feature-360" data-feature="1">
+   <div class="feature-grain" aria-hidden="true"></div><div class="feature-top micro"><span>02 / 07 — BUSINESS</span><span>VERSION 1 AVAILABLE · EXPANDING</span></div>
+   <div class="feature-grid"><div class="feature-copy"><span class="feature-copy-kicker micro">WORKFORCE TECHNOLOGY</span><h3>People.<br>Work.<br><em>Everywhere.</em></h3><p>A business workforce platform with an available version focused on employee records and compliance administration. Broader capabilities are in development.</p><a href="/products/flurzi360" class="feature-link">Explore Flurzi360 <span>↗</span></a></div><div class="feature-visual feature-visual-360"><img src="/flagship/assets/sponsorsafe.webp" alt="Screenshot from the existing SponsorSafe HR platform" loading="lazy"><div class="feature-visual-border" aria-hidden="true"></div></div></div>
+   <div class="feature-bottom micro"><span>FLURZI360</span><span>ONE OF SEVEN</span></div>
+  </article>
+  <article class="feature-panel feature-commit" data-feature="2">
+   <div class="feature-grain" aria-hidden="true"></div><div class="feature-top micro"><span>03 / 07 — FINANCIAL COMMITMENTS</span><span>PREPARING FOR LAUNCH</span></div>
+   <div class="feature-grid"><div class="feature-copy"><span class="feature-copy-kicker micro">A PRODUCT IN PREPARATION</span><h3>Make space<br>for what<br><em>matters.</em></h3><p>A structured savings and financial commitment platform. Financial integrations are pending and the product is not yet launched.</p><a href="/products/commit" class="feature-link">Explore Flurzi Commit <span>↗</span></a></div><div class="feature-visual feature-visual-commit"><div class="commit-editorial" aria-hidden="true"><div class="commit-editorial-top"><span>INTENTION</span><span>001</span></div><strong>COMMIT.</strong><div class="commit-editorial-rule"><i></i></div><div class="commit-editorial-bottom"><span>ONE STEP<br>AT A TIME.</span><span>FLURZI</span></div></div></div></div>
+   <div class="feature-bottom micro"><span>FLURZI COMMIT</span><span>ONE OF SEVEN</span></div>
+  </article>
+  <div class="features-pagination micro" aria-hidden="true"><span>SELECTED WORK</span><div><i id="feature-step-0"></i><i id="feature-step-1"></i><i id="feature-step-2"></i></div><span id="feature-page-label">01 / 03</span></div>
+ </div>
+</section>
+<section class="directory" id="all-platforms">
+ <div class="section-meta micro"><span>03 / THE COMPLETE PORTFOLIO</span><span>TAKE A CLOSER LOOK</span></div>
+ <div class="directory-intro"><h2>Seven very<br><em>different</em> ideas.</h2><p>Explore what exists today and what's still being built. Every platform has its own direction.</p></div>
+ <div class="directory-list">
+  <a class="directory-row" data-preview="/flagship/assets/endnovel.webp" href="/products/endnovel"><span class="directory-n">01</span><span class="directory-name">EndNovel</span><span class="directory-sector">Reading & audio</span><span class="directory-status">Version 1 available</span><span class="directory-arrow">↗</span></a>
+  <a class="directory-row" data-preview="/flagship/assets/sponsorsafe.webp" href="/products/flurzi360"><span class="directory-n">02</span><span class="directory-name">Flurzi360</span><span class="directory-sector">Workforce technology</span><span class="directory-status">Version 1 available</span><span class="directory-arrow">↗</span></a>
+  <a class="directory-row" data-preview="/flagship/assets/commit.webp" href="/products/commit"><span class="directory-n">03</span><span class="directory-name">Flurzi Commit</span><span class="directory-sector">Financial commitments</span><span class="directory-status">Preparing for launch</span><span class="directory-arrow">↗</span></a>
+  <a class="directory-row" href="/products/flurzix"><span class="directory-n">04</span><span class="directory-name">FlurziX</span><span class="directory-sector">Digital commerce</span><span class="directory-status">Under development</span><span class="directory-arrow">↗</span></a>
+  <a class="directory-row" data-preview="/flagship/assets/flurzirush-art.webp" href="/products/flurzirush"><span class="directory-n">05</span><span class="directory-name">FlurziRush</span><span class="directory-sector">Games & entertainment</span><span class="directory-status">Under development</span><span class="directory-arrow">↗</span></a>
+  <a class="directory-row" href="/products/cortex"><span class="directory-n">06</span><span class="directory-name">Flurzi Cortex</span><span class="directory-sector">Intelligent systems</span><span class="directory-status">Under development</span><span class="directory-arrow">↗</span></a>
+  <a class="directory-row" data-preview="/flagship/assets/cinema.webp" href="/products/cinema"><span class="directory-n">07</span><span class="directory-name">Flurzi Cinema</span><span class="directory-sector">Film & entertainment</span><span class="directory-status">In development</span><span class="directory-arrow">↗</span></a>
+ </div>
+ <div class="directory-hover" id="directory-hover" aria-hidden="true"><img alt="" src="/flagship/assets/endnovel.webp"><span class="micro">A CLOSER LOOK / FLURZIHQ</span></div>
+ <div class="directory-foot"><span>Seven independently developed directions. One shared ambition.</span><a href="/products">View the ecosystem <span>↗</span></a></div>
+</section>
+<section class="close" id="contact"><div class="close-top micro"><span>04 / BEGIN A CONVERSATION</span><span>THE FUTURE IS STILL BEING MADE</span></div><h2>Ideas don't<br>stop <em>here.</em></h2><div class="close-bottom"><p>Something you'd like to build, explore or discuss with the team behind Flurzi?</p><a href="mailto:hello@flurzimobileapp.co.uk" class="close-cta">Let's talk <span>↗</span></a></div><div class="close-word" aria-hidden="true">FLURZI</div></section>
+</div>
+<footer class="shell-footer"><span>© 2026 FLURZI LIMITED</span><span>FLURZIHQ — THE FLURZI HEADQUARTERS</span><a href="#top">BACK TO TOP ↑</a></footer>
+`;

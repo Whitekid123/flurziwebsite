@@ -1,65 +1,62 @@
-﻿# Flurzi corporate website
+# FLURZIHQ — Complete Cinematic Website Redesign (Release 05)
 
-A corporate Next.js website for Flurzi Limited, with a complete company-led homepage and 18 public pages. The seven-platform ecosystem, company story, innovation direction, partnerships, contact journeys and shared navigation are implemented in the application.
+This project contains the complete FLURZIHQ Next.js website. The approved cinematic homepage from Release 04 has been preserved, and all the existing secondary routes have been redesigned to harmonise with its high-contrast forest-green/ivory editorial identity, immersive imagery, refined typography and intentional scroll-linked motion.
 
-**Review the actual website at http://localhost:3411 after starting it below.** `docs/design-preview/index.html` is the earlier standalone concept; it is not the Next.js website.
+## What's included
 
-## Run
+- Original approved homepage, with responsive navigation, scroll-directed full-screen chapter sequences, the seven-platform presentation, and reduced-motion support.
+- New editorial About experience with company story, timeline, team portraits and a responsive, scroll-controlled manifesto.
+- Reskinned, working seven-platform ecosystem directory with original category filters and honest availability stages.
+- Seven individual cinematic product pages: EndNovel, Flurzi360, Flurzi Commit, FlurziX, FlurziRush, Flurzi Cortex and Flurzi Cinema. Existing links, features, distinctions between live and planned capabilities, and existing product visualisations remain.
+- Redesigned Technology & Innovation, Partnerships, Contact, FAQs, Testing Opportunity and legal pages (privacy policy, terms, disclaimer and data protection).
+- Responsive shared header/footer, mobile menu, media reveals, section transitions, gallery hover previews and quiet motion for information-heavy/legal pages.
+- Original content data, company contact information, API endpoint, legal content, redirects, assets and supporting documentation retained. No false achievements or launch claims added.
+
+The original `/projects` route still redirects to `/innovation`, as it did before. Legacy product aliases also retain their redirects.
+
+## Run the live Next.js website
+
+Requirements: Node.js supported by the Next.js version in package-lock.json and npm.
 
 ```sh
 npm ci
-npm run dev -- -p 3411
-npm run build
-npm start -- -p 3411
+npm run dev
 ```
 
-## Pages
-
-Home; Ecosystem; seven platform detail pages; Company; Technology & Innovation; Partnerships; FAQ; Contact; Privacy policy; Terms; Disclaimer; Data protection. Former Projects, SponsorSafe, PlayVault and Flurzi X URLs redirect to their current destinations.
-
-## Active implementation
-
-- `components/EditorialHome.tsx`: homepage content
-- `components/InteractiveOpening.tsx` and `CorporateWater.tsx`: company-led hero with decorative liquid light, pause control, mobile and reduced-motion fallbacks
-- `components/EcosystemDirectory.tsx`: all seven platforms, status labels and accessible category filters
-- `components/HomeMotion.tsx`: company statement, drawn technology contours, scroll progress and portfolio reveal
-- `components/CompanyStatement.tsx`, `CorporateDirections.tsx`, `CorporatePortfolio.tsx`: company-led narrative, technology chapters and accessible seven-platform selection
-- `components/SiteMotion.tsx`: page reveals, product parallax, depth and pointer-following labels
-- `components/SiteHeader.tsx` and `SiteFooter.tsx`: shared navigation and animated side menu
-- `components/ProductGrid.tsx`: filtered ecosystem directory
-- `app/corporate.css`, `app/transformation.css` and `app/corporate-story.css`: current corporate design, responsive layouts, company narrative and hero styling
-- `lib/site-content.ts`: product, company and navigation content
-- `lib/faq-content.json`, `lib/legal-content.json`: migrated source content
-- `components/ContactDraft.tsx`: topic-aware enquiry preparation, with a local download while public email approval is pending
-
-The earlier portal, product-window opening and single-page components remain as unused experiments. The active hero scene is CorporateWater, which reuses LiquidSurface without product windows or logo geometry.
-
-## Audits
-
-`docs/CONTENT-AUDIT.md` maps source pages to the implementation and records the Commit content discrepancy. Source snapshots are in `docs/source-audit/`.
-
-`docs/MOTION-NOTES.md` records the Junca browser observations, their implementation, fallbacks and verification. Third-party assets are not included in the website.
-
-## Images and footage
-
-Edit `lib/media.ts`; place assets in `public/media/`.
-The desktop opening uses an interactive liquid background. Set HERO_MEDIA.video and a poster to substitute decorative looping footage. Smaller screens use lightweight liquid-light styling; reduced motion freezes it or displays the supplied poster. Genuine platform screenshots are mapped in `lib/site-content.ts`. The retained `ScrollMedia` component is available for future supplied footage; the current portfolio uses genuine still images where available.
-
-Keep headings outside footage and provide a poster. MP4/H.264 with frequent keyframes is a starting point; final framing and seek timing need tuning to the supplied assets.
-
-Reduced-motion mode removes 3D, sticky storytelling and smooth scrolling, including when the preference changes during a visit.
-
-## Checks
+Open http://localhost:3000. Before deployment, run:
 
 ```sh
-node scripts/check-corporate-site.cjs http://localhost:3411
-node scripts/check-corporate-hero.cjs http://localhost:3411
-node scripts/check-corporate-story.cjs http://localhost:3411
+npm run build
+npm run start
 ```
 
-The site check covers all current routes, content, metadata, images, internal links, filters, redirects, menu keyboard behaviour, mobile layouts, enquiry routing/download and the sitemap. Results and desktop/mobile screenshots are saved under `screenshots/corporate-site/`. The hero check covers actual water movement, pause, reduced-motion and WebGL fallback behaviour. Historical checks that assert the retired four-product design are superseded.
+**Environment:** `.env.example` documents settings. Contact form sending requires your configured server-side contact mail integration and Cloudflare Turnstile; without that configuration it shows the original honest 'enquiries not open yet' state. Secrets are not included. No changes were made to the original sending API or security logic.
 
-Public contact details and leadership publication remain pending. The contact form currently downloads an enquiry draft and explicitly states that it has not sent anything. The registered postal address is displayed. See [implementation and publication dependencies](docs/CORPORATE-TRANSFORMATION.md) and [questions for the founder](docs/design-preview/QUESTIONS-FOR-FOUNDER.md).
+## Important files
 
-`scripts/audit-content.mjs` refreshes live-source snapshots and overwrites imported policy/FAQ JSON. Review source changes before using refreshed content.
+- `app/page.tsx`, `components/FlagshipHome.tsx`, `app/flagship-home.css`, `public/flagship/`: approved animated homepage and its assets.
+- `app/cinema-subpages.css`: shared responsive design system for all other pages.
+- `components/PageHeroArt.tsx`: page-specific original compositions using existing Flurzi media.
+- `components/ProductHeroArt.tsx`: distinctive artwork for all seven product pages.
+- `components/PageInterlude.tsx`: type-led scroll chapters.
+- `components/PageMotion.tsx`: GSAP scroll and entrance choreography on secondary pages, respecting reduced-motion preferences.
+- `components/hq/HqDirectory.tsx`: existing sector filtering with new editorial hover previews.
+- `app/[slug]/page.tsx`: legal document templates, complete original text and new on-page section navigation.
+- `lib/site-content.ts`, `lib/legal-content.json`: company, platform and legal copy preserved.
+- `app/api/contact`: original contact submission API kept intact.
+- `README-ORIGINAL.md`, `docs/`, `scripts/`: retained supporting project content.
 
+## Offline preview
+
+The **complete download** also contains a `preview/` folder with `index.html` and 18 secondary-page HTML snapshots. Extract the whole ZIP, then open `preview/index.html` in Chrome or Edge. Navigate to each subpage from the menu or product links.
+
+The preview pages have standalone CSS and native Web Animations for approximate page introductions, details and filters. **The production site uses React/Next.js and GSAP; use the Next.js project to evaluate full functionality.** The contact form is displayed in its unconfigured state in the standalone preview and cannot submit there.
+
+## QA and deployment limitations
+
+- 18 redesigned secondary-page templates visually reviewed in Chromium, including desktop (1440×900), phones (390×844), selected compact phones (320×568) and tablets (768×1024): **47 sampled layouts with no horizontal overflow or JavaScript page errors**.
+- Desktop/mobile menu, FAQ disclosure, directory sector filtering, legal section navigation and 551 preview local links/image references checked.
+- 58 application TypeScript/TSX files passed syntax transpilation (not a complete type check).
+- This environment could not install missing Next.js dependencies from the public npm registry, so **full `next build`, deployment smoke tests, physical-device tests and real form delivery are not verified here**. Run the commands above before production deployment.
+
+The redesign deliberately avoids generic futuristic spheres and invented imagery; the distinct product artwork is limited to existing Flurzi media and original typography-based compositions. The legal copy and product stages should be reviewed by the company before publishing.

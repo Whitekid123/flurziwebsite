@@ -1,3 +1,4 @@
+import PageHeroArt from "@/components/PageHeroArt";
 import type {Metadata} from "next";
 import Link from "next/link";
 import {COMPANY} from "@/lib/site-content";
@@ -11,12 +12,12 @@ export const metadata:Metadata={
 export default function TestingOpportunityPage(){
   const subject=encodeURIComponent("FLURZIHQ quality testing application");
   const body=encodeURIComponent("Name:\nDevices and operating systems I can test:\nRelevant testing experience or interests:\nGeneral availability:\n");
-  return <>
+  return <div className="cinema-page cinema-page-testing">
     <section className="hq-page-intro">
       <span className="hq-eyebrow">WORK WITH FLURZIHQ</span>
       <h1>Help us test<br/><em>what we build.</em></h1>
       <p>Apply to be considered for software quality testing opportunities with FLURZIHQ.</p>
-    </section>
+    <PageHeroArt kind="testing"/></section>
     <section className="hq-section">
       <div className="hq-section-heading">
         <h2>Put products<br/>through their paces.</h2>
@@ -31,5 +32,5 @@ export default function TestingOpportunityPage(){
       <p className="hq-form-explanation">We use application details to consider you for testing opportunities and communicate about them. See our <Link href="/privacy-policy">privacy information</Link>.</p>
       <p className="hq-form-explanation">Questions? Contact <a href={`mailto:${COMPANY.email}`}>{COMPANY.email}</a>.</p>
     </section>
-  </>;
+  </div>;
 }

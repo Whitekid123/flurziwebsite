@@ -1,0 +1,263 @@
+{
+  "desktop": {
+    "errors": [],
+    "overflow_px": 0,
+    "screens": 15,
+    "data": [
+      {
+        "state": "intro",
+        "y": 0,
+        "progress": {
+          "filmProgress": 0,
+          "featureProgress": 0,
+          "stage": "opening"
+        }
+      },
+      {
+        "state": "film_18",
+        "y": 729,
+        "progress": {
+          "filmProgress": 0.177,
+          "featureProgress": 0,
+          "stage": "opening"
+        }
+      },
+      {
+        "state": "film_35",
+        "y": 1417,
+        "progress": {
+          "filmProgress": 0.337,
+          "featureProgress": 0,
+          "stage": "novel"
+        }
+      },
+      {
+        "state": "film_42",
+        "y": 1701,
+        "progress": {
+          "filmProgress": 0.416,
+          "featureProgress": 0,
+          "stage": "novel"
+        }
+      },
+      {
+        "state": "film_55",
+        "y": 2227,
+        "progress": {
+          "filmProgress": 0.538,
+          "featureProgress": 0,
+          "stage": "work"
+        }
+      },
+      {
+        "state": "film_71",
+        "y": 2875,
+        "progress": {
+          "filmProgress": 0.697,
+          "featureProgress": 0,
+          "stage": "cinema"
+        }
+      },
+      {
+        "state": "film_83",
+        "y": 3361,
+        "progress": {
+          "filmProgress": 0.82,
+          "featureProgress": 0,
+          "stage": "cinema"
+        }
+      },
+      {
+        "state": "film_98",
+        "y": 3969,
+        "progress": {
+          "filmProgress": 0.972,
+          "featureProgress": 0,
+          "stage": "end"
+        }
+      },
+      {
+        "state": "manifesto",
+        "y": 5435,
+        "progress": {
+          "filmProgress": 1,
+          "featureProgress": 0,
+          "stage": "end"
+        }
+      },
+      {
+        "state": "work_intro",
+        "y": 6376,
+        "progress": {
+          "filmProgress": 1,
+          "featureProgress": 0,
+          "stage": "end"
+        }
+      },
+      {
+        "state": "selected_1",
+        "y": 7623,
+        "progress": {
+          "filmProgress": 1,
+          "featureProgress": 0.147,
+          "stage": "end"
+        }
+      },
+      {
+        "state": "selected_2",
+        "y": 8622,
+        "progress": {
+          "filmProgress": 1,
+          "featureProgress": 0.517,
+          "stage": "end"
+        }
+      },
+      {
+        "state": "selected_3",
+        "y": 9648,
+        "progress": {
+          "filmProgress": 1,
+          "featureProgress": 0.895,
+          "stage": "end"
+        }
+      },
+      {
+        "state": "directory",
+        "y": 11267,
+        "progress": {
+          "filmProgress": 1,
+          "featureProgress": 0.999,
+          "stage": "end"
+        }
+      },
+      {
+        "state": "contact",
+        "y": 12859,
+        "progress": {
+          "filmProgress": 1,
+          "featureProgress": 1,
+          "stage": "end"
+        }
+      }
+    ]
+  },
+  "mobile": {
+    "errors": [],
+    "overflow_px": 0,
+    "screens": 12,
+    "data": [
+      {
+        "state": "intro",
+        "y": 0,
+        "progress": {
+          "filmProgress": 0,
+          "featureProgress": 0,
+          "stage": "opening"
+        }
+      },
+      {
+        "state": "film_18",
+        "y": 508,
+        "progress": {
+          "filmProgress": 0.179,
+          "featureProgress": 0,
+          "stage": "opening"
+        }
+      },
+      {
+        "state": "film_35",
+        "y": 989,
+        "progress": {
+          "filmProgress": 0.349,
+          "featureProgress": 0,
+          "stage": "novel"
+        }
+      },
+      {
+        "state": "film_42",
+        "y": 1187,
+        "progress": {
+          "filmProgress": 0.42,
+          "featureProgress": 0,
+          "stage": "novel"
+        }
+      },
+      {
+        "state": "film_55",
+        "y": 1554,
+        "progress": {
+          "filmProgress": 0.549,
+          "featureProgress": 0,
+          "stage": "work"
+        }
+      },
+      {
+        "state": "film_71",
+        "y": 2007,
+        "progress": {
+          "filmProgress": 0.709,
+          "featureProgress": 0,
+          "stage": "cinema"
+        }
+      },
+      {
+        "state": "film_83",
+        "y": 2346,
+        "progress": {
+          "filmProgress": 0.829,
+          "featureProgress": 0,
+          "stage": "cinema"
+        }
+      },
+      {
+        "state": "film_98",
+        "y": 2770,
+        "progress": {
+          "filmProgress": 0.979,
+          "featureProgress": 0,
+          "stage": "end"
+        }
+      },
+      {
+        "state": "manifesto",
+        "y": 3905,
+        "progress": {
+          "filmProgress": 1,
+          "featureProgress": 0,
+          "stage": "end"
+        }
+      },
+      {
+        "state": "selected_1",
+        "y": 0,
+        "progress": {
+          "filmProgress": 0.006,
+          "featureProgress": 0,
+          "stage": "opening"
+        }
+      },
+      {
+        "state": "directory",
+        "y": 8532,
+        "progress": {
+          "filmProgress": 0.992,
+          "featureProgress": 0.991,
+          "stage": "end"
+        }
+      },
+      {
+        "state": "contact",
+        "y": 9663,
+        "progress": {
+          "filmProgress": 1,
+          "featureProgress": 1,
+          "stage": "end"
+        }
+      }
+    ]
+  },
+  "reduced": {
+    "filmHeight": 810,
+    "manifestoText": "We don't believe\ngreat ideas have\nto fit into one box."
+  }
+}

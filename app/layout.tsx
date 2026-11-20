@@ -7,9 +7,11 @@ import "./hq-home.css";
 import "./hq-hero.css";
 import "./hq-sections.css";
 import "./hq-art-direction.css";
+import "./cinema-subpages.css";
 import AnalyticsConsent from "@/components/AnalyticsConsent";
 import SmoothScroll from "@/components/SmoothScroll";
 import SiteMotion from "@/components/SiteMotion";
+import PageMotion from "@/components/PageMotion";
 import SiteHeader from "@/components/SiteHeader";
 import SiteFooter from "@/components/SiteFooter";
 const interTight=localFont({src:"../public/fonts/inter-tight-latin.woff2",weight:"100 900",style:"normal",variable:"--font-inter-tight",display:"swap",fallback:["Arial"]});
@@ -23,5 +25,5 @@ export const metadata:Metadata={
 };
 export const viewport:Viewport={themeColor:"#0e141a",colorScheme:"light"};
 export default function RootLayout({children}:{children:React.ReactNode}){
- return <html lang="en-GB" className={interTight.variable}><body><SmoothScroll/><div className="studio-site"><a href="#main" className="editorial-skip">Skip to content</a><SiteHeader/><main id="main">{children}</main><SiteFooter/><AnalyticsConsent/><SiteMotion/></div></body></html>;
+ return <html lang="en-GB" className={interTight.variable}><body><SmoothScroll/><div className="studio-site"><a href="#main" className="editorial-skip">Skip to content</a><SiteHeader/><main id="main">{children}</main><SiteFooter/><AnalyticsConsent/><SiteMotion/><PageMotion/></div></body></html>;
 }

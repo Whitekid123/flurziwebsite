@@ -1,0 +1,233 @@
+{
+  "url": "https://www.flurzi.com/about",
+  "title": "About Flurzi",
+  "text": "FLURZI\nHome\nProducts\nAbout\nFAQ\nContact\n\nABOUT FLURZI\n\nDigital products built for practical everyday use.\n\nFlurzi Mobile App Limited builds focused digital products for work, commitments, entertainment and reading. Each platform has its own audience, but the same preference for clear flows and useful experiences.\n\nOUR COMPANY\n\nFour products. One operating standard.\n\nFlurzi is the parent company behind SponsorSafe HR, Flurzi Commit, FlurziCinema and End Novel. The products serve different markets, but they are built from the same belief: a good product should be easy to understand, useful to return to and clear about what it helps people do.\n\nSponsorSafe HR supports UK employers managing sponsor licence records and audit preparation. Flurzi Commit helps people manage fixed-term commitment plans. FlurziCinema focuses on streaming discovery and viewing. End Novel gives readers a free way to discover stories and continue reading.\n\nStructured by design\n\nFlurzi products are built around clear flows, practical information and repeatable systems.\n\nBuilt for trust\n\nAccount data, content, compliance records and payment-related workflows need careful handling. Clarity sits at the centre of the product experience.\n\nFocused products\n\nSponsorSafe HR, Flurzi Commit, FlurziCinema and End Novel solve different problems while sharing the same product standard.\n\nSPONSORSAFE HR\n\nFor employers and HR teams.\n\nA sponsor licence compliance product for UK employers that need clearer tracking, secure document visibility, proactive reminders and audit-ready evidence packs.\n\nFLURZI COMMIT\n\nFor individuals and communities.\n\nA secure commitment product that turns money goals into fixed-term plans with billing visibility, maturity tracking and a clear payout path.\n\nFLURZICINEMA\n\nFor entertainment audiences.\n\nA streaming platform for movies, series, reels and live entertainment with discovery, continue watching and a polished viewing experience.\n\nEND NOVEL\n\nFor story readers.\n\nA free reading platform where readers can discover stories, save a library, follow rankings and unlock supported episodes.\n\nFLURZI\n\nBuilding focused digital products for work, commitments, entertainment and reading.\n\nProducts\nSponsorSafe HR\nFlurzi Commit\nFlurziCinema\nEnd Novel\nAll products\nCompany\nAbout\nFAQ\nContact\nContact\nhello@flurzimobileapp.co.uk\n+44 7467 830622\nBook a demo →\n\n© 2026 Flurzi Mobile App Limited. All rights reserved.\n\nPrivacy Policy\nTerms of Service\nDisclaimer\nData Protection",
+  "nodes": [
+    {
+      "tag": "P",
+      "text": "About Flurzi"
+    },
+    {
+      "tag": "H1",
+      "text": "Digital products built for practical everyday use."
+    },
+    {
+      "tag": "P",
+      "text": "Flurzi Mobile App Limited builds focused digital products for work, commitments, entertainment and reading. Each platform has its own audience, but the same preference for clear flows and useful experiences."
+    },
+    {
+      "tag": "P",
+      "text": "Our Company"
+    },
+    {
+      "tag": "H2",
+      "text": "Four products. One operating standard."
+    },
+    {
+      "tag": "P",
+      "text": "Flurzi is the parent company behind SponsorSafe HR, Flurzi Commit, FlurziCinema and End Novel. The products serve different markets, but they are built from the same belief: a good product should be easy to understand, useful to return to and clear about what it helps people do."
+    },
+    {
+      "tag": "P",
+      "text": "SponsorSafe HR supports UK employers managing sponsor licence records and audit preparation. Flurzi Commit helps people manage fixed-term commitment plans. FlurziCinema focuses on streaming discovery and viewing. End Novel gives readers a free way to discover stories and continue reading."
+    },
+    {
+      "tag": "H3",
+      "text": "Structured by design"
+    },
+    {
+      "tag": "P",
+      "text": "Flurzi products are built around clear flows, practical information and repeatable systems."
+    },
+    {
+      "tag": "H3",
+      "text": "Built for trust"
+    },
+    {
+      "tag": "P",
+      "text": "Account data, content, compliance records and payment-related workflows need careful handling. Clarity sits at the centre of the product experience."
+    },
+    {
+      "tag": "H3",
+      "text": "Focused products"
+    },
+    {
+      "tag": "P",
+      "text": "SponsorSafe HR, Flurzi Commit, FlurziCinema and End Novel solve different problems while sharing the same product standard."
+    },
+    {
+      "tag": "P",
+      "text": "SponsorSafe HR"
+    },
+    {
+      "tag": "H2",
+      "text": "For employers and HR teams."
+    },
+    {
+      "tag": "P",
+      "text": "A sponsor licence compliance product for UK employers that need clearer tracking, secure document visibility, proactive reminders and audit-ready evidence packs."
+    },
+    {
+      "tag": "P",
+      "text": "Flurzi Commit"
+    },
+    {
+      "tag": "H2",
+      "text": "For individuals and communities."
+    },
+    {
+      "tag": "P",
+      "text": "A secure commitment product that turns money goals into fixed-term plans with billing visibility, maturity tracking and a clear payout path."
+    },
+    {
+      "tag": "P",
+      "text": "FlurziCinema"
+    },
+    {
+      "tag": "H2",
+      "text": "For entertainment audiences."
+    },
+    {
+      "tag": "P",
+      "text": "A streaming platform for movies, series, reels and live entertainment with discovery, continue watching and a polished viewing experience."
+    },
+    {
+      "tag": "P",
+      "text": "End Novel"
+    },
+    {
+      "tag": "H2",
+      "text": "For story readers."
+    },
+    {
+      "tag": "P",
+      "text": "A free reading platform where readers can discover stories, save a library, follow rankings and unlock supported episodes."
+    },
+    {
+      "tag": "P",
+      "text": "Building focused digital products for work, commitments, entertainment and reading."
+    },
+    {
+      "tag": "H3",
+      "text": "Products"
+    },
+    {
+      "tag": "H3",
+      "text": "Company"
+    },
+    {
+      "tag": "H3",
+      "text": "Contact"
+    },
+    {
+      "tag": "P",
+      "text": "© 2026 Flurzi Mobile App Limited. All rights reserved."
+    }
+  ],
+  "links": [
+    {
+      "text": "FLURZI",
+      "href": "https://www.flurzi.com/"
+    },
+    {
+      "text": "Home",
+      "href": "https://www.flurzi.com/"
+    },
+    {
+      "text": "Products",
+      "href": "https://www.flurzi.com/products"
+    },
+    {
+      "text": "About",
+      "href": "https://www.flurzi.com/about"
+    },
+    {
+      "text": "FAQ",
+      "href": "https://www.flurzi.com/faq"
+    },
+    {
+      "text": "Contact",
+      "href": "https://www.flurzi.com/contact"
+    },
+    {
+      "text": "FLURZI",
+      "href": "https://www.flurzi.com/"
+    },
+    {
+      "text": "",
+      "href": "https://x.com/flurzi_official?s=21"
+    },
+    {
+      "text": "",
+      "href": "https://whatsapp.com/channel/0029Vb6IvkeBPzjaC0UQBX2P"
+    },
+    {
+      "text": "",
+      "href": "https://www.tiktok.com/@flurzi.mobile.app?_r=1&_t=ZN-96cNPV3YjxO"
+    },
+    {
+      "text": "",
+      "href": "https://youtube.com/@flurzimobileapplimitedofficial?si=OjkvkZtfRdZHJDlM"
+    },
+    {
+      "text": "SponsorSafe HR",
+      "href": "https://sponsorsafe-hr.com/"
+    },
+    {
+      "text": "Flurzi Commit",
+      "href": "https://flurzicommit.com/"
+    },
+    {
+      "text": "FlurziCinema",
+      "href": "https://flurzicinema.com/"
+    },
+    {
+      "text": "End Novel",
+      "href": "https://endnovel-flurzi.com/"
+    },
+    {
+      "text": "All products",
+      "href": "https://www.flurzi.com/products"
+    },
+    {
+      "text": "About",
+      "href": "https://www.flurzi.com/about"
+    },
+    {
+      "text": "FAQ",
+      "href": "https://www.flurzi.com/faq"
+    },
+    {
+      "text": "Contact",
+      "href": "https://www.flurzi.com/contact"
+    },
+    {
+      "text": "hello@flurzimobileapp.co.uk",
+      "href": "mailto:hello@flurzimobileapp.co.uk"
+    },
+    {
+      "text": "+44 7467 830622",
+      "href": "tel:+447467830622"
+    },
+    {
+      "text": "Book a demo →",
+      "href": "https://www.flurzi.com/contact"
+    },
+    {
+      "text": "Privacy Policy",
+      "href": "https://www.flurzi.com/privacy-policy"
+    },
+    {
+      "text": "Terms of Service",
+      "href": "https://www.flurzi.com/terms"
+    },
+    {
+      "text": "Disclaimer",
+      "href": "https://www.flurzi.com/disclaimer"
+    },
+    {
+      "text": "Data Protection",
+      "href": "https://www.flurzi.com/data-protection"
+    }
+  ]
+}

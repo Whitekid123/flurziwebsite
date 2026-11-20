@@ -1,0 +1,392 @@
+/* FLURZIHQ / SECONDARY PAGES -- cinematic system 05.
+   Matches the approved forest-and-ivory flagship; never restyles its homepage.
+   No invented client logos, product capabilities, metrics, or synthetic illustrations. */
+
+.cinema-page{--cinema-forest:#13372a;--cinema-ink:#173126;--cinema-paper:#eeece3;--cinema-mist:#ced7c4;--cinema-quiet:#506357;background:var(--cinema-paper);color:var(--cinema-ink);overflow:clip;isolation:isolate}
+.cinema-page .hq-page-intro,.cinema-page .hq-product-intro{max-width:none;margin:0;min-height:min(930px,100svh);padding:clamp(152px,16vh,200px) 5vw clamp(96px,12vh,160px);background:var(--cinema-forest);color:#f5f2e9;position:relative;isolation:isolate;overflow:hidden}
+.cinema-page .hq-page-intro::before,.cinema-page .hq-product-intro::before{content:"";position:absolute;inset:0;z-index:-1;pointer-events:none;background:linear-gradient(90deg,transparent calc(25% - .5px),#ffffff0c 25%,transparent calc(25% + .5px)),linear-gradient(90deg,transparent calc(50% - .5px),#ffffff0c 50%,transparent calc(50% + .5px)),linear-gradient(90deg,transparent calc(75% - .5px),#ffffff0c 75%,transparent calc(75% + .5px))}
+.cinema-page .hq-page-intro::after,.cinema-page .hq-product-intro::after{content:"";pointer-events:none;position:absolute;inset:auto 5vw 39px;height:1px;background:#e5e9dc36}
+.cinema-page .hq-page-intro .hq-eyebrow,.cinema-page .hq-product-intro .hq-eyebrow{display:block;color:#b3c9b5;font-family:"Courier New",monospace;font-size:10px;letter-spacing:.13em;margin-bottom:clamp(65px,10vh,122px);position:relative;z-index:4}
+.studio-site .cinema-page .hq-page-intro h1,.studio-site .cinema-page .hq-product-intro h1{font-size:clamp(62px,7.55vw,138px);letter-spacing:-.072em;line-height:.98;font-weight:570;position:relative;z-index:4;max-width:74%;text-wrap:balance}
+.cinema-page .hq-page-intro h1 em,.cinema-page .hq-product-intro h1 em{color:#ceddb8;font-family:Georgia,"Times New Roman",serif;font-weight:400;letter-spacing:-.068em;font-style:italic}
+.cinema-page .hq-page-intro>p{position:relative;z-index:4;max-width:495px;color:#ced9cf;font-size:clamp(15px,1.25vw,19px);line-height:1.55;letter-spacing:-.025em;margin-top:clamp(34px,5vh,57px)}
+.cinema-page .hq-page-intro>.cinema-art{z-index:2}
+.cinema-page .hq-page-intro:has(.cinema-art--policy){min-height:70svh}
+.cinema-page .hq-page-intro .hq-eyebrow::before,.cinema-page .hq-product-intro>.hq-eyebrow::before{content:"";display:inline-block;width:5px;height:5px;margin-right:12px;vertical-align:3px;border-radius:50%;background:#afce9e}
+.cinema-page .hq-section{position:relative;max-width:1800px}
+.cinema-page .hq-kicker,.cinema-page .hq-eyebrow,.cinema-interlude-meta,.cinema-interlude-foot,.cinema-art-bottom-note,.cinema-art-frame figcaption,.cinema-product-art-meta,.cinema-art-frame [class*=note]{font-family:"Courier New",monospace;letter-spacing:.1em}
+.cinema-page .hq-section .hq-eyebrow{font-size:11px}
+.studio-site .cinema-page .hq-section h2{font-size:clamp(47px,5.9vw,98px);font-weight:530;letter-spacing:-.065em;line-height:1}
+.studio-site .cinema-page .hq-section h2 em{color:#547f5d}
+.cinema-page .hq-section-heading{align-items:start;margin-bottom:clamp(44px,6vw,94px)}
+.cinema-page .hq-section-heading>p{font-size:17px;line-height:1.5;max-width:450px}
+.cinema-page .hq-section{padding-block:clamp(100px,12vw,200px)}
+.cinema-page .hq-scope-grid article{position:relative;padding-block:35px 65px;transition:padding-left .5s cubic-bezier(.16,1,.3,1)}
+.cinema-page .hq-scope-grid article:hover{padding-left:10px}
+.cinema-page .hq-scope-grid h3{font-size:clamp(25px,2.45vw,39px);line-height:1.13;font-weight:520;letter-spacing:-.045em}
+.cinema-page .hq-scope-grid p{font-size:16px;max-width:500px}
+.cinema-page .hq-link{font-size:14px;transition:color .28s ease,padding-left .28s ease}
+.cinema-page .hq-link:hover{color:#2f6542;padding-left:5px}
+.cinema-page .hq-solid-link{background:#183d2e;transition:transform .3s cubic-bezier(.16,1,.3,1),background .3s}
+.cinema-page .hq-solid-link:hover{transform:translateY(-2px);background:#2d5c41}
+
+/* The opening artwork: authored photo compositions, not abstract 3D objects. */
+.cinema-art{position:absolute;right:5vw;top:21%;width:44vw;max-width:790px;height:68%;min-height:420px;pointer-events:none}
+.cinema-art-frame{position:absolute;margin:0;overflow:hidden;background:#d8e0d1;box-shadow:0 36px 90px #07150f5c}
+.cinema-art-frame img{width:100%;height:100%;object-fit:cover;display:block;filter:saturate(.8);transform-origin:center}
+.cinema-art-frame figcaption{position:absolute;inset:auto 0 0;display:flex;justify-content:space-between;padding:16px 18px;font-size:9px;line-height:1.1;color:#fff;z-index:2;background:linear-gradient(0deg,#06130fd1,transparent)}
+.cinema-art-bottom-note{position:absolute;bottom:0;right:0;font-size:9px;color:#c6d1c6}
+.cinema-art-oversize{position:absolute;font-family:Georgia,"Times New Roman",serif;font-size:clamp(185px,25vw,410px);font-style:italic;font-weight:400;line-height:.75;letter-spacing:-.1em;color:#e9efe61c;z-index:3;left:-25%;bottom:9%}
+.cinema-art--about .cinema-art-main{inset:0 0 10% 23%}
+.cinema-art--about .cinema-art-secondary{inset:54% auto 0 -2%;width:47%;height:40%;border:12px solid var(--cinema-forest)}
+.cinema-art--products .cinema-art-main{inset:0 7% 17% 19%;z-index:1;transform:rotate(3deg)}
+.cinema-art--products .cinema-art-secondary{inset:46% auto 0 -2%;width:40%;height:49%;z-index:3;transform:rotate(-5deg);border:7px solid var(--cinema-forest)}
+.cinema-art--products .cinema-art-tertiary{inset:11% -5% auto auto;width:35%;height:34%;z-index:2;transform:rotate(8deg);border:7px solid var(--cinema-forest)}
+.cinema-innovation-frame,.cinema-qa-frame{position:absolute;inset:3% 0 10% 9%;overflow:hidden;background:#eae9df;box-shadow:0 30px 80px #0004}
+.cinema-innovation-frame img,.cinema-qa-frame img{width:100%;height:100%;object-fit:cover;filter:saturate(.75) contrast(1.05);display:block}
+.cinema-innovation-frame:before,.cinema-qa-frame:before{content:"";position:absolute;inset:0;z-index:1;background:linear-gradient(0deg,#0a1d16c5,transparent 55%)}
+.cinema-innovation-coordinate{position:absolute;inset:auto 22px 22px;z-index:2;display:flex;justify-content:space-between;gap:12px;border-top:1px solid #ffffff72;padding-top:12px;font:9px "Courier New",monospace;letter-spacing:.02em;color:#fff}
+.cinema-art-technical{left:-12%;top:4%;bottom:auto;font-family:var(--font-inter-tight),Arial,sans-serif;font-style:normal;font-weight:750;font-size:clamp(160px,17vw,320px);letter-spacing:-.11em;color:#e9efe635}
+.cinema-letter-stage{position:absolute;inset:3% 0 8% 12%;background:#dce4d1;color:#17352a;overflow:hidden;display:flex;flex-direction:column;justify-content:center;padding:clamp(28px,3vw,65px)}
+.cinema-letter-stage:after{content:"";position:absolute;inset:12px;border:1px solid #2c4c3540;pointer-events:none}
+.cinema-letter-kicker{position:absolute;left:clamp(28px,3vw,65px);top:37px;font:10px "Courier New",monospace;letter-spacing:.1em}
+.cinema-letter-stage strong{display:block;position:relative;font-size:clamp(62px,7vw,132px);font-weight:650;line-height:.88;letter-spacing:-.095em;white-space:nowrap}
+.cinema-letter-stage strong i{font-style:italic;font-family:Georgia,"Times New Roman",serif;font-weight:400;letter-spacing:-.1em}
+.cinema-letter-arrow{position:absolute;right:clamp(28px,3vw,65px);bottom:40px;font-size:70px;line-height:1;font-weight:300}
+.cinema-contact-type{background:#e8e9dc}
+.cinema-contact-type strong{font-size:clamp(100px,9.3vw,174px)}
+.cinema-qa-type{background:#e3e2d6}
+.cinema-qa-type strong{font-size:clamp(155px,17vw,305px);letter-spacing:-.1em}
+.cinema-qa-type strong span{font-style:italic;font-family:Georgia,"Times New Roman",serif;font-weight:400;color:#608865;margin-inline:8px}
+.cinema-letter-foot{position:absolute;left:clamp(28px,3vw,65px);bottom:40px;font:10px "Courier New",monospace}
+.cinema-qa-frame{inset:3% 0 10% 13%}
+.cinema-qa-frame:after{content:"";position:absolute;inset:10% 9%;z-index:2;border:1px solid #f5f0de99}
+.cinema-qa-corner{position:absolute;z-index:3;left:10%;color:#fff;font:11px "Courier New",monospace;letter-spacing:.1em}
+.cinema-qa-corner.top{top:13%}.cinema-qa-corner.bottom{bottom:13%}
+.cinema-qa-reticle{position:absolute;right:10%;z-index:3;display:block;width:35px;height:35px;border:1px solid #d6e5d3a0}
+.cinema-qa-reticle.a{top:13%}.cinema-qa-reticle.b{bottom:13%}
+.cinema-policy-type{background:#d7dfd0}
+.cinema-policy-type strong{font-size:clamp(70px,8vw,155px)}
+
+/* Editorial interludes: full-height typographic motion, no filler illustration. */
+.cinema-interlude{min-height:100svh;overflow:hidden;position:relative;display:flex;flex-direction:column;justify-content:space-between;padding:clamp(45px,5vw,100px) 5vw;isolation:isolate}
+.cinema-interlude--about{background:#1d4232;color:#e5eadb}
+.cinema-interlude--innovation{background:#d5dfca;color:#173b2b}
+.cinema-interlude--partnerships{background:#d5ddcb;color:#143a2b}
+.cinema-interlude::before{content:"";position:absolute;inset:0;pointer-events:none;z-index:-1;background:linear-gradient(90deg,transparent 49.9%,#ffffff1a 50%,transparent 50.1%)}
+.cinema-interlude-meta,.cinema-interlude-foot{display:flex;justify-content:space-between;gap:20px;font-size:10px;line-height:1.5}
+.cinema-interlude-lines{font-size:clamp(75px,10vw,192px);letter-spacing:-.085em;line-height:.87;font-weight:570;margin-block:clamp(95px,13vh,180px);align-self:center;width:100%}
+.cinema-interlude-lines>span{display:block;transform-origin:left center}
+.cinema-interlude-lines>span:nth-child(even){text-align:right}
+.cinema-interlude-lines em{font-family:Georgia,"Times New Roman",serif;font-weight:400;font-style:italic;letter-spacing:-.1em}
+.cinema-interlude--about em{color:#b4d29f}
+.cinema-interlude-foot a{border-bottom:1px solid currentColor;padding-bottom:5px;transition:transform .3s}
+.cinema-interlude-foot a:hover{transform:translate(3px,-3px)}
+
+/* About: large editorial opening, transformed portraits, and a documented history. */
+.cinema-page-about .hq-company-story{padding-top:clamp(135px,14vw,230px)}
+.cinema-page-about .hq-company-story .hq-intro-statement{grid-template-columns:1.28fr 1fr;align-items:end;gap:5vw}
+.studio-site .cinema-page-about .hq-intro-statement h2{font-size:clamp(60px,7.1vw,132px);line-height:.98}
+.cinema-page-about .hq-intro-body>.hq-lead{font-size:clamp(23px,2.1vw,34px);letter-spacing:-.04em;line-height:1.35}
+.cinema-page-about .hq-mission-grid{gap:0}
+.cinema-page-about .hq-mission-grid article{padding:40px 5vw;background:#e0e6d9}
+.cinema-page-about .hq-mission-grid article+article{background:#d0decf}
+.cinema-page-about .hq-journey-section{background:#e5e9df;max-width:none;padding-inline:max(5vw,calc((100vw - 1800px)/2))}
+.cinema-page-about .hq-company-timeline li{position:relative;padding-left:40px;border-bottom:1px solid #718b783d}
+.cinema-page-about .hq-company-timeline li:before{position:absolute;content:"";width:7px;height:7px;border-radius:50%;background:#537f5d;left:5px;top:38px}
+.cinema-page-about .hq-person-portrait{background:#d9e6dc;overflow:hidden}
+.cinema-page-about .hq-person-portrait img{transition:transform 1.3s cubic-bezier(.16,1,.3,1),filter .8s;filter:saturate(.7)}
+.cinema-page-about .hq-company-person:hover img{transform:scale(1.045);filter:saturate(1)}
+.cinema-page-about .hq-company-people-grid{gap:55px 28px}
+.cinema-page-about .hq-company-person{border-top:1px solid #869b8d66;padding-top:18px}
+.cinema-page-about .hq-purpose-standalone{background:#e5eadd}
+
+/* Product directory: film-like hover reveal and legible status filters. */
+.cinema-page-products .hq-directory-section{padding-block:clamp(80px,10vw,140px)}
+.cinema-page-products .hq-directory-filters{gap:0;border-bottom:1px solid #55746155;padding-bottom:22px}
+.cinema-page-products .hq-directory-filters button{border:0;border-radius:0;padding-inline:20px;min-height:48px;background:none;position:relative;font-size:12px}
+.cinema-page-products .hq-directory-filters button:after{content:"";position:absolute;left:20px;right:20px;bottom:0;height:1px;background:#1d4631;transform:scaleX(0);transform-origin:left;transition:transform .3s}
+.cinema-page-products .hq-directory-filters button[aria-pressed=true]{color:#1c4733;font-weight:700}
+.cinema-page-products .hq-directory-filters button[aria-pressed=true]:after,.cinema-page-products .hq-directory-filters button:hover:after{transform:scaleX(1)}
+.cinema-page-products .hq-directory-count{margin-block:38px;font:11px "Courier New",monospace;letter-spacing:.07em}
+.cinema-page-products .hq-platform-row{position:relative;min-height:155px;padding-block:29px;overflow:hidden;isolation:isolate;border-color:#7b97826e;transition:padding-left .45s cubic-bezier(.16,1,.3,1),background .35s}
+.cinema-page-products .hq-platform-row:hover,.cinema-page-products .hq-platform-row:focus-visible{padding-left:30px;background:#d4dfd1}
+.cinema-page-products .hq-platform-row:before{content:"";position:absolute;left:0;top:0;bottom:0;width:3px;background:#3a7451;transform:scaleY(0);transform-origin:bottom;transition:transform .4s;z-index:3}
+.cinema-page-products .hq-platform-row:hover:before,.cinema-page-products .hq-platform-row:focus-visible:before{transform:scaleY(1)}
+.cinema-page-products .hq-platform-row .cinema-row-media{position:absolute;inset:-12% 22% -18% 34%;opacity:0;transform:scale(1.12) translateY(10px);pointer-events:none;z-index:-1;transition:opacity .55s ease,transform .85s cubic-bezier(.16,1,.3,1)}
+.cinema-page-products .hq-platform-row .cinema-row-media:before{content:"";position:absolute;inset:0;background:linear-gradient(90deg,#d4dfd1,#d4dfd1c4 20%,#d4dfd100 80%,#d4dfd1);z-index:1}
+.cinema-page-products .hq-platform-row .cinema-row-media img{width:100%;height:100%;object-fit:cover;filter:grayscale(.35) saturate(.7)}
+.cinema-page-products .hq-platform-row:hover .cinema-row-media,.cinema-page-products .hq-platform-row:focus-visible .cinema-row-media{opacity:.48;transform:scale(1.01) translateY(0)}
+.cinema-page-products .hq-platform-row>*:not(.cinema-row-media){position:relative;z-index:2}
+.cinema-page-products .hq-platform-identity h3{font-size:clamp(30px,3.5vw,59px);letter-spacing:-.065em;font-weight:580}
+.cinema-page-products .hq-platform-row>p{font-size:15px;color:#3a4e42}
+.cinema-page-products .hq-platform-row .hq-row-arrow{font-size:29px}
+.cinema-page-products .hq-stage-guide{background:#dce5d8;max-width:none;padding:clamp(100px,11vw,180px) 5vw}
+.cinema-page-products .hq-stage-guide h2{font-size:clamp(50px,6vw,95px);letter-spacing:-.06em}
+.cinema-page-products .hq-stage-guide dt{font-size:22px;font-weight:530}
+
+/* Product detail pages: one real brand hero per product; clean disclosure of stages. */
+.cinema-page-product .hq-product-intro{min-height:820px;display:flex;flex-direction:column;justify-content:center;padding-top:165px;padding-bottom:100px}
+.cinema-page-product .hq-product-intro>.hq-eyebrow{margin-bottom:30px}
+.cinema-page-product .hq-back-link{position:absolute;top:132px;left:5vw;z-index:5;font-size:12px;color:#d3e2cf;display:inline-flex;align-items:center;transition:transform .2s}
+.cinema-page-product .hq-back-link:hover{transform:translateX(-5px)}
+.studio-site .cinema-page-product .hq-product-intro h1{max-width:65%;font-size:clamp(77px,8.2vw,154px);margin:0;overflow-wrap:anywhere;text-wrap:balance}
+.cinema-page-product .hq-product-intro-bottom{z-index:4;position:relative;gap:16px;max-width:550px;margin-top:32px}
+.cinema-page-product .hq-product-intro-bottom>p{color:#d3e0d3;font-size:clamp(16px,1.5vw,22px);line-height:1.5}
+.cinema-page-product .hq-product-intro-bottom .platform-status{font:11px "Courier New",monospace;letter-spacing:.04em;color:#cde8c7}
+.cinema-page-product .hq-detail-actions{position:relative;z-index:4;max-width:54%;margin-top:30px;gap:12px 25px}
+.cinema-page-product .hq-detail-actions .hq-solid-link{background:#e4eadd;color:#173a28;padding:16px 20px}
+.cinema-page-product .hq-detail-actions .hq-solid-link:hover{background:#c4e5b0}
+.cinema-page-product .hq-detail-actions .hq-link{color:#e4eadd;border-color:#93b398}
+.cinema-product-art{position:absolute;width:min(43vw,780px);height:65%;right:4vw;top:21%;pointer-events:none;z-index:2}
+.cinema-product-art-frame{position:absolute;inset:0;background:#d5dfd1;overflow:hidden;box-shadow:0 30px 100px #07170f6d}
+.cinema-product-art-frame>img{width:100%;height:100%;object-fit:cover;display:block;filter:saturate(.82)}
+.cinema-product-art-meta{position:absolute;bottom:0;inset-inline:0;display:flex;justify-content:space-between;padding:19px 20px;color:#fff;font-size:9px;background:linear-gradient(0deg,#091911cf,transparent)}
+.cinema-product-art--flurzi360 .cinema-product-art-frame>img{object-position:30% 50%}
+.cinema-product-art--commit .cinema-product-art-frame{background:#103c2f}
+.cinema-product-art--commit .cinema-product-art-frame>img{object-fit:contain;padding:15%}
+.cinema-product-art--cortex .cinema-product-art-frame{background:#e0e6d9}
+.cinema-product-art--flurzix .cinema-product-art-frame{background:#d3e4df}
+.cinema-product-typeset{height:100%;display:flex;flex-direction:column;justify-content:space-between;padding:38px;color:#173a2c}
+.cinema-product-typeset small,.cinema-product-typeset span{font:10px "Courier New",monospace;letter-spacing:.06em;text-transform:uppercase}
+.cinema-product-typeset strong{font-size:clamp(70px,7vw,160px);font-weight:700;letter-spacing:-.09em;line-height:.9;overflow-wrap:anywhere}
+.cinema-page-product .hq-detail-visual{position:relative;padding:clamp(70px,9vw,150px) 5vw;background:#dbe5d9}
+.cinema-page-product .hq-detail-visual .hq-visual{max-width:min(1100px,94vw);box-shadow:0 25px 65px #0d332219;background:#f3f2ec}
+.cinema-page-product .hq-brand-figure{background:#e9ece4;padding:clamp(60px,7vw,130px) 8vw}
+.cinema-page-product .hq-brand-figure img{max-height:650px;transition:transform .9s cubic-bezier(.16,1,.3,1)}
+.cinema-page-product .hq-brand-figure:hover img{transform:scale(1.014)}
+.cinema-page-product .hq-detail-overview{padding-block:clamp(125px,12vw,215px)}
+.studio-site .cinema-page-product .hq-detail-overview h2{font-size:clamp(50px,5.3vw,92px);font-weight:540;letter-spacing:-.07em}
+.cinema-page-product .hq-availability-note{background:#dfe8dd;border-left:3px solid #1d5634}
+.cinema-page-product .hq-detail-scope{padding-block:clamp(55px,6vw,110px)}
+.cinema-page-product .hq-detail-scope+.hq-detail-scope{padding-top:0}
+.cinema-page-product .hq-next-product{background:#1d3d2e;color:#f6f3ed;padding:90px 5vw}
+.cinema-page-product .hq-next-product:hover{background:#2e5d40}
+.studio-site .cinema-page-product .hq-next-product strong{font-size:clamp(44px,7vw,110px);letter-spacing:-.07em}
+.cinema-page-product .hq-next-product>span:last-child{font-size:44px}
+
+/* Innovation: clear editorial design, stages remain tied to product facts. */
+.cinema-page-innovation .hq-innovation-principles{background:#e4e9df;max-width:none;padding-inline:5vw}
+.cinema-page-innovation .hq-innovation-principles .hq-scope-grid{gap:3vw}
+.cinema-page-innovation .hq-innovation-principles .hq-scope-grid article{padding:40px 28px 48px;border-top:2px solid #2c6042;background:#f1f3ea}
+.cinema-page-innovation .hq-innovation-direction{background:#e9ede3;max-width:none;gap:7vw;min-height:650px;align-items:center;padding-inline:5vw}
+.cinema-page-innovation .hq-innovation-direction:nth-child(even){background:#dce7da}
+.cinema-page-innovation .hq-direction-heading{position:sticky;top:120px;align-self:start}
+.studio-site .cinema-page-innovation .hq-direction-heading h2{font-size:clamp(49px,6vw,100px)}
+.cinema-page-innovation .hq-direction-platforms article{padding:33px 0 42px}
+.cinema-page-innovation .hq-direction-platforms h3{font-size:clamp(27px,3vw,43px);font-weight:570;letter-spacing:-.05em}
+
+/* Partnerships: numbered editorial choices with a large conversation chapter. */
+.cinema-page-partnerships .hq-opportunity-section{background:#edece3}
+.cinema-page-partnerships .hq-opportunity-grid{gap:20px}
+.cinema-page-partnerships .hq-opportunity-grid article{padding:38px 30px 45px;border:1px solid #81968371;border-top:2px solid #1f5739;background:#e3e9dc;min-height:520px;transition:background .4s,transform .5s cubic-bezier(.16,1,.3,1)}
+.cinema-page-partnerships .hq-opportunity-grid article:hover{transform:translateY(-9px);background:#d4e0d1}
+.cinema-page-partnerships .hq-opportunity-grid article>span{font:12px "Courier New",monospace}
+.cinema-page-partnerships .hq-opportunity-grid h3{font-size:clamp(28px,2.9vw,46px);letter-spacing:-.06em;font-weight:550;line-height:1.1}
+.cinema-page-partnerships .hq-collaboration-context{background:#e3e9da;max-width:none;padding-inline:5vw}
+
+/* Contact: generous business enquiry layout, preserve form fields / API. */
+.cinema-page-contact .hq-contact-layout{gap:8vw;padding-block:clamp(110px,13vw,220px)}
+.cinema-page-contact .hq-contact-details h2{font-size:clamp(65px,6.4vw,115px);line-height:.92}
+.cinema-page-contact .hq-contact-details>p{font-size:17px;max-width:500px}
+.cinema-page-contact .hq-registered-contact{border-color:#829a874d}
+.cinema-page-contact .hq-contact-draft{background:#e1e8da;border:1px solid #a0b6a262;padding:clamp(30px,4vw,70px);box-shadow:0 30px 80px #1533250b}
+.cinema-page-contact .hq-contact-draft h2{font-size:clamp(38px,4vw,68px);letter-spacing:-.065em}
+.cinema-page-contact .hq-contact-draft input,.cinema-page-contact .hq-contact-draft select,.cinema-page-contact .hq-contact-draft textarea{border:1px solid #9eafa4;background:#f7f6f0;transition:border-color .2s,box-shadow .2s;min-height:54px}
+.cinema-page-contact .hq-contact-draft input:focus,.cinema-page-contact .hq-contact-draft select:focus,.cinema-page-contact .hq-contact-draft textarea:focus{outline:none;border-color:#29603e;box-shadow:0 0 0 2px #b4d4b7}
+.cinema-page-contact .hq-inline-invite{background:#e4eadd;max-width:none;padding:95px 5vw}
+
+/* FAQ: accordion choreography remains native, keyboard and assistive-tech friendly. */
+.cinema-page-faq .hq-faq-layout{display:grid;grid-template-columns:minmax(200px,.3fr) minmax(0,1fr);gap:clamp(45px,6vw,120px);max-width:1600px}
+.cinema-page-faq .hq-faq-layout>aside{position:sticky;top:140px;align-self:start}
+.cinema-page-faq .hq-faq-layout>aside nav a{font-size:15px;padding:17px 0;border-color:#78917e69;transition:padding-left .3s,color .3s}
+.cinema-page-faq .hq-faq-layout>aside nav a:hover{padding-left:12px;color:#2b5b3f}
+.studio-site .cinema-page-faq .hq-faq-group h2{font-size:clamp(34px,3.5vw,59px)!important;margin-bottom:30px;letter-spacing:-.06em}
+.cinema-page-faq .hq-faq-group details{border-color:#819a8670}
+.cinema-page-faq .hq-faq-group summary{min-height:95px;font-size:clamp(18px,1.6vw,26px);line-height:1.26;letter-spacing:-.025em;gap:30px;padding:23px 0}
+.cinema-page-faq .hq-faq-group summary>span{font-size:38px;font-weight:300;color:#2d5f3d;transition:transform .4s cubic-bezier(.16,1,.3,1)}
+.cinema-page-faq .hq-faq-group details[open] summary>span{transform:rotate(45deg)}
+.cinema-page-faq .hq-faq-group details p{font-size:17px;line-height:1.65;color:#455e50;padding-bottom:32px}
+@supports (interpolate-size:allow-keywords){.cinema-page-faq .hq-faq-group details{interpolate-size:allow-keywords}.cinema-page-faq .hq-faq-group details::details-content{block-size:0;overflow:hidden;transition:block-size .45s cubic-bezier(.16,1,.3,1),content-visibility .45s allow-discrete}.cinema-page-faq .hq-faq-group details[open]::details-content{block-size:auto}}
+
+/* Testing and compliance policy: substantial but deliberately quieter. */
+.cinema-page-testing .hq-section-heading{padding-top:30px}
+.cinema-page-testing .hq-scope-grid{gap:25px;margin-block:40px}
+.cinema-page-testing .hq-scope-grid article{border:1px solid #76907b66;border-top:2px solid #20543b;background:#e0e8db;padding:40px;min-height:280px}
+.cinema-page-testing .hq-scope-grid article h3{font-size:clamp(26px,2.2vw,37px)}
+.cinema-page-testing .hq-section>.hq-solid-link{margin-top:35px}
+.cinema-page-policy .hq-policy-content{display:grid;grid-template-columns:minmax(220px,.3fr) minmax(0,1fr);gap:45px clamp(50px,6vw,120px);max-width:1600px}
+.cinema-page-policy .hq-policy-review-note{grid-column:1/-1;margin-bottom:30px;border:0;border-top:2px solid #325940;background:#dee7da;padding:28px 35px;font-size:15px}
+.cinema-page-policy .cinema-legal-nav{position:sticky;top:125px;align-self:start;display:flex;flex-direction:column;gap:0;border-top:1px solid #81978780}
+.cinema-page-policy .cinema-legal-nav>span{font:11px "Courier New",monospace;padding:21px 0;color:#486450;letter-spacing:.07em}
+.cinema-page-policy .cinema-legal-nav>a{font-size:13px;display:block;padding:13px 0;border-bottom:1px solid #81978780;line-height:1.45;transition:padding-left .3s}
+.cinema-page-policy .cinema-legal-nav>a:hover{padding-left:8px;color:#27603d}
+.cinema-page-policy .cinema-legal-body section{scroll-margin-top:125px;border-top:1px solid #8fa08e7d;padding-top:28px;margin-bottom:70px}
+.studio-site .cinema-page-policy .cinema-legal-body h2{font-size:clamp(29px,3vw,49px)!important;letter-spacing:-.05em;margin-bottom:25px}
+.cinema-page-policy .cinema-legal-body p{font-size:16px;line-height:1.78;max-width:830px}
+
+/* Shared footer: retains full links but continues the premium brand tone. */
+.studio-site:has(.cinema-page) .editorial-footer.corporate-footer{background:#122e22;color:#f0efe6}
+.studio-site:has(.cinema-page) .footer-invite{padding-block:clamp(70px,9vw,140px);border-color:#dde6d52a}
+.studio-site:has(.cinema-page) .footer-invite>a{font-weight:550;font-size:clamp(47px,6.8vw,116px);letter-spacing:-.07em;line-height:.98}
+.studio-site:has(.cinema-page) .footer-invite p{color:#aec5b2}
+.studio-site:has(.cinema-page) .footer-columns>nav>span{color:#a9c5ac;font:11px "Courier New",monospace;letter-spacing:.1em;margin-bottom:12px}
+.studio-site:has(.cinema-page) .footer-columns a{transition:color .2s}
+.studio-site:has(.cinema-page) .footer-columns a:hover{color:#bdddba}
+
+/* Large laptops, tablets, compact landscape and phones. Keep all text / CTAs. */
+@media(max-width:1200px){
+ .cinema-art{right:4vw;width:43vw;height:60%}
+ .studio-site .cinema-page .hq-page-intro h1{font-size:clamp(59px,7vw,114px);max-width:71%}
+ .cinema-letter-stage strong{font-size:6.6vw}
+ .cinema-contact-type strong{font-size:9vw}
+ .cinema-page-product .hq-detail-actions{gap:8px 20px}
+ .cinema-page-product .hq-product-intro h1{font-size:clamp(66px,7vw,120px)}
+}
+@media(max-width:900px){
+ .cinema-page .hq-page-intro,.cinema-page .hq-product-intro{min-height:0;padding:130px 5vw 35px}
+ .studio-site .cinema-page .hq-page-intro h1{font-size:clamp(59px,8.9vw,100px);max-width:100%;text-wrap:balance}
+ .cinema-page .hq-page-intro .hq-eyebrow{margin-bottom:55px}
+ .cinema-page .hq-page-intro>p{max-width:630px;margin-top:32px}
+ .cinema-page .hq-page-intro::after{bottom:20px}
+ .cinema-art{position:relative;inset:auto;width:100%;max-width:none;min-height:0;height:clamp(330px,55vw,600px);margin:50px 0 35px}
+ .cinema-art--about .cinema-art-main{inset:0 4% 7% 25%}
+ .cinema-art--about .cinema-art-secondary{inset:53% auto 0 0}
+ .cinema-art-oversize{font-size:34vw}
+ .cinema-letter-stage strong{font-size:clamp(75px,13vw,155px)}
+ .cinema-contact-type strong{font-size:clamp(110px,16vw,180px)}
+ .cinema-qa-type strong{font-size:clamp(170px,26vw,290px)}
+ .cinema-policy-type strong{font-size:clamp(90px,13vw,155px)}
+ .cinema-innovation-coordinate{flex-wrap:wrap}
+ .cinema-page .hq-section{padding-block:clamp(80px,10vw,140px)}
+ .cinema-interlude{min-height:750px}
+ .cinema-interlude-lines{font-size:clamp(74px,10.5vw,120px)}
+ .cinema-page-about .hq-company-story .hq-intro-statement{grid-template-columns:1fr}
+ .cinema-page-about .hq-intro-body{max-width:650px}
+ .cinema-page-innovation .hq-direction-heading{position:relative;top:auto}
+ .cinema-page-innovation .hq-innovation-direction{min-height:0}
+ .cinema-page-faq .hq-faq-layout{grid-template-columns:1fr}
+ .cinema-page-faq .hq-faq-layout>aside{position:relative;top:auto}
+ .cinema-page-product .hq-product-intro{display:block;min-height:0;padding-top:160px;padding-bottom:35px}
+ .cinema-page-product .hq-back-link{top:110px}
+ .studio-site .cinema-page-product .hq-product-intro h1{max-width:100%;font-size:clamp(68px,9.5vw,120px)}
+ .cinema-page-product .hq-product-intro-bottom,.cinema-page-product .hq-detail-actions{max-width:660px}
+ .cinema-product-art{position:relative;inset:auto;margin-top:52px;width:100%;height:clamp(350px,61vw,680px)}
+ .cinema-page-policy .hq-policy-content{grid-template-columns:1fr}
+ .cinema-page-policy .cinema-legal-nav{position:relative;top:auto;display:block;columns:2}
+ .cinema-page-policy .cinema-legal-nav>span{display:block;column-span:all}
+ .cinema-page-policy .cinema-legal-nav>a{break-inside:avoid}
+ .cinema-page-partnerships .hq-opportunity-grid article{min-height:0}
+}
+@media(max-width:700px){
+ .cinema-page .hq-page-intro,.cinema-page .hq-product-intro{padding:120px 24px 34px}
+ .studio-site .cinema-page .hq-page-intro h1{font-size:clamp(48px,11.1vw,79px);line-height:.99;letter-spacing:-.07em}
+ .cinema-page .hq-page-intro .hq-eyebrow{margin-bottom:50px;font-size:9px}
+ .cinema-page .hq-page-intro>p{font-size:15px;margin-top:26px;line-height:1.5}
+ .cinema-art{height:clamp(320px,92vw,480px);margin-top:45px;margin-bottom:30px}
+ .cinema-art-frame figcaption{font-size:8px;padding:12px}
+ .cinema-art-bottom-note{font-size:8px;bottom:2px}
+ .cinema-art--about .cinema-art-secondary{border-width:6px}
+ .cinema-art--products .cinema-art-secondary,.cinema-art--products .cinema-art-tertiary{border-width:5px}
+ .cinema-art--products .cinema-art-tertiary{right:0}
+ .cinema-art--partnerships .cinema-letter-stage,.cinema-art--contact .cinema-letter-stage{inset:2% 0 8% 4%}
+ .cinema-letter-stage{inset:2% 0 8% 4%;padding:25px}
+ .cinema-letter-stage:after{inset:8px}
+ .cinema-letter-kicker{top:23px;left:25px;font-size:8px}
+ .cinema-letter-stage strong{font-size:clamp(65px,12.8vw,115px)}
+ .cinema-contact-type strong{font-size:clamp(84px,15.3vw,135px)}
+ .cinema-qa-type strong{font-size:clamp(125px,26vw,210px)}
+ .cinema-policy-type strong{font-size:clamp(67px,11.5vw,105px)}
+ .cinema-letter-arrow{right:24px;bottom:26px;font-size:50px}
+ .cinema-letter-foot{left:25px;bottom:20px;font-size:8px}
+ .cinema-innovation-coordinate{font-size:8px;gap:5px;inset:auto 12px 15px}
+ .cinema-page .hq-section{padding-block:75px}
+ .cinema-page .hq-section-heading{display:block}
+ .cinema-page .hq-section-heading>p{margin-top:30px;justify-self:start}
+ .studio-site .cinema-page .hq-section h2{font-size:clamp(43px,10.8vw,68px)}
+ .cinema-interlude{padding:35px 24px;min-height:620px}
+ .cinema-interlude-meta,.cinema-interlude-foot{font-size:8px}
+ .cinema-interlude-lines{font-size:clamp(55px,11.2vw,90px);line-height:.95;letter-spacing:-.07em}
+ .cinema-interlude-lines>span:nth-child(even){text-align:left;padding-left:8vw}
+ .cinema-page-about .hq-mission-grid article{padding:34px 26px}
+ .cinema-page-about .hq-company-people-grid{gap:45px}
+ .cinema-page-about .hq-company-timeline li{padding-left:30px}
+ .cinema-page-products .hq-directory-section{padding:70px 24px}
+ .cinema-page-products .hq-directory-filters button{padding-inline:10px;font-size:11px}
+ .cinema-page-products .hq-directory-filters button:after{left:10px;right:10px}
+ .cinema-page-products .hq-platform-row{padding:24px 0;min-height:115px}
+ .cinema-page-products .hq-platform-row>p{font-size:13px}
+ .cinema-page-products .hq-platform-row .cinema-row-media{display:none}
+ .cinema-page-products .hq-stage-guide{padding:75px 24px}
+ .cinema-page-innovation .hq-innovation-principles .hq-scope-grid{display:block}
+ .cinema-page-innovation .hq-innovation-principles .hq-scope-grid article{margin-bottom:16px}
+ .cinema-page-partnerships .hq-opportunity-grid article{padding:30px 24px 35px}
+ .cinema-page-contact .hq-contact-layout{gap:55px}
+ .cinema-page-contact .hq-contact-details h2{font-size:clamp(56px,12vw,88px)}
+ .cinema-page-contact .hq-contact-draft{padding:28px 20px}
+ .cinema-page-faq .hq-faq-layout{padding:70px 24px;gap:45px}
+ .cinema-page-faq .hq-faq-layout>aside nav{grid-template-columns:1fr 1fr}
+ .cinema-page-faq .hq-faq-group summary{font-size:18px;min-height:78px}
+ .cinema-page-faq .hq-faq-group summary>span{font-size:32px}
+ .cinema-page-testing .hq-scope-grid{display:block}
+ .cinema-page-testing .hq-scope-grid article{padding:30px 24px;min-height:0;margin-bottom:15px}
+ .cinema-page-policy .hq-policy-content{padding:65px 24px}
+ .cinema-page-policy .cinema-legal-nav{columns:1}
+ .cinema-page-policy .hq-policy-review-note{padding:22px 18px;font-size:14px}
+ .cinema-page-product .hq-product-intro{padding-top:150px}
+ .cinema-page-product .hq-back-link{left:24px;top:95px}
+ .studio-site .cinema-page-product .hq-product-intro h1{font-size:clamp(65px,12.8vw,90px)}
+ .cinema-page-product .hq-detail-actions{gap:14px}
+ .cinema-page-product .hq-detail-actions>a{font-size:12px}
+ .cinema-product-art{height:clamp(320px,85vw,500px);margin-top:45px}
+ .cinema-product-typeset strong{font-size:clamp(74px,13vw,110px)}
+ .cinema-page-product .hq-detail-scope{padding-top:65px}
+ .cinema-page-product .hq-next-product{padding:65px 24px}
+ .studio-site .cinema-page-product .hq-next-product strong{font-size:clamp(44px,10vw,72px)}
+ .studio-site:has(.cinema-page) .footer-invite>a{font-size:clamp(44px,12vw,72px)}
+}
+@media(max-width:390px){
+ .studio-site .cinema-page .hq-page-intro h1{font-size:clamp(43px,10.7vw,53px)}
+ .cinema-art{height:310px}
+ .cinema-letter-stage strong{font-size:12.2vw}
+ .cinema-contact-type strong{font-size:16vw}
+ .cinema-qa-type strong{font-size:28vw}
+ .cinema-page-product .hq-product-intro-bottom>p{font-size:16px}
+ .studio-site .cinema-page-product .hq-product-intro h1{font-size:clamp(50px,12vw,68px)}
+ .cinema-page-products .hq-platform-identity h3{font-size:29px}
+}
+@media(max-height:650px) and (min-width:901px){
+ .cinema-page .hq-page-intro,.cinema-page .hq-product-intro{min-height:740px;padding-top:140px}
+ .cinema-page .hq-page-intro .hq-eyebrow{margin-bottom:55px}
+ .cinema-art,.cinema-product-art{height:65%}
+}
+@media(prefers-reduced-motion:reduce){
+ .cinema-page *, .cinema-interlude *{scroll-behavior:auto!important;transition-duration:.001ms!important;animation-duration:.001ms!important}
+ .cinema-interlude-lines>span,.cinema-page [data-cinema-image],.cinema-page [data-cinema-type]{transform:none!important;clip-path:none!important;opacity:1!important;filter:none!important}
+}
+/* FINAL TYPOGRAPHIC COLLISION GUARDS (desktop art / headline composition). */
+@media(min-width:901px){
+ .studio-site .cinema-page .hq-page-intro h1{max-width:62%;font-size:clamp(61px,6.7vw,116px)}
+ .studio-site .cinema-page-about .hq-page-intro h1,.studio-site .cinema-page-products .hq-page-intro h1,.studio-site .cinema-page-innovation .hq-page-intro h1{max-width:66%}
+ .studio-site .cinema-page-contact .hq-page-intro h1{max-width:58%;font-size:clamp(60px,5.5vw,102px)}
+ .studio-site .cinema-page-partnerships .hq-page-intro h1{max-width:60%;font-size:clamp(62px,5.8vw,110px)}
+ .studio-site .cinema-page-faq .hq-page-intro h1{max-width:60%;font-size:clamp(62px,6vw,113px)}
+ .studio-site .cinema-page-policy .hq-page-intro h1{max-width:54%;font-size:clamp(51px,4.7vw,87px);line-height:1.03;overflow-wrap:normal}
+ .cinema-page-policy .hq-page-intro{min-height:800px}
+}
+.cinema-product-art--cortex .cinema-product-typeset strong{font-size:clamp(48px,6.6vw,112px);white-space:nowrap;overflow-wrap:normal}
+@media(max-width:700px){
+ .cinema-product-art--cortex .cinema-product-typeset strong{font-size:clamp(50px,9vw,75px)}
+}
+/* Shared header/footer wordmark, harmonised with the approved flagship. */
+.studio-site:has(.cinema-page) .brand-wordmark-cinematic{position:relative;display:inline-flex;align-items:flex-start;font-size:clamp(23px,2vw,31px);font-weight:800;line-height:1;letter-spacing:-.09em;color:inherit}
+.studio-site:has(.cinema-page) .brand-wordmark-cinematic em{font-size:.37em;font-weight:600;letter-spacing:-.025em;color:inherit;font-style:normal;transform:translate(1px,-2px)}
+.studio-site:has(.cinema-page) .brand-wordmark-dot{display:block;border-radius:50%;width:4px;height:4px;background:#b7d8a7;margin:0 0 0 5px;align-self:flex-start;opacity:.9}
+.studio-site:has(.cinema-page) .editorial-header{height:92px;gap:24px;padding-inline:5vw}
+.studio-site:has(.cinema-page) .editorial-header.on-dark{color:#f4f4e9}
+.studio-site:has(.cinema-page) .primary-links{font-size:12px;gap:clamp(18px,2.2vw,36px);margin-right:25px}
+.studio-site:has(.cinema-page) .editorial-menu-button{font-size:12px;letter-spacing:.03em}
+.studio-site:has(.cinema-page) .editorial-header:not(.on-dark){background:#f2f0e8f4;color:#18372a}
+@media(max-width:900px){.studio-site:has(.cinema-page) .primary-links{display:none}}
+@media(max-width:700px){.studio-site:has(.cinema-page) .editorial-header{height:76px;padding-inline:24px}}
+@media(max-width:390px){.studio-site:has(.cinema-page) .brand-wordmark-cinematic{font-size:24px}}

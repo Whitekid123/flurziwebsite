@@ -1,0 +1,109 @@
+/* FLURZIHQ design tokens — single source of truth.
+   Light editorial paper + dark cinematic ink + ONE accent (HQ pine).
+   Imported once from app/layout.tsx. */
+
+@theme {
+  --color-ink: #0e141a;
+  --color-ink-deep: #090e13;
+  --color-paper: #f4f1e9;
+  --color-paper-deep: #eae6d9;
+  --color-accent: #1c4a3a;
+  --color-accent-bright: #2a6b53;
+  --color-accent-ink: #eef4ee;
+  --color-mute: #5a6360;
+  --color-mute-dark: #9aa5a1;
+  --color-line: rgba(14, 20, 26, 0.14);
+  --color-line-dark: rgba(244, 241, 233, 0.16);
+
+  --font-sans: var(--font-inter-tight), ui-sans-serif, system-ui, sans-serif;
+}
+
+:root {
+  --hq-ink: #0e141a;
+  --hq-ink-deep: #090e13;
+  --hq-paper: #f4f1e9;
+  --hq-paper-deep: #eae6d9;
+  --hq-accent: #1c4a3a;
+  --hq-accent-bright: #2a6b53;
+  --hq-accent-glow: #8fd0ae;
+  --hq-mute: #5a6360;
+  --hq-mute-dark: #9aa5a1;
+  --hq-line: rgba(14, 20, 26, 0.14);
+  --hq-line-dark: rgba(244, 241, 233, 0.16);
+
+  --hq-display: clamp(3rem, 8vw, 7.5rem);
+  --hq-h2: clamp(2rem, 4.5vw, 3.75rem);
+  --hq-lead: 1.125rem;
+  --hq-kicker: 0.75rem;
+
+  --hq-section-pad: clamp(96px, 12vw, 180px);
+  --hq-radius-editorial: 2px;
+  --hq-radius-ui: 10px;
+}
+
+/* FLURZIHQ wordmark: tight-tracked FLURZI + pine HQ. Parent links carry the accessible label. */
+.wordmark {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+}
+.brand-wordmark {
+  font-weight: 800;
+  letter-spacing: -0.06em;
+  font-size: 1.3rem;
+  line-height: 1;
+  white-space: nowrap;
+  color: inherit;
+}
+.brand-wordmark img {
+  width: 30px;
+  height: 30px;
+  border-radius: 7px;
+  display: inline-block;
+  vertical-align: -7px;
+  margin-right: 9px;
+}
+.brand-wordmark em {
+  font-style: normal;
+  color: var(--hq-accent-bright);
+}
+/* Portfolio parent lockup: FLURZI + small HQ. */
+.portfolio-parent > strong em {
+  font-style: normal;
+  font-size: 0.32em;
+  letter-spacing: 0.02em;
+  vertical-align: 0.9em;
+  margin-left: 0.35em;
+  color: var(--hq-accent-glow);
+}
+
+/* P1 close-out — live legacy surfaces sit on dark navy, where solid pine is
+   too dark to read. Dark-surface accents use the light pine tint (same hue,
+   one-accent discipline holds). Higher specificity beats corporate.css,
+   which imports after this file. Full navy regrade ships with the P2 rebuild. */
+.studio-site .corporate-hero-copy h1 em {
+  color: var(--hq-accent-glow);
+}
+.studio-site .corporate-hero-meta i {
+  background: var(--hq-accent-glow);
+}
+.studio-site .corporate-primary:hover {
+  background: var(--hq-accent-glow);
+}
+.site-header .brand-wordmark em,
+.editorial-footer .brand-wordmark em {
+  color: var(--hq-accent-glow);
+}
+
+/* P1 close-out — mobile hero: let the hero size to its content instead of
+   forcing a full-viewport void below the CTAs. Full recomposition ships
+   with the P2 rebuild. */
+@media (max-width: 700px) {
+  .studio-site .corporate-opening.home-opening {
+    height: auto;
+    min-height: 620px;
+    max-height: none;
+    padding-bottom: 110px;
+  }
+}
